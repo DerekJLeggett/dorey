@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <ul class="list-unstyled">
+                <li>Select a State
+                    <ul>
+                        <li (click)="getRecreationalAreas(state.code)" *ngFor="let state of states">{{state.name}}<br><img
+                                class="img-fluid img-thumbnail flag" src="assets/images/flags/svg/us/{{state.code|lowercase}}.svg"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-10">
+            <ul class="list-unstyled">
+                <li>
+                    <ul class="list-unstyled">
+                        <li *ngFor="let recArea of recreationalAreas">
+                            <h2><a target="_blank" href="{{recArea.RecAreaMapURL}}">{{recArea.RecAreaName}}</a></h2><br>
+                            <h3>{{recArea.RecAreaDescription}}</h3><br>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <a target="_blank" href="http://ridb.recreation.gov/">Data Source</a>
+</div>

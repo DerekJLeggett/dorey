@@ -1,0 +1,44 @@
+<html>
+  <head>
+  	<title>World Population Visualized by Country</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var jsonData = $.ajax({
+          url: "/api/getPopulationByCountry.php",
+          dataType: "json",
+          async: false
+          }).responseText;
+
+        var chartData = JSON.parse(jsonData);            
+
+         // Create our data table out of JSON data loaded from server.
+        var dTable = new google.visualization.DataTable();
+        
+        dTable.addColumn('string','Country');
+        dTable.addColumn('number','Population');
+        
+        for(i=0;i<chartData.length;i++){
+                var currentObj = chartData[i];
+                dTable.addRow([currentObj.Country,currentObj.Population]);
+        }
+        
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(dTable, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

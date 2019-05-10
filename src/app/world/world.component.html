@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="countrySelect" class="sr-only">Select a Country</label>
+          <select class="custom-select" id="countrySelect"
+            (change)="getStatesNestedCitiesByCountryCode($event.target.value)">
+            <option selected class="text-center">Select a Country</option>
+            <option *ngFor="let country of countries" class="text-center" value="{{country.Code}}">
+              {{country.Name}}
+            </option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row" *ngFor="let state of states">
+    <div class="col">
+      <img class="img-fluid" title="{{state.State}}"
+        src="assets/images/flags/svg/us/{{state.StateCode | lowercase}}.svg">
+      <div class="progress" style="height: 35px;" *ngFor="let city of state.Cities">
+        <div class="progress-bar bg-warning h3 text-dark" role="progressbar" [style.width.%]="city.Population"
+          aria-valuenow="city.Population" aria-valuemin="0" aria-valuemax="100">{{city.City}} -
+          {{city.Population}}</div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="accordion" id="statesAccordion">
+    <div class="card" *ngFor="let state of states" data-toggle="collapse" [attr.data-target]="'#' + state.State"
+      aria-expanded="true" aria-controls="collapseOne">
+      <div class="card-header" id="headingOne">
+        <div class="row">
+          <div class="col">
+            <img class="img-fluid" src="assets/images/flags/svg/{{country.Code2 | lowercase}}.svg">
+          </div>
+          <div class="col h3">
+            {{state.State}}
+          </div>
+        </div>
+      </div>
+      <div id="{{state.State}}" class="collapse show" aria-labelledby="headingOne" data-parent="#statesAccordion">
+        <div class="card-body">
+          <div class="progress" style="height: 35px;" *ngFor="let language of languagesByCountryCode">
+            <div class="progress-bar bg-warning h3 text-dark" role="progressbar" [style.width.%]="language.Percentage"
+              aria-valuenow="language.Percentage" aria-valuemin="0" aria-valuemax="100">{{language.Language}} -
+              {{language.Percentage}}%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+<router-outlet></router-outlet>

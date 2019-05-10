@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <ul class="list-unstyled">
+                <li>Select a State
+                    <ul>
+                        <li (click)="getParks(state.code)" *ngFor="let state of states">{{state.name}}<br><img class="img-fluid img-thumbnail flag"
+                                src="assets/images/flags/svg/us/{{state.code|lowercase}}.svg"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-10">
+            <ul class="list-unstyled">
+                <li>
+                    <ul>
+                        <li *ngFor="let park of parks">{{park.fullName}}
+                            <h2><a target="_blank" href="{{park.url}}">{{park.fullName}}</a></h2><br>
+                            <img class="img-fluid img-thumbnail" src="{{park.images[0].url}}" alt="{{park.images[0].altText}}"><br>
+                            <h3>{{park.description}}</h3><br>
+                            <h4><a target="_blank" href="{{park.directionsUrl}}">Get Directions</a></h4><br>
+                            <h3>Weather Info: </h3><br>
+                            <h4>{{park.weatherInfo}}</h4>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

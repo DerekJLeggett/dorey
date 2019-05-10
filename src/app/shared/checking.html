@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Offline checking</title>
+    <link rel=Stylesheet type="text/css" href=/css/checking.css />
+    <link rel=Stylesheet type="text/css" href=/css/normalize.css />
+</head>
+<body>
+    <fieldset>
+        <legend><h1>Offline Checking application - Using <a href="http://www.w3schools.com/html/html5_webstorage.asp" target=_blank>HTML5 local storage</a></h1></legend>
+        <fieldset>
+            <legend><b>Add a new category/Payee</b></legend>
+            <label for="newCategory">Category Name:</label>
+            <input type=text name="newCategory" id="newCategory" />
+            <button type=button id="addCategory">Add Category</button>
+
+            <label for="newPayee">Payee Name:</label>
+            <input type=text name="newPayee" id="newPayee" />
+            <button type=button id="addPayee">Add Payee</button>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Add a new transaction</b></legend>
+            <label for="check">Check Number: </label>
+            <input type=text name="check" id="check" />
+            <label for="date">Date: </label>
+            <input type=date name="date" id="date" />
+            <label for="payee">Payee: </label>
+            <select name="payee" id="payee"></select>
+            <label for="category">Category: </label>
+            <select name="category" id="category"></select>
+            <label for="amount">Amount: </label>
+            <input type=text name="amount" id="amount" />
+            <button type=button id="addTransaction">Submit</button>
+        </fieldset>
+        <fieldset>
+            <legend><b>Import transactions from CSV - format(date, description, check #, amount)</b></legend>
+            <input type="file" name="csvFile" id="csvFile" accept="text/*,.csv" />
+        </fieldset>
+    </fieldset>
+    <div><table id="transactions"><caption>Transactions</caption><thead><tr class=headerRow><th>Check</th><th>Date</th><th>Payee</th><th>Category</th><th>Amount</th></tr></thead></table></div>
+    <div><table id="categoryTotal"><caption>Totals by category</caption><thead><tr class=headerRow><th>Category</th><th>Total</th></tr></thead></table></div>
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src=/scripts/papaparse.js></script>
+    <script type="text/javascript">
+    //Add new payee
+        var addPayeeButton = document.getElementById("addPayee");
+        addPayeeButton.onclick = function () {
+            addPayee(document.getElementById("newPayee").value);
+        };
+        var addCategoryButton = document.getElementById("addCategory");
+        addCategoryButton.onclick = function () {
+            addCategory(document.getElementById("newCategory").value);
+        };
+        var addTransactionButton = document.getElementById("addTransaction");
+        addTransactionButton.onclick = function () {
+            var checkNum = document.getElementById("check").value;
+            var date = document.getElementById("date").value;
+            var payee = document.getElementById("payee").value;
+            var category = document.getElementById("category").value;
+            var amount = document.getElementById("amount").value;
+            addTransaction(checkNum, date, payee, category, amount);
+        };
+        $(document).ready(function () {
+            //$('#transactions').DataTable();
+            //$('#categoryTotal').DataTable();
+        });
+        //For running with Node
+        //var localStorage = require('node-persist');
+        //localStorage.initSync();
+
+        //localStorage.removeItem("payees");
+        //localStorage.removeItem("categories");
+        //localStorage.removeItem("transactions");
+
+        //initialize arrays
+        var transactions = [];
+        var categories = [];
+        var payees = [];
+        var totalsByCategory = [];
+        var transactionsTable = document.getElementById("transactions");
+        var categoryTotalTable = document.getElementById("categoryTotal");
+        //Payee's
+        var storedPayees = localStorage.getItem("payees");
+        //upon first visit, initialize sample data
+        if (storedPayees === null || storedPayees === undefined) {
+            populateSamplePayees();
+        }
+        else {
+            payees = JSON.parse(localStorage.getItem("payees"));
+        }
+        //Categories
+        var storedCategories = localStorage.getItem("categories");
+        //upon first visit, initialize sample data
+        if (storedCategories === null || storedCategories === undefined) {
+            populateSampleCategories();
+        }
+        else {
+            categories = JSON.parse(localStorage.getItem("categories"));
+        }
+        //Transactions
+        var storedTransactions = localStorage.getItem("transactions");
+        if (storedTransactions === null || storedTransactions === undefined) {
+            populateSampleTransactions();
+        }
+        else {
+            transactions = JSON.parse(localStorage.getItem("transactions"));
+            listTransactions();
+        }
+        //Display initial sample data
+        listPayees();
+        listCategories();
+        listCategoryTotals();
+
+
+        function populateSampleCategories() {
+            var sampleCategories = ["Grocery", "Rent", "Mortgage", "Insurance", "Auto loan", "Gas", "Home Phone", "Internet", "Cell Phone", "Uncategorized"];
+            for (var i = 0; i < sampleCategories.length; i++) {
+                addCategory(sampleCategories[i]);
+            }
+        }
+        function populateSamplePayees() {
+            var samplePayees = ["Fry's", "Bank of America", "USAA", "DSFCU", "Circle K", "Century Link", "Cox", "Verizon"];
+            for (var i = 0; i < samplePayees.length; i++) {
+                addPayee(samplePayees[i]);
+            }
+        }
+        function populateSampleTransactions() {
+            for (var i = 0; i < 11; i++) {
+                var checkNum = i + 1;
+                var date = '3/6/2015';
+                var rannum = getRandom(payees.length.toString(10)).toString(10);
+                var payee = JSON.parse(payees[rannum - 1]).name
+                rannum = getRandom(categories.length.toString(10)).toString(10);
+                var category = JSON.parse(categories[rannum - 1]).name;
+                var amount = getRandomCurrency(999);
+                addTransaction(checkNum, date, payee, category, amount);
+            }
+        }
+        //Object methods
+        function Category(name) {
+            this.name = name;
+        }
+        function Payee(name) {
+            this.name = name;
+        }
+        function Transaction(checkNum, date, payee, category, amount) {
+            this.checkNum = checkNum;
+            this.date = date;
+            this.payee = payee;
+            this.category = category;
+            this.amount = amount;
+        }
+        function CategoryTotal(category, total) {
+            this.category = category;
+            this.total = total;
+        }
+
+        function addCategory(name) {
+            try {
+                var category = new Category(name);
+                categories[categories.length] = JSON.stringify(category);
+                localStorage.setItem("categories", JSON.stringify(categories));
+                listCategories();
+            } catch (e) {
+                if (e == QUOTA_EXCEEDED_ERR) {
+                    alert('Storage Quota Exceeded');
+                }
+            }
+        }
+
+        function listCategories() {
+            var categorySelect = document.getElementById("category");
+            removeOptions(categorySelect);
+            for (var i = 0, len = categories.length; i < len; ++i) {
+                var category = JSON.parse(categories[i]);
+                console.log("Category: " + category.name);
+                option = document.createElement("option");
+                option.value = category.name;
+                option.innerHTML = category.name;
+                categorySelect.appendChild(option);
+            }
+        }
+
+        function addPayee(name) {
+            try {
+                var payee = new Payee(name);
+                payees[payees.length] = JSON.stringify(payee);
+                localStorage.setItem("payees", JSON.stringify(payees));
+                listPayees();
+            } catch (e) {
+                if (e == QUOTA_EXCEEDED_ERR) {
+                    alert('Storage Quota Exceeded');
+                }
+            }
+        }
+
+        function listPayees() {
+            var payeeSelect = document.getElementById("payee");
+            removeOptions(payeeSelect);
+            for (var i = 0, len = payees.length; i < len; ++i) {
+                var payee = JSON.parse(payees[i]);
+                console.log("Payee: " + payee.name);
+                option = document.createElement("option");
+                option.value = payee.name;
+                option.innerHTML = payee.name;
+                payeeSelect.appendChild(option);
+            }
+        }
+        function addTransaction(checkNum, date, payee, category, amount) {
+            try {
+                var transaction = new Transaction(checkNum, date, payee, category, amount);
+                transactions[transactions.length] = JSON.stringify(transaction);
+                localStorage.setItem("transactions", JSON.stringify(transactions));
+                //addTransactionRow(transaction);
+                listTransactions();
+                listCategoryTotals();
+            } catch (e) {
+                if (e == QUOTA_EXCEEDED_ERR) {
+                    alert('Storage Quota Exceeded');
+                }
+            }
+        }
+        function listTransactions() {
+            deleteTableRows(transactionsTable);
+            var balance = 0;
+            for (var i = 0, len = transactions.length; i < len; ++i) {
+                var transaction = JSON.parse(transactions[i]);
+                addTransactionRow(transaction);
+                console.log("Check #: " + transaction.checkNum + " Date: " + transaction.date + " Payee: " + transaction.payee + " Category: " + transaction.category + " Amount: " + transaction.amount);
+                balance = (balance + parseFloat(transaction.amount));
+            }
+            balance = balance.toFixed(2);
+            addBalanceRow(balance);
+            console.log("Balance: " + balance);
+        }
+        function addBalanceRow(balance) {
+            var row = transactionsTable.insertRow(-1);
+            row.className = "balanceRow";
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.innerHTML = "Total:";
+            cell2.innerHTML = "";
+            cell3.innerHTML = "";
+            cell4.innerHTML = "";
+            cell5.innerHTML = balance;
+        }
+        function addTransactionRow(transaction) {
+            var row = transactionsTable.insertRow(-1);
+            row.className = "transactionRow";
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.innerHTML = transaction.checkNum;
+            cell2.innerHTML = transaction.date;
+            cell3.innerHTML = transaction.payee;
+            cell4.innerHTML = transaction.category;
+            cell5.innerHTML = transaction.amount;
+        }
+
+        function addCategoryTotal(category, total) {
+            var categoryTotal = new CategoryTotal(category, total);
+            totalsByCategory[totalsByCategory.length] = JSON.stringify(categoryTotal);
+        }
+        function removeCategoryTotal(index) {
+            totalsByCategory.splice(index, 1);
+        }
+        function listCategoryTotals() {
+            totalsByCategory = [];
+            for (var i = 0, len = transactions.length; i < len; ++i) {
+                var transaction = JSON.parse(transactions[i]);
+                //Keep running totals by category
+                if (!category_in_array(transaction.category)) {
+                    //Add Category to totals array
+                    addCategoryTotal(transaction.category, parseFloat(transaction.amount));
+                }
+                else {
+                    //Category already present in array, add to existing amount.
+                    for (var x = 0; x < totalsByCategory.length; x++) {
+                        var category = JSON.parse(totalsByCategory[x]);
+                        if (category.category === transaction.category) {
+                            var total = (parseFloat(category.total) + parseFloat(transaction.amount)).toFixed(2);
+                            removeCategoryTotal(x);
+                            addCategoryTotal(category.category, total);
+                            break;
+                        }
+                    }
+                }
+            }
+            deleteTableRows(categoryTotalTable);
+            for (var y = 0, len = totalsByCategory.length; y < len; ++y) {
+                var category = JSON.parse(totalsByCategory[y]);
+                addCategoryTotalRow(category);
+                console.log("Category: " + category.category + " Total: " + category.total);
+            }
+        }
+
+        function deleteTableRows(table) {
+            var tableRows = table.getElementsByTagName('tr');
+            var rowCount = tableRows.length
+            for (var y = rowCount - 1; y > 0; --y) {
+                table.deleteRow(y);
+            }
+        }
+
+        function addCategoryTotalRow(category) {
+            var row = categoryTotalTable.insertRow(-1);
+            row.className = "transactionRow";
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = category.category;
+            cell2.innerHTML = category.total;
+        }
+
+        //Reusable utility functions
+        function getRandom(maxVal) {
+            return Math.floor((Math.random() * maxVal) + 1);
+        }
+        function getRandomCurrency(maxVal) {
+            return (Math.random() * maxVal + 1).toFixed(2);
+        }
+        function removeOptions(selectbox) {
+            var i;
+            for (i = selectbox.options.length - 1; i >= 0; i--) {
+                selectbox.remove(i);
+            }
+        }
+
+        function category_in_array(category) {
+            for (var i = 0; i < totalsByCategory.length; i++) {
+                var existingCategory = JSON.parse(totalsByCategory[i]).category;
+                if (existingCategory === category) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        //CSV Import
+        window.onload = function () {
+            if (window.File && window.FileReader) {
+                var fileInput = document.getElementById('csvFile');
+
+                fileInput.addEventListener('change', function (e) {
+                    var file = fileInput.files[0];
+                    //var textType = application / vnd.ms - excel; //text.*/;
+
+                    //if (file.type.match(textType)) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var date;
+                        var payee;
+                        var checkNum;
+                        var amount;
+                        var balance;
+                        var firstQuote;
+                        var secondQuote;
+
+                        var contents = reader.result;
+                        var rows = Papa.parse(contents);
+                        for (var i = 1; i < rows.data.length; i++) {
+                            var row = rows.data[i];
+                            date = row[0];
+                            payee = row[1];
+                            checkNum = row[2];
+                            amount = row[3];
+                            balance = row[4];
+                            if (amount != undefined) {
+                                addTransaction(checkNum, date, payee, 'Uncategorized', amount);
+                            }
+                            //console.log(lines[i]);
+                        };
+
+                    }
+
+                    reader.readAsText(file);
+
+                });
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
+            }
+        }
+    </script>
+</body>
+</html>

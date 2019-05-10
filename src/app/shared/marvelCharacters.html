@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>Characters from the Marvel universe!</h1>
+    <div id="marvelError"></div>
+    <div id="marvelContent"></div>
+    <div id="dialog" title="Details"></div>
+	<script type="text/javascript" src="/js/vendor/jquery.js"></script>
+	<script type="text/javascript">
+	    var offset = 0;
+        $(document).ready(function () {
+             getCharacters(offset);
+        });
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                offset += 50;
+                getCharacters(offset);
+            }
+        });
+        function getCharacters(offset) {
+            $.ajax({
+                url: "http://gateway.marvel.com:80/v1/public/characters?",
+                data: {
+                    apikey: "1acc0272c26b58f06f418cf285aaf60c"
+                    , limit: 50
+                    , offset: offset
+                },
+                // work with the response
+                success: function (response) {
+                    var marvelContent = "";
+                    var attributionHTML = response.attributionHTML;
+                    var attributionText = response.attributionText;
+                    var characterName = "";
+                    var characterURI = "";
+                    var detailURL = "";
+                    var wikiURL = "";
+                    var comicLinkURL = "";
+                    var characterDescription = "";
+                    var thumbExt = "";
+                    var thumbPath = "";
+                    var previewLink = "";
+                    var description = "";
+                    //Characters
+                    for (var i = 0; i < response.data.results.length; i++) {
+                        var character = response.data.results[i];
+                        characterName = character.name;
+                        characterURI = character.resourceURI;
+                        characterDescription = character.description;
+                        detailURL = character.urls[0].url;
+                        //wikiURL = character.urls[1].url;
+                        //comicLinkURL = character.urls[2].url;
+                        if (character.thumbnail == null) {
+                            thumbExt = "";
+                            thumbPath = "";
+                        }
+                        else {
+                            thumbExt = character.thumbnail.extension;
+                            thumbPath = character.thumbnail.path;
+                        }
+                        if (thumbPath.toLowerCase().indexOf("image_not_available") == -1) {
+                            $("#marvelContent").append("<a href=\"" + detailURL + "\" target=\"_blank\"><img src=\"" + thumbPath + "." + thumbExt + "\" width=\"400\" height=\"400\" title=\"" + characterName + " - " + characterDescription + "\"></img></a>");
+                        }
+                
+                    }
+                }
+            });
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4">
+      <h1>Das Auto!</h1>
+      <ul class="list-unstyled">
+        <li *ngFor="let type of types" (click)="getMakesByType(type.type)">
+          <h3>{{type.type}}</h3>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <ul class="list-unstyled">
+        <li *ngFor="let make of makesByType" (click)="getModelsByMakeId(make.MakeId)">
+          {{make.MakeName}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <ul class="list-unstyled">
+        <li *ngFor="let model of models">
+          {{model.Model_Name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

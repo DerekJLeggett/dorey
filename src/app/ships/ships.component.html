@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Active Ships in the U.S. Navy</h2>
+            <ul class="list-unstyled">
+                <li>
+                    <ul>
+                        <li *ngFor="let ship of ships" (click)="selectShip(ship)">
+                            <a target="_blank" href="{{ship.DANFSLink}}">{{ship.Class}} - {{ship.Name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+[{
+    "type": "Bus"
+},
+{
+    "type": "Multipurpose Passenger Vehicle (MPV)"
+},
+{
+    "type": "Motorcycle"
+},
+{
+    "type": "Low Speed Vehicle (LSV)"
+},
+{
+    "type": "Passenger Car"
+},
+{
+    "type": "Trailer"
+},
+{
+    "type": "Truck"
+},
+{
+    "type": "Incomplete Vehicle"
+},
+{
+    "type": "Off Road Vehicle"
+}
+]

@@ -1,0 +1,6 @@
+.container-fluid {
+    background-image: url('/assets/images/Emblem_of_the_United_States_Navy.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}

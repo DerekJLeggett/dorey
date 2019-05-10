@@ -1,0 +1,42 @@
+[
+    {
+        "url": "/world",
+        "linkText": "World"
+    },
+    {
+        "url": "/starwars",
+        "linkText": "StarWars"
+    },
+    {
+        "url": "/marvel",
+        "linkText": "Marvel"
+    },
+    {
+        "url": "/ships",
+        "linkText": "Ships"
+    },
+    {
+        "url": "/auto",
+        "linkText": "Auto"
+    },
+    {
+        "url": "/dunkin",
+        "linkText": "Dunkin"
+    },
+    {
+        "url": "/nps",
+        "linkText": "National Parks"
+    },
+    {
+        "url": "/recreation",
+        "linkText": "Recreational Areas"
+    },
+    {
+        "url": "/library",
+        "linkText": "Libraries"
+    },
+    {
+        "url": "/snap",
+        "linkText": "SNAP"
+    }
+]

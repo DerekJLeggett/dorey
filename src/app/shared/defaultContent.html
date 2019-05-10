@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        body {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="defaultContent">
+        <img src="/img/holidayCalendar.svg" id="holidayCalendar" class="icon" />
+        <img src="/img/BOOKS.svg" id="books" class="icon" />
+        <img src="/img/game.svg" id="playAGame" class="icon" />
+        <img src="/img/shapes.svg" id="randomShapes" class="icon" />
+        <img src="/img/comic.svg" id="comic" class="icon" />
+        <img src="/img/JapanNavalFlag.svg" id="Japan" class="icon" />
+        <a href="map.html" target="_blank"><img src="/img/neocreo-Blue-World-Map.svg" id="map" class="icon" /></a>
+        <a href="reports.html" target="_blank"><img src="/img/ponque.svg" id="reports" class="icon" /></a>
+        <a href="checking.html" target="_blank"><img src="/img/saving.svg" id="checking" class="icon" /></a>
+        <a href="population.html" target="_blank"><img src="/img/population.svg" id="population" class="icon" /></a>
+    </div>
+    
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#books").click(function () {
+                $('#mainContent').load('books.html');
+            });
+            $("#holidayCalendar").click(function () {
+                $('#mainContent').load('calendar.html');
+            });
+            $("#playAGame").click(function () {
+                $('#mainContent').load('game.html');
+            });
+            $("#randomShapes").click(function () {
+                $('#mainContent').load('randomShapes.html');
+            });
+            $("#comic").click(function () {
+                $('#mainContent').load('marvelCharacters.html');
+            });
+            $("#Japan").click(function () {
+                $('#mainContent').load('Japan.html');
+            });
+            
+        });
+        
+    </script>
+</body>
+</html>

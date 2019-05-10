@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <p>Move your mouse over(or click/tap) the area below:</p>
+    <svg id="svgRandomShapes" height="500" width="500" onmousemove="changeLine()" onclick="changeLine()">
+        <line id="line" x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2"></line>
+        <polygon id="poly" points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+        <path id="path" d="M 200 50 L 300 150 L 200 50" stroke="blue" fill="none"></path>
+        <rect id="rect" x="10" y="10" width="100" height="50" fill="yellow" stroke="black"></rect>
+        <text id="text" x="20" y="20" fill="black" font-size="15">Hello from the other side!</text>
+    </svg>
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#svgRandomShapes").outerWidth = window.innerWidth;
+            $("#svgRandomShapes").outerHeight = window.innerHeight;
+        });
+    //Random shapes
+    function changeLine() {
+        var svg = document.getElementById("svgRandomShapes");
+        var maxHeight = svg.getAttribute("height");
+        var maxWidth = svg.getAttribute("width");
+        var line = document.getElementById("line");
+        var poly = document.getElementById("poly");
+        var path = document.getElementById("path");
+        var rect = document.getElementById("rect");
+        var text = document.getElementById("text");
+        line.setAttribute("x1", getRandom(maxWidth));
+        line.setAttribute("y1", getRandom(maxHeight));
+        line.setAttribute("x2", getRandom(maxWidth));
+        line.setAttribute("y2", getRandom(maxHeight));
+        line.setAttribute("style", "stroke:" + getRandomColor() + ";stroke-width:" + getRandom(10));
+        var points = "";
+        for (i = 0; i < 4; i++) {
+            points += getRandom(maxWidth) + "," + getRandom(maxHeight) + " ";
+        }
+        poly.setAttribute("points", points);
+        poly.setAttribute("style", "fill:" + getRandomColor() + ";stroke:" + getRandomColor() + ";stroke-width:" +
+
+getRandom(10));
+
+        path.setAttribute("d", "M " + getRandom(maxWidth) + " " + getRandom(maxHeight) + " L " + getRandom
+
+(maxWidth) + " " + getRandom(maxHeight) + " L " + getRandom(maxWidth) + " " + getRandom(maxHeight));
+        path.setAttribute("stroke", getRandomColor());
+        path.setAttribute("fill", getRandomColor());
+
+        rect.setAttribute("x", getRandom(maxWidth));
+        rect.setAttribute("y", getRandom(maxHeight));
+        rect.setAttribute("fill", getRandomColor());
+
+        text.setAttribute("x", getRandom(maxWidth));
+        text.setAttribute("y", getRandom(maxHeight));
+        text.setAttribute("fill", getRandomColor());
+    }
+    function getRandom(maxVal) {
+        return Math.floor((Math.random() * maxVal) + 1);
+    }
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    </script>
+</body>
+</html>

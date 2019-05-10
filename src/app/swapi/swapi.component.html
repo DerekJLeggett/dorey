@@ -1,0 +1,334 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <label for="filmSelect" class="sr-only">Select a Film</label>
+                    <select class="custom-select" id="filmSelect" (change)="getDetails($event.target.value)">
+                        <option selected class="text-center">Select a Film</option>
+                        <option *ngFor="let film of films" class="text-center" value="{{film}}">
+                            {{film.title}}
+                        </option>
+                    </select>
+                </div>
+            </form>
+
+            <h3>Select a Film</h3>
+            <ul class="list-unstyled">
+                <li>
+                    <ul>
+                        <li *ngFor="let film of films" (click)="getDetails(film)">{{film.title}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10" *ngIf="selectedFilm">
+            <div class="row">
+                <div>
+                    <h2>Episode: {{selectedFilm.episode_id}} - {{selectedFilm.title}} - Directed by:
+                        {{selectedFilm.director}} - Produced by: {{selectedFilm.producer}} Released:
+                        {{selectedFilm.release_date | date}}
+                    </h2>
+                    <p>{{selectedFilm.opening_crawl}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="list-unstyled">
+                    <li>
+                        <h4>Characters</h4>
+                        <ul>
+                            <li *ngFor="let character of characters" data-toggle="modal" data-target="#characterModal"
+                                (click)="characterSelected(character)">{{character.name}}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li>
+                        <h4>Planets</h4>
+                        <ul>
+                            <li *ngFor="let planet of planets" data-toggle="modal" data-target="#planetModal"
+                                (click)="planetSelected(planet)">{{planet.name}}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li>
+                        <h4>StarShips</h4>
+                        <ul>
+                            <li *ngFor="let starship of starShips" data-toggle="modal" data-target="#starshipModal"
+                                (click)="starShipSelected(starship)">{{starship.name}}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li>
+                        <h4>Vehicles</h4>
+                        <ul>
+                            <li *ngFor="let vehicle of vehicles" data-toggle="modal" data-target="#vehicleModal"
+                                (click)="vehicleSelected(vehicle)">{{vehicle.name}}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li>
+                        <h4>Species</h4>
+                        <ul>
+                            <li *ngFor="let specie of species" data-toggle="modal" data-target="#specieModal"
+                                (click)="specieSelected(specie)">{{specie.name}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+
+    <div class="modal fade" id="characterModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="characterModalClose">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModal-label" *ngIf="selectedCharacter">Character Details -
+                        {{selectedCharacter.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-striped table-bordered table-hover table-condensed table-sm">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Height</th>
+                                        <th>Weight</th>
+                                        <th>Hair</th>
+                                        <th>Skin</th>
+                                        <th>Eye</th>
+                                        <th>Birth</th>
+                                        <th>Gender</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="selectedCharacter">
+                                        <td>{{selectedCharacter.name | titlecase}}</td>
+                                        <td>{{selectedCharacter.height}}</td>
+                                        <td>{{selectedCharacter.mass}}</td>
+                                        <td>{{selectedCharacter.hair_color | titlecase}}</td>
+                                        <td>{{selectedCharacter.skin_color | titlecase}}</td>
+                                        <td>{{selectedCharacter.eye_color | titlecase}}</td>
+                                        <td>{{selectedCharacter.birth_year}}</td>
+                                        <td>{{selectedCharacter.gender | titlecase}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="characterModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="planetModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="planetModalClose">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModal-label" *ngIf="selectedPlanet">Planet Details -
+                        {{selectedPlanet.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-striped table-bordered table-hover table-condensed table-sm">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Rotation Period</th>
+                                        <th>Orbital Period</th>
+                                        <th>Diameter</th>
+                                        <th>Climate</th>
+                                        <th>Gravity</th>
+                                        <th>Terrain</th>
+                                        <th>Surface Water</th>
+                                        <th>Population</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="selectedPlanet">
+                                        <td>{{selectedPlanet.name}}</td>
+                                        <td>{{selectedPlanet.rotation_period | number}}</td>
+                                        <td>{{selectedPlanet.orbital_period | number}}</td>
+                                        <td>{{selectedPlanet.diameter | number}}</td>
+                                        <td>{{selectedPlanet.climate | titlecase}}</td>
+                                        <td>{{selectedPlanet.gravity | titlecase}}</td>
+                                        <td>{{selectedPlanet.terrain | titlecase}}</td>
+                                        <td>{{selectedPlanet.surface_water | number}}</td>
+                                        <td>{{selectedPlanet.population | number}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="planetModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="starshipModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="starshipModalClose">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModal-label" *ngIf="selectedStarShip">StarShip Details -
+                        {{selectedStarShip.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-striped table-bordered table-hover table-condensed table-sm">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Model</th>
+                                        <th>Manufacturer</th>
+                                        <th>Cost</th>
+                                        <th>Length</th>
+                                        <th>Speed</th>
+                                        <th>Crew</th>
+                                        <th>Passengers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="selectedStarShip">
+                                        <td>{{selectedStarShip.name}}</td>
+                                        <td>{{selectedStarShip.model | titlecase}}</td>
+                                        <td>{{selectedStarShip.manufacturer | titlecase}}</td>
+                                        <td>{{selectedStarShip.cost_in_credits | number}}</td>
+                                        <td>{{selectedStarShip.length | number}}</td>
+                                        <td>{{selectedStarShip.max_atmosphering_speed | number}}</td>
+                                        <td>{{selectedStarShip.crew | number}}</td>
+                                        <td>{{selectedStarShip.passengers | number}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="starshipModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="vehicleModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="vehicleModalClose">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModal-label" *ngIf="selectedVehicle">Vehicle Details -
+                        {{selectedVehicle.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-striped table-bordered table-hover table-condensed table-sm">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Model</th>
+                                        <th>Manufacturer</th>
+                                        <th>Cost</th>
+                                        <th>Length</th>
+                                        <th>Speed</th>
+                                        <th>Crew</th>
+                                        <th>Passengers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="selectedVehicle">
+                                        <td>{{selectedVehicle.name}}</td>
+                                        <td>{{selectedVehicle.model | titlecase}}</td>
+                                        <td>{{selectedVehicle.manufacturer | titlecase}}</td>
+                                        <td>{{selectedVehicle.cost_in_credits | number}}</td>
+                                        <td>{{selectedVehicle.length | number}}</td>
+                                        <td>{{selectedVehicle.max_atmosphering_speed | number}}</td>
+                                        <td>{{selectedVehicle.crew | number}}</td>
+                                        <td>{{selectedVehicle.passengers | number}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="vehicleModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="specieModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" id="specieModalClose">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModal-label" *ngIf="selectedSpecie">Specie Details -
+                        {{selectedSpecie.name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-striped table-bordered table-hover table-condensed table-sm">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Classification</th>
+                                        <th>Designation</th>
+                                        <th>Average Height</th>
+                                        <th>Average Life Span</th>
+                                        <th>Homeworld</th>
+                                        <th>Language</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngIf="selectedSpecie">
+                                        <td>{{selectedSpecie.name}}</td>
+                                        <td>{{selectedSpecie.classification | titlecase}}</td>
+                                        <td>{{selectedSpecie.designation | titlecase}}</td>
+                                        <td>{{selectedSpecie.average_height | number}}</td>
+                                        <td>{{selectedSpecie.average_lifespan | number}}</td>
+                                        <td>{{selectedSpecie.homeworld | titlecase}}</td>
+                                        <td>{{selectedSpecie.language | titlecase}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        id="vehicleModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

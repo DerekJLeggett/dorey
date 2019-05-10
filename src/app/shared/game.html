@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    
+</head>
+<body>
+    <h2>The circle will turn red when you click it. See if you can turn the circle red.</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="500" id="svgElusiveCircle">
+        <circle cx="40" cy="40" r="30" stroke="black"
+                stroke-width="2" fill="green"
+                onclick="circleClick(event)"
+                onmouseover="moveTheCircle(event)">
+        </circle>
+    </svg>
+
+    <script type="text/javascript">
+    //Elusive Circle
+    var svg = document.getElementById("svgElusiveCircle");
+    var maxHeight = svg.getAttribute("height");
+    var maxWidth = svg.getAttribute("width");
+    function circleClick(e) {
+        var circle = e.srcElement;
+        circle.setAttribute('fill', 'red');
+    }
+    function moveTheCircle(e) {
+        var circle = e.srcElement;
+        circle.setAttribute('cx', getRandom(maxWidth));
+        circle.setAttribute('cy', getRandom(maxHeight));
+    }
+    function getRandom(maxVal) {
+        return Math.floor((Math.random() * maxVal) + 1);
+    }
+    </script>
+</body>
+</html>

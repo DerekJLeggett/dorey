@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div id='mapDiv'></div>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
+    <script type="text/javascript">
+        var map = null;
+        var propertyCode;
+        var addressLine1;
+        var distance;
+        var units;
+        //http://restapi.choicehotels.com/OpenAPI/v2/hotel/AZ125/summary
+        window.onload = function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(GetMap, geoError);
+            }
+            else {
+                alert('Geolocation is not supported.');
+            }
+        }
+        function geoError(error) {
+            var status = document.getElementById('mapDiv');
+            status.innerHTML = 'failed lookup ' + error.message;
+        }
+        function GetMap(pos) {
+            map = new Microsoft.Maps.Map(document.getElementById("mapDiv"),
+                                   {
+                                       credentials: "AhqVmimBmcrfP0tJoLGc2JLQqFdmhCrsWu8OSpgYNLU8nt0yTY8nk6wWh-Z_pvz0",
+                                       center: new Microsoft.Maps.Location(pos.coords.latitude, pos.coords.longitude),
+                                       mapTypeId: Microsoft.Maps.MapTypeId.road,
+                                       zoom: 10
+                                   });
+            // Define the pushpin location
+            var loc = new Microsoft.Maps.Location(pos.coords.latitude, pos.coords.longitude);
+            // Add a pin to the map
+            var pin = new Microsoft.Maps.Pushpin(loc, { text: 'Me' });
+            map.entities.push(pin);
+            placesNearGeo(pos.coords.latitude, pos.coords.longitude);
+	    getDunkinDonuts(pos.coords.latitude, pos.coords.longitude);
+            // Add a handler for the map click event.
+            Microsoft.Maps.Events.addHandler(map, 'click', addPin);
+        }
+        function addPin(e) {
+            if (e.targetType == "map") {
+                var point = new Microsoft.Maps.Point(e.getX(), e.getY());
+                var loc = e.target.tryPixelToLocation(point);
+                var pin = new Microsoft.Maps.Pushpin(loc);
+                map.entities.push(pin);
+                placesNearGeo(loc.latitude, loc.longitude);
+		getDunkinDonuts(loc.latitude, loc.longitude);
+            }
+        }
+        function addPushPin(latitude, longitude, title, icon, description) {
+            var loc = new Microsoft.Maps.Location(latitude, longitude);
+            // Create the infobox for the pushpin
+            pinInfobox = new Microsoft.Maps.Infobox(loc,
+                {
+                    title: title,
+                    description: description,
+                    visible: false,
+                    offset: new Microsoft.Maps.Point(0, 15)
+                });
+            // Add a pin to the map
+            var pin = new Microsoft.Maps.Pushpin(loc, {
+                icon: icon,
+                width: 50,
+                height: 50,
+                infobox: pinInfobox,
+                text: ''
+            });
+            // Add handler for the pushpin click event.
+            Microsoft.Maps.Events.addHandler(pin, 'click', displayInfobox);
+            // Hide the infobox when the map is moved.
+            Microsoft.Maps.Events.addHandler(map, 'viewchange', hideInfobox);
+            map.entities.push(pin);
+            map.entities.push(pinInfobox);
+        };
+        function displayInfobox(e) {
+            //pinInfobox.setOptions({ visible:true });
+            pinInfobox.setOptions({
+                title: e.target._infobox._title,
+                description: e.target._infobox._description,
+                visible: true,
+                offset: new Microsoft.Maps.Point(0, 25)
+            });
+            pinInfobox.setLocation(e.target.getLocation());
+        }
+        function hideInfobox(e) {
+            pinInfobox.setOptions({ visible: false });
+        }
+        // Using YQL and JSONP
+        function placesNearGeo(latitude, longitude) {
+            var myArray;
+            //    var hotelAmenitiesArray;
+            //    var hotelRoomTypesArray;
+            //    var hotelAmenitiesString;
+            //    var hotelRoomTypesString;
+            var line1;
+            var city;
+            var county;
+            var countrySubdivision;
+            var postalCode;
+            var country;
+            var latitude;
+            var longitude;
+            var placeType;
+            var placeId;
+            var placeName;
+            var direction;
+            var distance;
+            var units;
+            var icon;
+            var brandCode;
+            var brandName;
+            var phone;
+            $.ajax({
+                url: "http://restapi.choicehotels.com/OpenAPI/v2/place/GeographicLocation/" + latitude + "," + longitude + "?distance=10m&addDetail=hotelBrand&addDetail=hotelPhone&accept=json",
+                // the name of the callback parameter, as specified by the YQL service  &addDetail=hotelMedia&addDetail=hotelRatings&addDetail=hotelRoomAmenities&addDetail=hotelRoomTypes&addDetail=hotelAmenities&include=Hotel
+                jsonp: "callback",
+                // tell jQuery we're expecting JSONP
+                dataType: "jsonp",
+                // work with the response
+                success: function (response) {
+                    console.log(response); // server response
+                    myArray = response.searchPlaceResponse.placeSearchResults;
+                    //var size = response.searchPlaceResponse.searchResponseHeader.size;
+                    //alert(response.searchPlaceResponse.searchResponseHeader.size);
+                    if (myArray != null) {
+                        for (var i = 0; i < myArray.length; i++) {
+                            //                hotelAmenitiesArray = myArray[i].place.hotelAmenities;
+                            //                hotelRoomTypesArray = myArray[i].place.roomTypes;
+                            line1 = myArray[i].place.address.line1;
+                            city = myArray[i].place.address.city;
+                            county = myArray[i].place.address.county;
+                            postalCode = myArray[i].place.address.postalCode;
+                            country = myArray[i].place.address.country;
+                            countrySubdivision = myArray[i].place.address.countrySubdivision;
+                            latitude = myArray[i].place.geoLocation.latitude;
+                            longitude = myArray[i].place.geoLocation.longitude;
+                            placeType = myArray[i].place.placeType;
+                            placeId = myArray[i].place.placeId;
+                            placeName = myArray[i].place.placeNames[0].name;
+                            direction = myArray[i].placeDistanceFromOrigin.direction;
+                            distance = myArray[i].placeDistanceFromOrigin.distance.value;
+                            units = myArray[i].placeDistanceFromOrigin.distance.units;
+                            if (placeType == 'Hotel') {
+                                brandCode = myArray[i].place.brandReference.brandCode;
+                                brandName = myArray[i].place.brandReference.name;
+                                phone = '(' + myArray[i].place.primaryPhoneNumber.areaCode + ')' + myArray[i].place.primaryPhoneNumber.phoneNumber;
+                            }
+                            else {
+                                brandCode = '';
+                                brandName = '';
+                                phone = '';
+                            }
+                            //                hotelAmenitiesString = '';
+                            //                for (var i = 0; i < hotelAmenitiesArray.length; i++) {
+                            //                    hotelAmenitiesString = hotelAmenitiesString + hotelAmenitiesArray[i].description;
+                            //                }
+                            //                hotelRoomTypesString = '';
+                            //                for (var i = 0; i < hotelRoomTypesArray.length; i++) {
+                            //                    hotelRoomTypesString = hotelRoomTypesString + hotelRoomTypesArray[i].code + "-" + hotelRoomTypesArray[i].description;
+                            //                }
+                            switch (placeType) {
+                                case 'Airport':
+                                    icon = '/img/Airport.png'
+                                    break;
+                                case 'AmusementPark':
+                                    icon = '/img/AmusementPark.png'
+                                    break;
+                                case 'Attraction':
+                                    icon = '/img/Default.png'
+                                    break;
+                                case 'Beach':
+                                    icon = '/img/Beach.png'
+                                    break;
+                                case 'BusinessOffice':
+                                    icon = '/img/Default.png'
+                                    break;
+                                case 'BusStation':
+                                    icon = '/img/BusStation.png'
+                                    break;
+                                case 'Casino':
+                                    icon = '/img/Casino.png'
+                                    break;
+                                case 'City':
+                                    icon = '/img/City.png'
+                                    break;
+                                case 'CivicCenter':
+                                    icon = '/img/Default.png'
+                                    break;
+                                case 'College':
+                                    icon = '/img/College.png'
+                                    break;
+                                case 'ConventionCenter':
+                                    icon = '/img/Default.png'
+                                    break;
+                                case 'Country':
+                                    icon = '/img/Default.png'
+                                    break;
+                                case 'CountrySubdivision (state/province)':
+                                    icon = '/img/Default.png'
+                                    break;
+                                case 'GolfCourse':
+                                    icon = '/img/GolfCourse.png'
+                                    break;
+                                case 'Hospital':
+                                    icon = '/img/Hospital.png'
+                                    break;
+                                case 'Hotel':
+                                    switch (brandCode) {
+                                        case 'CS':
+                                    icon = '/img/CS.png'
+                                            break;
+                                        case 'QI':
+                                    icon = '/img/Q.png'
+                                            break;
+                                        case 'CI':
+                                    icon = '/img/CI.png'
+                                            break;
+                                        case 'SL':
+                                    icon = '/img/S.png'
+                                            break;
+                                        case 'AC':
+                                    icon = '/img/A.png'
+                                            break;
+                                        case 'RW':
+                                    icon = '/img/W.png'
+                                            break;
+                                        case 'CL':
+                                    icon = '/img/R.png'
+                                            break;
+                                        case 'SB':
+                                    icon = '/img/S.png'
+                                           break;
+                                        case 'EL':
+                                    icon = '/img/E.png'
+                                            break;
+                                        default:
+                                     icon = '/img/Hotel.png'
+                                    }
+                                    break;
+                                case 'InterstateExit':
+                                    icon = '/img/InterstateExit.png'
+                                    break;
+                                case 'MilitaryBase':
+                                    icon = '/img/MilitaryBase.png'
+                                    break;
+                                case 'Museum':
+                                    icon = '/img/Museum.png'
+                                    break;
+                                case 'Park':
+                                    icon = '/img/Park.png'
+                                    break;
+                                case 'PerformingArts':
+                                    icon = '/img/PerformingArts.png'
+                                    break;
+                                case 'PostalArea':
+                                    icon = '/img/PostalArea.png'
+                                    break;
+                                case 'Resort':
+                                    icon = '/img/Resort.png'
+                                    break;
+                                case 'ShoppingMall':
+                                    icon = '/img/ShoppingMall.png'
+                                    break;
+                                case 'SportsComplex':
+                                    icon = '/img/SportsComplex.png'
+                                    break;
+                                case 'Subway':
+                                    icon = '/img/Subway.png'
+                                    break;
+                                case 'TrainStation':
+                                    icon = '/img/TrainStation.png'
+                                    break;
+                                default:
+                                    icon = '/img/Default.png';
+                            }
+                            addPushPin(latitude, longitude, placeName, icon, phone + " " + line1 + " " + city + ", " + countrySubdivision + " " + postalCode + " " + country + " " + distance + units);
+                            //document.write(city + " " + country + " " + countrySubdivision + " " + latitude + " " + longitude + " " + placeType + " " + direction
+                            // + " " + distance + " " + units + "<br>");
+                        }
+                    }
+                }
+            });
+        };
+
+	function getDunkinDonuts(latitude, longitude) {
+            var myArray;
+            var name;
+            var phone;
+            var address;
+            var lat;
+            var long;
+	    var distance;
+       	    $.getJSON( "/api/getDunkinDonutLocations.php?lat=" + latitude + "&long=" + longitude, function( data ) {
+	   
+                 	myArray = data;
+			if (myArray != null) {
+                        for (var i = 0; i < myArray.length; i++) {
+                            name = myArray[i].name;
+                            phone = myArray[i].phone;
+                            address = myArray[i].address;
+                            lat = myArray[i].lat;
+                            long = myArray[i].loc_LONG_centroid;
+                            distance = myArray[i].distance;
+                            icon = '/img/dunkindonuts.png';
+                            addPushPin(lat, long, name, icon, phone + " " + address + " " + distance);
+                        }
+			}
+	    });
+	} 
+    </script>
+</body>
+</html>

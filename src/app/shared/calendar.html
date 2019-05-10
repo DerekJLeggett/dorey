@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <p>Holiday Calendar</p>
+    <div id="holidayCalendar"></div>
+    <script type="text/javascript">
+    var holidays = [
+        { name: 'New Years', month: 1, day: 1 },
+        { name: 'Martin Luther King, Jr.’s Birthday', month: 1, day: 21 },
+        { name: 'Valentines', month: 2, day: 14 },
+        { name: 'Presidents Day', month: 2, day: 18 },
+        { name: 'St. Patricks Day', month: 3, day: 17 }, 
+	{ name: 'Memorial Day', month: 5, day: 27 },
+        { name: 'Independence Day', month: 7, day: 4 },
+        { name: 'Labor Day', month: 9, day: 2 },
+        { name: 'Thanksgiving Day', month: 11, day: 28 },
+        { name: 'Christmas', month: 12, day: 25 }
+    ];
+    var holidaysUntil = daysUntil(holidays);
+    var table = "<table><th>Holiday</th><th>Days Until</th>";
+    for (i = 0; i < holidaysUntil.length; i++) {
+        table += "<tr><td class='holidayName'>" + holidaysUntil[i].holiday + "</td><td>" + holidaysUntil[i].daysUntil + "</td></tr>";
+    };
+    table += "</table>";
+    document.getElementById("holidayCalendar").innerHTML = table;
+    function daysUntil(holidays) {
+        // Set the unit values in milliseconds.
+        var msecPerMinute = 1000 * 60;
+        var msecPerHour = msecPerMinute * 60;
+        var msecPerDay = msecPerHour * 24;
+        var msecPerWeek = msecPerDay * 7;
+        var msecPerMonth = msecPerWeek * 4;
+        var holidaysDaysUntil = [];
+        // Set a date and get the milliseconds
+        var today = new Date();
+        var todayMsec = today.getTime();
+        var currentYear = today.getFullYear();
+        var currentMonth = today.getMonth();
+        var currentDay = today.getDate();
+        var effectiveYear;
+        for (i = 0; i < holidays.length; i++) {
+            // Set the date to the holidays date of the current year.
+            //Check if holiday has already past for current year
+            //note: month is a 0 based array from 0 to 11
+            var holidayMonth = (holidays[i].month - 1);
+            var holidayDay = holidays[i].day;
+            var holidayYear;
+            if (holidayMonth == currentMonth && holidayDay < currentDay) {
+                effectiveYear = (currentYear + 1);
+            }
+            else if (holidayMonth < currentMonth) {
+                effectiveYear = (currentYear + 1);
+            }
+            else {
+                effectiveYear = currentYear;
+            }
+
+            var holiday = new Date(effectiveYear, holidayMonth, holidayDay, 0, 0, 0, 0);
+
+            // Get the difference in milliseconds.
+            var interval = holiday.getTime() - todayMsec;
+
+            // Calculate how many days the interval contains. Subtract that
+            // many days from the interval to determine the remainder.
+            var daysUntil = Math.floor(interval / msecPerDay);
+
+            holidaysDaysUntil.push({ holiday: holidays[i].name, daysUntil: daysUntil });
+        }
+        // Sort and return the result.
+        holidaysDaysUntil.sort(function (a, b) {
+            return a.daysUntil - b.daysUntil
+        })
+        return holidaysDaysUntil;
+    }
+    </script>
+</body>
+</html>
