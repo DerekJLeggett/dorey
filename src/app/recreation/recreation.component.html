@@ -1,16 +1,17 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2">
-            <ul class="list-unstyled">
-                <li>Select a State
-                    <ul>
-                        <li (click)="getRecreationalAreas(state.code)" *ngFor="let state of states">{{state.name}}<br><img
-                                class="img-fluid img-thumbnail flag" src="assets/images/flags/svg/us/{{state.code|lowercase}}.svg"></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="col">
+            <label for="stateSelect" class="sr-only">Select a State</label>
+            <select class="custom-select" id="stateSelect" (change)="getRecreationalAreas($event.target.value)">
+                <option selected class="text-center">Select a State</option>
+                <option class="text-center" *ngFor="let state of states" class="text-center" value="{{state.code}}">
+                    {{state.name}}
+                </option>
+            </select>
         </div>
-        <div class="col-lg-10">
+    </div>
+    <div class="row">
+        <div class="col">
             <ul class="list-unstyled">
                 <li>
                     <ul class="list-unstyled">

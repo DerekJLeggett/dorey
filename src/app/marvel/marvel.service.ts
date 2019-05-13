@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { ISeries } from './marvel';
+import { ISeries, ICharacter, ICharacterById } from './marvel';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -11,12 +11,29 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MarvelService {
-  baseUrl: string = "https://gateway.marvel.com:443/v1/public/series?apikey=1acc0272c26b58f06f418cf285aaf60c";
+  baseUrl: string = "https://gateway.marvel.com:443/v1/public/";
+  apiKey: string = "1acc0272c26b58f06f418cf285aaf60c";
 
   constructor(private http: HttpClient) { }
 
+  getCharacters(): Observable<ICharacter[]> {
+    return this.http.get<ICharacter[]>('assets/data/superHeroes.json')
+      .pipe(
+        map(response => response),
+        catchError(this.handleError('getCharacters', []))
+      );
+  }
+  getCharacterById(id: number): Observable<ICharacterById[]> {
+    return this.http.get<ICharacterById[]>(this.baseUrl + "characters/" + id + "?apikey=" + this.apiKey)
+      .pipe(
+        tap(response => console.log(response)),
+        map(response => response['data']),
+        map(response => response['results']),
+        catchError(this.handleError('getCharacterById', []))
+      );
+  }
   getSeries(): Observable<ISeries[]> {
-    return this.http.get<ISeries[]>(this.baseUrl)
+    return this.http.get<ISeries[]>(this.baseUrl + "series?apikey=" + this.apiKey)
       .pipe(
         tap(response => console.log(response)),
         map(response => response['data']),

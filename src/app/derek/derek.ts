@@ -1,4 +1,5 @@
 export interface IDerekslinks {
     url: string,
-    linkText: string
+    linkText: string,
+    imagePath: string
 }

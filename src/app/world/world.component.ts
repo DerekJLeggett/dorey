@@ -10,7 +10,7 @@ export class WorldComponent {
   title = 'World';
   countries: ICountry[] = [];
   states: IState[] = [];
-  countryCode: string;
+  country: ICountry;
   constructor(private worldService: WorldService) { }
 
   ngOnInit() {
@@ -23,6 +23,7 @@ export class WorldComponent {
   }
 
   getStatesNestedCitiesByCountryCode(countryCode: string) {
+    this.country = this.countries.find(country => country.Code === countryCode);
     this.worldService.getStatesNestedCitiesByCountryCode(countryCode)
       .subscribe(response => this.states = response);
   }

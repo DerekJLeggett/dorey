@@ -29,13 +29,13 @@ export class SwapiComponent implements OnInit {
     this.swapiService.getFilms()
       .subscribe(response => this.films = response.sort());
   }
-  getDetails(film: IFilm) {
-    this.selectedFilm = film;
-    this.getCharacters(film);
-    this.getPlanets(film);
-    this.getStarships(film);
-    this.getSpecies(film);
-    this.getVehicles(film);
+  getDetails(episode_id: number) {
+    this.selectedFilm = this.films.find(film => film.episode_id == episode_id);
+    this.getCharacters(this.selectedFilm);
+    this.getPlanets(this.selectedFilm);
+    this.getStarships(this.selectedFilm);
+    this.getSpecies(this.selectedFilm);
+    this.getVehicles(this.selectedFilm);
   }
   getCharacters(film: IFilm) {
     this.characters = [];

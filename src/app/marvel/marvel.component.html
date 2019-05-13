@@ -1,13 +1,33 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <ul class="list-unstyled">
-                <li>Marvel comic book series
-                    <ul>
-                        <li *ngFor="let serie of series">{{serie.title}}</li>
-                    </ul>
-                </li>
-            </ul>
+            <label for="characterSelect" class="sr-only">Select a Character</label>
+            <select class="custom-select" id="characterSelect" (change)="getCharacterById($event.target.value)">
+                <option selected class="text-center">Select a Character</option>
+                <option class="text-center" *ngFor="let character of characters" class="text-center"
+                    value="{{character.id}}">
+                    {{character.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div *ngFor="let characterBy of characterById" class="text-center">
+                <h3>{{characterBy.name}}</h3>
+                <h4>{{characterBy.description}}</h4>
+                <img class="img-fluid" title="{{characterBy.name}}"
+                    src="{{characterBy.thumbnail.path}}.{{characterBy.thumbnail.extension}}">
+                <h4><u>Comics</u></h4>
+                <div *ngFor="let comic of characterBy.comics.items">
+                    {{comic.name}}
+                </div>
+                <h4><u>Stories</u></h4>
+                <div *ngFor="let story of characterBy.stories.items">
+                    {{story.name}}
+                </div>
+            </div>
+            <a class="text-center" href="http://marvel.com">Data provided by Marvel. © 2019 MARVEL</a>
         </div>
     </div>
 </div>
