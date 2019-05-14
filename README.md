@@ -25,3 +25,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+curl -X GET "https://developer.nps.gov/api/v1/parks?limit=500&fields=images&api_key=8sBuYXBQNGxwSU3ER3S6Xjd4Ys3COHuINh3KX9hn" -H "accept: application/json"

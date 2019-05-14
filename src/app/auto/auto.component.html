@@ -30,13 +30,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col text-center">
       <h4 class="text-center">Models</h4>
-      <ul class="list-unstyled">
-        <li *ngFor="let model of models">
-          {{model.Model_Name}}
-        </li>
-      </ul>
+      <div *ngFor="let model of models">
+        {{model.Model_Name}}
+      </div>
     </div>
   </div>
+  <a href="https://vpic.nhtsa.dot.gov/api/Home" target="_blank">Data Provided by Vehicle API</a>
 </div>
