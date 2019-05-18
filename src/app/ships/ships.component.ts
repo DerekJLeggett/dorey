@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IShip } from './ships';
+import { IShip, IShipType } from './ships';
 import { ShipsService } from './ships.service';
 
 @Component({
@@ -10,15 +10,19 @@ import { ShipsService } from './ships.service';
 export class ShipsComponent implements OnInit {
   ships: IShip[] = [];
   selectedShip: IShip;
-  shipTypes = [];
+  shipTypes: IShipType[] = [];
   constructor(private shipsService: ShipsService) { }
 
   ngOnInit() {
-    this.getShips();
+    this.getShipTypes();
   }
 
-  getShips() {
-    this.shipsService.getShips()
+  getShipTypes() {
+    this.shipsService.getShipTypes()
+      .subscribe(response => this.shipTypes = response)
+  }
+  getShipsByType(shipType: string) {
+    this.shipsService.getShipsByType(shipType)
       .subscribe(response => this.ships = response);
   }
   selectShip(ship: IShip) {

@@ -25,3 +25,8 @@ export interface IShip {
     Commission: string;
     Age: number;
 }
+
+export interface IShipType {
+    Code: string;
+    Name: string;
+}

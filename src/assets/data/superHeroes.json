@@ -214,5 +214,109 @@
     {
         "id": 1010735,
         "name": "Drax"
+    },
+    {
+        "id": 1009718,
+        "name": "Wolverine"
+    },
+    {
+        "id": 1017325,
+        "name": "Wolverine (Marvel War of Heroes)"
+    },
+    {
+        "id": 1011006,
+        "name": "Wolverine (Ultimate)"
+    },
+    {
+        "id": 1017479,
+        "name": "Wolverine (X-Men: Battle of the Atom)"
+    },
+    {
+        "id": 1009257,
+        "name": "Cyclops"
+    },
+    {
+        "id": 1010918,
+        "name": "Cyclops (Ultimate)"
+    },
+    {
+        "id": 1017473,
+        "name": "Cyclops (X-Men: Battle of the Atom)"
+    },
+    {
+        "id": 1009629,
+        "name": "Storm"
+    },
+    {
+        "id": 1010979,
+        "name": "Storm (Age of Apocalypse)"
+    },
+    {
+        "id": 1017309,
+        "name": "Storm (Marvel Heroes)"
+    },
+    {
+        "id": 1010978,
+        "name": "Storm (Ultimate)"
+    },
+    {
+        "id": 1009327,
+        "name": "Jean Grey"
+    },
+    {
+        "id": 1009496,
+        "name": "Jean Grey"
+    },
+    {
+        "id": 1010946,
+        "name": "Jean Grey (Ultimate)"
+    },
+    {
+        "id": 1009504,
+        "name": "Professor X"
+    },
+    {
+        "id": 1010958,
+        "name": "Professor X (Ultimate)"
+    },
+    {
+        "id": 1009417,
+        "name": "Magneto"
+    },
+    {
+        "id": 1010944,
+        "name": "Magneto (Age of Apocalypse)"
+    },
+    {
+        "id": 1010945,
+        "name": "Magneto (House of M)"
+    },
+    {
+        "id": 1009465,
+        "name": "Mystique"
+    },
+    {
+        "id": 1010953,
+        "name": "Mystique (Age of Apocalypse)"
+    },
+    {
+        "id": 1010954,
+        "name": "Mystique (House of M)"
+    },
+    {
+        "id": 1011129,
+        "name": "Mystique (Ultimate)"
+    },
+    {
+        "id": 1009673,
+        "name": "Toad"
+    },
+    {
+        "id": 1009554,
+        "name": "Sabretooth"
+    },
+    {
+        "id": 1010969,
+        "name": "Sabretooth (Age of Apocalypse)"
     }
 ]
