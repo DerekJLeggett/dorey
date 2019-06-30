@@ -20,6 +20,7 @@ import { NpsComponent } from './nps/nps.component';
 import { RecreationComponent } from './recreation/recreation.component';
 import { SnapComponent } from './snap/snap.component';
 import { LibraryComponent } from './library/library.component';
+import { PerformanceComponent } from './performance/performance.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { LibraryComponent } from './library/library.component';
     NpsComponent,
     RecreationComponent,
     SnapComponent,
-    LibraryComponent
+    LibraryComponent,
+    PerformanceComponent
   ],
   imports: [
     BrowserModule,

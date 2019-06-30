@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col" *ngIf="selectedFilm">
             <div>
-                <h2>Episode: {{selectedFilm.episode_id}} - {{selectedFilm.title}} - Directed by:
+                <h2 id="title">Episode: {{selectedFilm.episode_id}} - {{selectedFilm.title}} - Directed by:
                     {{selectedFilm.director}} - Produced by: {{selectedFilm.producer}} Released:
                     {{selectedFilm.release_date | date}}
                 </h2>

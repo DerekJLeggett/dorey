@@ -14,6 +14,7 @@ import { NpsComponent } from './nps/nps.component';
 import { RecreationComponent } from './recreation/recreation.component';
 import { SnapComponent } from './snap/snap.component';
 import { LibraryComponent } from './library/library.component';
+import { PerformanceComponent } from './performance/performance.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home', },
   { path: 'home', component: HomeComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'nps', component: NpsComponent },
   { path: 'recreation', component: RecreationComponent },
   { path: 'snap', component: SnapComponent },
-  { path: 'library', component: LibraryComponent }
+  { path: 'library', component: LibraryComponent },
+  { path: 'performance', component: PerformanceComponent }
 ];
 
 @NgModule({

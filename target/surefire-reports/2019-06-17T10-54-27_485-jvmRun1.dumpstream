@@ -1,0 +1,33 @@
+# Created at 2019-06-17T10:54:43.937
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-06-17T10:54:59.567
+Unexpected IOException: 8,1,selenium.DoreyTest,testAuto(selenium.DoreyTest),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),DoreyTest.testAuto:119 \00BB Timeout Expected condition failed: waiting for presen...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)\000A\0009at selenium.DoreyTest.testAuto(DoreyTest.java:119)\000ACaused by: org.openqa.selenium.NoSuchElementException: \000Ano such element: Unable to locate element: {"method":"css selector"\002C"selector":"#nav\005C-derek\005C-tab"}\000A  (Session info: chrome=75.0.3770.90)\000AFor documentation on this error\002C please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.90\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58978}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 55790def21d1d0edff0797c1cbb5fb2e\000A*** Element info: {Using=id\002C value=nav-derek-tab}\000A\0009at selenium.DoreyTest.testAuto(DoreyTest.java:119)\000A
+
+
+# Created at 2019-06-17T10:54:59.577
+Unexpected IOException: 5,1,selenium.DoreyTest,testHomePage(selenium.DoreyTest),selenium.DoreyTest,null,null
+
+
+# Created at 2019-06-17T10:54:59.594
+Unexpected IOException: 8,1,selenium.DoreyTest,testHomePage(selenium.DoreyTest),null,expected [true] but found [false],null,expected [true] but found [false],DoreyTest.testHomePage:76 expected [true] but found [false],java.lang.AssertionError: expected [true] but found [false]\000A\0009at selenium.DoreyTest.testHomePage(DoreyTest.java:76)\000A
+
+
+# Created at 2019-06-17T10:54:59.602
+Unexpected IOException: 5,1,selenium.DoreyTest,testNavy(selenium.DoreyTest),selenium.DoreyTest,null,null
+
+
+# Created at 2019-06-17T10:55:20.004
+Unexpected IOException: 8,1,selenium.DoreyTest,testNavy(selenium.DoreyTest),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),DoreyTest.testNavy:110 \00BB Timeout Expected condition failed: waiting for presen...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)\000A\0009at selenium.DoreyTest.testNavy(DoreyTest.java:110)\000ACaused by: org.openqa.selenium.NoSuchElementException: \000Ano such element: Unable to locate element: {"method":"css selector"\002C"selector":"#nav\005C-derek\005C-tab"}\000A  (Session info: chrome=75.0.3770.90)\000AFor documentation on this error\002C please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.90\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58978}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 55790def21d1d0edff0797c1cbb5fb2e\000A*** Element info: {Using=id\002C value=nav-derek-tab}\000A\0009at selenium.DoreyTest.testNavy(DoreyTest.java:110)\000A
+
+
+# Created at 2019-06-17T10:55:22.077
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+

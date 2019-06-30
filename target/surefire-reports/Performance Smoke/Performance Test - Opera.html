@@ -1,0 +1,814 @@
+<html>
+<head>
+<title>TestNG:  Performance Test - Opera</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Performance Test - Opera</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>100/3/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jun 18 21:43:38 MST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>2732 seconds (2732292 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='1', code='CHH', company='ChoiceHotels', url=www.choicehotels.com', industry='Hospitality}</td>
+<td><div><pre>org.openqa.selenium.ScriptTimeoutException: script timeout: result was not received in 30 seconds
+  (Session info: chrome with embedded Chromium 73.0.3683.103)
+  (Driver info: OperaDriver=2.45.3255 (O60),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-0BUJ7PH&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.opera.OperaDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.3255 (O60), userDataDir: C:\Users\derek\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62606}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: 18fefe7068fcec169914100814ef6296
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:506)
+	at com.paulhammant.ngwebdriver.NgWebDriver.waitForAngularRequestsToFinish(NgWebDriver.java:68)
+	at selenium.PageDriver.waitForBrowser(PageDriver.java:77)
+	at selenium.PageDriver.navigateTo(PageDriver.java:30)
+	at selenium.PerformanceTest.testApp(PerformanceTest.java:66)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace514852936", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace514852936'><pre>org.openqa.selenium.ScriptTimeoutException: script timeout: result was not received in 30 seconds
+  (Session info: chrome with embedded Chromium 73.0.3683.103)
+  (Driver info: OperaDriver=2.45.3255 (O60),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-0BUJ7PH&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.opera.OperaDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.3255 (O60), userDataDir: C:\Users\derek\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:62606}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: 18fefe7068fcec169914100814ef6296
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeAsyncScript(RemoteWebDriver.java:506)
+	at com.paulhammant.ngwebdriver.NgWebDriver.waitForAngularRequestsToFinish(NgWebDriver.java:68)
+	at selenium.PageDriver.waitForBrowser(PageDriver.java:77)
+	at selenium.PageDriver.navigateTo(PageDriver.java:30)
+	at selenium.PerformanceTest.testApp(PerformanceTest.java:66)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>50</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='16', code='FRYS', company='Fry's', url=www.frys.com', industry='E-Commerce}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: timeout
+  (Session info: chrome with embedded Chromium 73.0.3683.103)
+  (Driver info: OperaDriver=2.45.3255 (O60),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-0BUJ7PH&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.opera.OperaDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.3255 (O60), userDataDir: C:\Users\derek\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59986}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: 91fe76ac958f5a1838f21bc9c612ced8
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at selenium.PageDriver.navigateTo(PageDriver.java:29)
+	at selenium.PerformanceTest.testApp(PerformanceTest.java:66)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1531122568", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1531122568'><pre>org.openqa.selenium.TimeoutException: timeout
+  (Session info: chrome with embedded Chromium 73.0.3683.103)
+  (Driver info: OperaDriver=2.45.3255 (O60),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-0BUJ7PH&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.opera.OperaDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.3255 (O60), userDataDir: C:\Users\derek\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59986}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: 91fe76ac958f5a1838f21bc9c612ced8
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at selenium.PageDriver.navigateTo(PageDriver.java:29)
+	at selenium.PerformanceTest.testApp(PerformanceTest.java:66)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>303</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='33', code='ARMY', company='U.S. Army', url=www.goarmy.com', industry='Armed Forces}</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: timeout
+  (Session info: chrome with embedded Chromium 73.0.3683.103)
+  (Driver info: OperaDriver=2.45.3255 (O60),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-0BUJ7PH&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.opera.OperaDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.3255 (O60), userDataDir: C:\Users\derek\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61791}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: b0bc1e2c4664dfd4ec3abf994749b687
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at selenium.PageDriver.navigateTo(PageDriver.java:29)
+	at selenium.PerformanceTest.testApp(PerformanceTest.java:66)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1877328398", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1877328398'><pre>org.openqa.selenium.TimeoutException: timeout
+  (Session info: chrome with embedded Chromium 73.0.3683.103)
+  (Driver info: OperaDriver=2.45.3255 (O60),platform=Windows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-0BUJ7PH&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.opera.OperaDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.45.3255 (O60), userDataDir: C:\Users\derek\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61791}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.103, webStorageEnabled: true}
+Session ID: b0bc1e2c4664dfd4ec3abf994749b687
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)
+	at selenium.PageDriver.navigateTo(PageDriver.java:29)
+	at selenium.PerformanceTest.testApp(PerformanceTest.java:66)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>303</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='2', code='BW', company='Best Western', url=www.bestwestern.com', industry='Hospitality}</td>
+<td></td>
+<td>70</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='3', code='MAR', company='Marriott', url=www.marriott.com', industry='Hospitality}</td>
+<td></td>
+<td>46</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='4', code='IHG', company='Holiday Inn', url=www.holidayinn.com', industry='Hospitality}</td>
+<td></td>
+<td>29</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='5', code='HH', company='Hilton', url=www.hilton.com', industry='Hospitality}</td>
+<td></td>
+<td>39</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='6', code='H', company='Hyatt', url=www.hyatt.com', industry='Hospitality}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='7', code='WH', company='Wyndham Hotels & Resorts', url=www.wyndhamhotels.com', industry='Hospitality}</td>
+<td></td>
+<td>26</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='8', code='AT', company='Anandtech', url=www.anandtech.com', industry='Technology News}</td>
+<td></td>
+<td>84</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='9', code='TH', company='Tom's Hardware', url=www.tomshardware.com', industry='Technology News}</td>
+<td></td>
+<td>34</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='10', code='CNN', company='CNN', url=www.cnn.com', industry='News}</td>
+<td></td>
+<td>37</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='11', code='BG', company='Boston Globe', url=www.bostonglobe.com', industry='News}</td>
+<td></td>
+<td>50</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='12', code='NYT', company='New York Times', url=www.nytimes.com', industry='News}</td>
+<td></td>
+<td>67</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='13', code='WP', company='Washington Post', url=www.washingtonpost.com', industry='News}</td>
+<td></td>
+<td>20</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='14', code='AMZ', company='Amazon', url=www.amazon.com', industry='E-Commerce}</td>
+<td></td>
+<td>16</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='15', code='BB', company='Best Buy', url=www.bestbuy.com', industry='E-Commerce}</td>
+<td></td>
+<td>27</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='17', code='DELTA', company='Delta', url=www.delta.com', industry='Airline}</td>
+<td></td>
+<td>24</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='18', code='SW', company='Southwest Airlines', url=www.southwest.com', industry='Airline}</td>
+<td></td>
+<td>28</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='19', code='AA', company='American Airlines', url=www.aa.com', industry='Airline}</td>
+<td></td>
+<td>25</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='20', code='KO', company='Coca-Cola', url=www.coca-cola.com', industry='Soda}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='21', code='PEP', company='Pepsi', url=www.pepsi.com', industry='Soda}</td>
+<td></td>
+<td>59</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='22', code='PH', company='Pizza Hut', url=www.pizzahut.com', industry='Pizza}</td>
+<td></td>
+<td>40</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='23', code='DPZ', company='Domino's', url=www.dominos.com', industry='Pizza}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='24', code='PPJ', company='Papa John's', url=www.papajohns.com', industry='Pizza}</td>
+<td></td>
+<td>30</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='25', code='HTZ', company='Hertz', url=www.hertz.com', industry='Car Rental}</td>
+<td></td>
+<td>39</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='26', code='ENT', company='Enterprise', url=www.enterprise.com', industry='Car Rental}</td>
+<td></td>
+<td>26</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='27', code='CAR', company='Avis', url=www.avis.com', industry='Car Rental}</td>
+<td></td>
+<td>24</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='28', code='SBUX', company='Starbucks', url=www.starbucks.com', industry='Coffee Shops}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='29', code='DNKN', company='Dunkin' Donuts', url=www.dunkindonuts.com', industry='Coffee Shops}</td>
+<td></td>
+<td>13</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='30', code='WMT', company='Walmart', url=www.walmart.com', industry='E-Commerce}</td>
+<td></td>
+<td>30</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='31', code='TGT', company='Target', url=www.target.com', industry='E-Commerce}</td>
+<td></td>
+<td>26</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='34', code='NAVY', company='U.S. Navy', url=www.navy.com', industry='Armed Forces}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='35', code='AIRFO', company='U.S. Air Force', url=www.airforce.com', industry='Armed Forces}</td>
+<td></td>
+<td>18</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='36', code='JAR', company='U.S. Marines', url=www.marines.com', industry='Armed Forces}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='37', code='CG', company='U.S. Cost Guard', url=www.gocoastguard.com', industry='Armed Forces}</td>
+<td></td>
+<td>15</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='38', code='FBI', company='Federal Bureau of Investigation', url=www.fbi.gov', industry='Clandestine}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='39', code='CIA', company='Central Intelligence Agency', url=www.cia.gov', industry='Clandestine}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='40', code='WH', company='White House', url=www.whitehouse.gov', industry='U.S. Government}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='41', code='T', company='Treasury', url=home.treasury.gov', industry='U.S. Government}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='42', code='DHS', company='Department of Homeland Security', url=www.dhs.gov', industry='U.S. Government}</td>
+<td></td>
+<td>11</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='43', code='USDS', company='U.S. Department of State', url=www.state.gov', industry='U.S. Government}</td>
+<td></td>
+<td>20</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='44', code='TM', company='Toyota', url=www.toyota.com', industry='Automobile}</td>
+<td></td>
+<td>29</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='45', code='MB', company='Mercedes-Benz', url=www.mercedes-benz.com', industry='Automobile}</td>
+<td></td>
+<td>13</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='46', code='BMW', company='BMW', url=www.bmw.com', industry='Automobile}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='47', code='F', company='Ford', url=www.ford.com', industry='Automobile}</td>
+<td></td>
+<td>19</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='48', code='GM', company='General Motors', url=www.gm.com', industry='Automobile}</td>
+<td></td>
+<td>11</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='49', code='FCAU', company='Fiat Chrysler', url=www.fcagroup.com', industry='Automobile}</td>
+<td></td>
+<td>10</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='50', code='VW', company='Volkswagen', url=www.vw.com', industry='Automobile}</td>
+<td></td>
+<td>35</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='52', code='NPR', company='National Public Radio', url=www.npr.org', industry='News}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='53', code='AZC', company='Arizona Central', url=www.azcentral.com', industry='News}</td>
+<td></td>
+<td>60</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='54', code='WG', company='Walgreens', url=www.walgreens.com', industry='Drug Stores}</td>
+<td></td>
+<td>16</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='55', code='CVS', company='CVS', url=www.cvs.com', industry='Drug Stores}</td>
+<td></td>
+<td>17</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='56', code='USAA', company='United Services Automobile Association', url=www.usaa.com', industry='Insurance}</td>
+<td></td>
+<td>6</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='57', code='SFI', company='State Farm', url=www.statefarm.com', industry='Insurance}</td>
+<td></td>
+<td>38</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='58', code='GCO', company='Geico', url=www.geico.com', industry='Insurance}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='59', code='FARM', company='Farmers', url=www.farmers.com', industry='Insurance}</td>
+<td></td>
+<td>10</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='60', code='PROG', company='Progressive', url=www.progressive.com', industry='Insurance}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='61', code='ESUR', company='Esurance', url=www.esurance.com', industry='Insurance}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='62', code='HD', company='Home Depot', url=www.homedepot.com', industry='Home Improvement}</td>
+<td></td>
+<td>22</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='63', code='LOW', company='Lowe's', url=www.lowes.com', industry='Home Improvement}</td>
+<td></td>
+<td>18</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='64', code='TRV', company='True Value Hardware', url=www.truevalue.com', industry='Home Improvement}</td>
+<td></td>
+<td>16</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='65', code='AH', company='Ace Hardware', url=www.acehardware.com', industry='Home Improvement}</td>
+<td></td>
+<td>18</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='66', code='MAB', company='Maybelline', url=www.maybelline.com', industry='Beauty Brands}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='67', code='CG', company='Covergirl', url=www.covergirl.com', industry='Beauty Brands}</td>
+<td></td>
+<td>11</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='68', code='MS', company='Microsoft', url=www.microsoft.com', industry='Software}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='69', code='APL', company='Apple', url=www.apple.com', industry='Software}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='70', code='IBM', company='IBM', url=www.ibm.com', industry='Software}</td>
+<td></td>
+<td>17</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='71', code='OR', company='Oracle', url=www.oracle.com', industry='Software}</td>
+<td></td>
+<td>17</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='72', code='SAP', company='SAP', url=www.sap.com', industry='Software}</td>
+<td></td>
+<td>18</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='73', code='TCS', company='Tata Consultancy Services', url=www.tcs.com', industry='Software}</td>
+<td></td>
+<td>9</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='74', code='INT', company='Intel', url=www.intel.com', industry='Computer Hardware}</td>
+<td></td>
+<td>11</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='75', code='AMD', company='AMD', url=www.amd.com', industry='Computer Hardware}</td>
+<td></td>
+<td>13</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='76', code='DELL', company='DELL', url=www.dell.com', industry='Computer Hardware}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='77', code='HP', company='Hewlett Packard', url=www.hp.com', industry='Computer Hardware}</td>
+<td></td>
+<td>18</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='78', code='NV', company='Nvidia', url=www.nvidia.com', industry='Computer Hardware}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='79', code='EVGA', company='EVGA', url=www.evga.com', industry='Computer Hardware}</td>
+<td></td>
+<td>10</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='80', code='KING', company='Kingston', url=www.kingston.com', industry='Computer Hardware}</td>
+<td></td>
+<td>10</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='81', code='ANT', company='Antec', url=www.antec.com', industry='Computer Hardware}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='82', code='CRU', company='Crucial', url=www.crucial.com', industry='Computer Hardware}</td>
+<td></td>
+<td>13</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='83', code='HYU', company='Hyundai', url=www.hyundai.com', industry='Automobile}</td>
+<td></td>
+<td>21</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='84', code='KIA', company='Kia', url=www.kia.com', industry='Automobile}</td>
+<td></td>
+<td>20</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='85', code='SUB', company='Subaru', url=www.subaru.com', industry='Automobile}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='86', code='HARK', company='Harkins', url=www.harkins.com', industry='Movie Theater}</td>
+<td></td>
+<td>13</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='87', code='AMC', company='AMC Theaters', url=www.amctheatres.com', industry='Movie Theater}</td>
+<td></td>
+<td>18</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='88', code='WEN', company='Wendy's', url=www.wendys.com', industry='Restaurant}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='89', code='MCD', company='McDonald's', url=www.mcdonalds.com', industry='Restaurant}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='90', code='VI', company='Village Inn', url=www.villageinn.com', industry='Restaurant}</td>
+<td></td>
+<td>8</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='91', code='CJR', company='Carl's Jr.', url=www.carlsjr.com', industry='Restaurant}</td>
+<td></td>
+<td>10</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='92', code='BARP', company='Barro's', url=www.barrospizza.com', industry='Pizza}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='93', code='JNJ', company='Johnson & Johnson', url=www.jnj.com', industry='Conglomerate}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='94', code='MMM', company='3M', url=www.3m.com', industry='Conglomerate}</td>
+<td></td>
+<td>15</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='95', code='DU', company='DuPont', url=www.dupont.com', industry='Conglomerate}</td>
+<td></td>
+<td>30</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='96', code='BO', company='Boeing', url=www.boeing.com', industry='Aerospace}</td>
+<td></td>
+<td>11</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='97', code='NASA', company='NASA', url=www.nasa.gov', industry='Aerospace}</td>
+<td></td>
+<td>15</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='98', code='ESA', company='ESA(European Space Agency)', url=www.esa.int', industry='Aerospace}</td>
+<td></td>
+<td>25</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='99', code='CSA', company='CSA(Canadian Space Agency)', url=www.asc-csa.gc.ca', industry='Aerospace}</td>
+<td></td>
+<td>26</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='100', code='ISRO', company='ISRO(Indian Space Research Organisation)', url=www.isro.gov.in', industry='Aerospace}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='101', code='JAXA', company='JAXA(Japan Aerospace Exploration Agency)', url=global.jaxa.jp', industry='Aerospace}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='102', code='MCA', company='McAlister's Deli', url=www.mcalistersdeli.com', industry='Restaurant}</td>
+<td></td>
+<td>12</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='103', code='CAT', company='Caterpillar', url=www.caterpillar.com', industry='Heavy Equipment}</td>
+<td></td>
+<td>10</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='104', code='JD', company='John Deere', url=www.deere.com', industry='Heavy Equipment}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+<tr>
+<td title='selenium.PerformanceTest.testApp()'><b>testApp</b><br>Test class: selenium.PerformanceTest<br>Parameters: CompanyData{id='105', code='PG', company='Proctor & Gamble', url=www.pg.com/', industry='Conglomerate}</td>
+<td></td>
+<td>14</td>
+<td>selenium.PerformanceTest@6adede5</td></tr>
+</table><p>
+</body>
+</html>

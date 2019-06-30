@@ -11,7 +11,7 @@
 
    $q = "SELECT DISTINCT(C.District) AS 'State', S.abv, C.Name AS 'City', C.Population FROM city C
 	LEFT JOIN geo_states S ON S.name = C.District
-	WHERE C.CountryCode='$countryCode' 
+	WHERE C.CountryCode='$countryCode'
 	ORDER BY C.District, C.Population DESC;"; 
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))

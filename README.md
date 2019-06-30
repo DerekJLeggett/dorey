@@ -1,4 +1,10 @@
 # Dorey
+mvn test -DsuiteXmlFile=testsuite.xml
+mvn test -Dtest=DoreyTest
+mvn test -Dtest=PerformanceTest
+mvn -U clean install -Dmaven.test.skip=true
+
+sudo docker-compose up --scale chrome=5 --scale firefox=5 -d
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 

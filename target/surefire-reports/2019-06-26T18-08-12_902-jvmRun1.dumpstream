@@ -1,0 +1,2008 @@
+# Created at 2019-06-26T18:27:44.037
+Unexpected IOException with stream: 18:27:44.009 [TestNG-PoolService-0] INFO  selenium.PageDriver - Cookie name: optimizelyEndUserId
+
+
+# Created at 2019-06-26T18:27:44.069
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-06-26T18:27:44.120
+Unexpected IOException with stream: 18:27:44.068 [TestNG-PoolService-0] INFO  selenium.PageDriver - Cookie value: oeu1561598221767r0.59938338968231
+
+
+# Created at 2019-06-26T18:27:44.138
+Unexpected IOException with stream: 18:27:44.136 [TestNG-PoolService-0] INFO  selenium.PageDriver - Cookie name: cnprevpage_pn
+
+
+# Created at 2019-06-26T18:27:44.166
+Unexpected IOException: 5,1,selenium.DoreyTest,testAuto(selenium.DoreyTest),selenium.DoreyTest,null,null
+
+
+# Created at 2019-06-26T18:27:44.196
+Unexpected IOException: 8,1,selenium.DoreyTest,init(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,DoreyTest.init:70 \00BB WebDriver Reached error page: about:neterror?e=connectionF...,org.openqa.selenium.WebDriverException: \000AReached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9\000A\0009at selenium.DoreyTest.init(DoreyTest.java:70)\000A
+
+
+# Created at 2019-06-26T18:27:44.212
+Unexpected IOException with stream: 18:27:44.163 [TestNG-PoolService-0] INFO  selenium.PageDriver - Cookie value: cnn%3Ain%3A%2F
+
+
+# Created at 2019-06-26T18:27:44.235
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:44.281
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:44.302
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:44.360
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:44.402
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:44.423
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:44.467
+Unexpected IOException with stream: 18:27:43.877 [TestNG-PoolService-1] INFO  selenium.PerformanceTest - www.tomshardware.com 51637.0
+
+
+# Created at 2019-06-26T18:27:44.486
+Unexpected IOException: 9,1,selenium.DoreyTest,testAuto(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:44.548
+Unexpected IOException with stream: 18:27:44.195 [TestNG-tests-1] INFO  selenium.PageDriver - Starting test: testAuto
+
+
+# Created at 2019-06-26T18:27:44.609
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:44.636
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:44.670
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:44.698
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:44.750
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:44.882
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:44.958
+Unexpected IOException with stream: 18:27:44.232 [TestNG-PoolService-0] INFO  selenium.PageDriver - Cookie name: _cb
+
+
+# Created at 2019-06-26T18:27:45.063
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:45.173
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:45.208
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:45.274
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:45.308
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:45.348
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:45.398
+Unexpected IOException with stream: 6
+
+# Created at 2019-06-26T18:27:45.422
+Unexpected IOException with stream: 18:27:44.547 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testAuto
+
+
+# Created at 2019-06-26T18:27:45.448
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:45.488
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:45.497
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:45.545
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:27:45.567
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:45.584
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:27:45.614
+Unexpected IOException: 9,1,selenium.DoreyTest,testHomePage(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:45.632
+Unexpected IOException with stream: 18:27:44.711 [TestNG-PoolService-1] INFO  selenium.Utility - 
+Sending 'POST' request to URL : http://localhost:4200/api/addTiming.php
+
+
+# Created at 2019-06-26T18:27:45.663
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:45.699
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:45.732
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:27:45.782
+Unexpected IOException with stream: 18:27:44.615 [TestNG-tests-1] INFO  selenium.PageDriver - Click element By.id: nav-derek-tab
+
+
+# Created at 2019-06-26T18:27:45.828
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:45.864
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:45.910
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:27:45.952
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:45.994
+Unexpected IOException with stream: 18:27:45.631 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testHomePage
+
+
+# Created at 2019-06-26T18:27:46.030
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:27:46.078
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:46.104
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:46.146
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:46.180
+Unexpected IOException: 9,1,selenium.DoreyTest,testLorisPage(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:46.234
+Unexpected IOException with stream: 18:27:45.062 [TestNG-PoolService-0] INFO  selenium.PageDriver - Cookie value: Tn2vD8SmhFDvOZem
+
+
+# Created at 2019-06-26T18:27:46.277
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:46.380
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:27:46.510
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:46.561
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:27:46.663
+Unexpected IOException with stream: 18:27:45.827 [TestNG-tests-1] INFO  selenium.PageDriver - Wait for element By.id: nav-derek-tab
+
+
+# Created at 2019-06-26T18:27:46.676
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:46.799
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:27:46.817
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:46.872
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:46.905
+Unexpected IOException with stream: 18:27:45.662 [TestNG-PoolService-1] INFO  selenium.Utility - Post parameters : [Content-Type: application/x-www-form-urlencoded,Content-Length: 104,Chunked: false]
+
+
+# Created at 2019-06-26T18:27:46.931
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:46.968
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:27:46.996
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:47.048
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:27:47.068
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:47.111
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:47.164
+Unexpected IOException with stream: 18:27:46.930 [TestNG-PoolService-1] INFO  selenium.Utility - Response Code : 200
+
+
+# Created at 2019-06-26T18:27:47.199
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:27:47.229
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:27:47.272
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:47.352
+Unexpected IOException with stream: 18:27:46.233 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testLorisPage
+
+
+# Created at 2019-06-26T18:27:47.401
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:47.460
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:47.507
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:47.566
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:47.627
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:47.683
+Unexpected IOException: 9,1,selenium.DoreyTest,testMarvel(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:47.711
+Unexpected IOException with stream: 18:27:46.752 [TestNG-PoolService-0] INFO  selenium.PerformanceTest - www.cnn.com 51637.0
+
+
+# Created at 2019-06-26T18:27:47.732
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:47.755
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:47.783
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:27:47.815
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:47.850
+Unexpected IOException with stream: 18:27:47.199 [TestNG-PoolService-1] INFO  selenium.Utility - null
+
+
+# Created at 2019-06-26T18:27:47.901
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:48.033
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:48.082
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:48.117
+Unexpected IOException with stream: 18:27:47.709 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testMarvel
+
+
+# Created at 2019-06-26T18:27:48.173
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:48.220
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:27:48.265
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:48.626
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:48.722
+Unexpected IOException: 9,1,selenium.DoreyTest,testNPS(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:48.808
+Unexpected IOException with stream: 18:27:48.006 [TestNG-PoolService-0] INFO  selenium.Utility - 
+Sending 'POST' request to URL : http://localhost:4200/api/addTiming.php
+
+
+# Created at 2019-06-26T18:27:48.896
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:48.942
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:49.056
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:49.183
+Unexpected IOException with stream: 9
+
+# Created at 2019-06-26T18:27:49.343
+Unexpected IOException with stream: 18:27:48.894 [TestNG-PoolService-0] INFO  selenium.Utility - Post parameters : [Content-Type: application/x-www-form-urlencoded,Content-Length: 105,Chunked: false]
+
+
+# Created at 2019-06-26T18:27:49.465
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:27:49.582
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:49.694
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:49.761
+Unexpected IOException with stream: 18:27:48.806 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testNPS
+
+
+# Created at 2019-06-26T18:27:49.803
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:49.822
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:27:49.851
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:27:49.912
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:49.933
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:27:50.012
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:27:50.037
+Unexpected IOException: 9,1,selenium.DoreyTest,testNavy(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:50.080
+Unexpected IOException with stream: 18:27:49.465 [TestNG-PoolService-0] INFO  selenium.Utility - Response Code : 200
+
+
+# Created at 2019-06-26T18:27:50.104
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:50.153
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:50.196
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:50.277
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:50.368
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:27:50.450
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:50.516
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:50.601
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:50.687
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:50.739
+Unexpected IOException with stream: 18:27:50.080 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testNavy
+
+
+# Created at 2019-06-26T18:27:50.789
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:50.850
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,The new session could not be created. (WARNING: The server did not provide any stacktrace information)\000ACommand duration or timeout: 6.06 seconds\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: driver.version: EdgeDriver,null,The new session could not be created. (WARNING: The server did not provide any stacktrace information)\000ACommand duration or timeout: 6.06 seconds\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: driver.version: EdgeDriver,PerformanceTest.testApp:68->StartUp.getWebDriver:68 \00BB SessionNotCreated The ne...,org.openqa.selenium.SessionNotCreatedException: \000AThe new session could not be created. (WARNING: The server did not provide any stacktrace information)\000ACommand duration or timeout: 6.06 seconds\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: driver.version: EdgeDriver\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:68)\000A
+
+
+# Created at 2019-06-26T18:27:51.071
+Unexpected IOException with stream: Jun 26, 2019 6:27:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-26T18:27:51.086
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:51.248
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:51.316
+Unexpected IOException: 9,1,selenium.DoreyTest,testPerformance(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:51.336
+Unexpected IOException with stream: 18:27:50.104 [TestNG-PoolService-0] INFO  selenium.Utility - null
+
+
+# Created at 2019-06-26T18:27:51.403
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:51.488
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:51.510
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:27:51.524
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:51.591
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:51.611
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:51.683
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:27:51.733
+Unexpected IOException with stream: 18:27:51.335 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testPerformance
+
+
+# Created at 2019-06-26T18:27:51.755
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:27:51.797
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:51.832
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:51.930
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:27:52.006
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:52.080
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:27:52.123
+Unexpected IOException: 9,1,selenium.DoreyTest,testStarWars(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:52.216
+Unexpected IOException with stream: 18:27:51.086 [TestNG-PoolService-1] INFO  selenium.PerformanceTest - NASA
+
+
+# Created at 2019-06-26T18:27:52.286
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:52.339
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:27:52.436
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:52.820
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:27:52.991
+Unexpected IOException with stream: 18:27:51.070 [TestNG-PoolService-0] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:27:53.107
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:53.211
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:53.256
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:53.312
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:53.406
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:27:53.429
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:53.487
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:53.517
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:27:53.552
+Unexpected IOException with stream: 18:27:52.215 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testStarWars
+
+
+# Created at 2019-06-26T18:27:53.587
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:53.605
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:27:53.656
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:53.682
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:53.740
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:53.770
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:53.791
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:53.823
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:53.842
+Unexpected IOException: 9,1,selenium.DoreyTest,testWorld(selenium.DoreyTest),null,Reached error page: about:neterror?e=connectionFailure&u=http%3A//localhost%3A4200/&c=UTF-8&f=regular&d=Firefox%20can%E2%80%99t%20establish%20a%20connection%20to%20the%20server%20at%20localhost%3A4200.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 2619\002C moz:profile: /tmp/rust_mozprofile.LylgOc...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 595540ff-a826-4d9a-97fa-5fa...}\000ASession ID: 595540ff-a826-4d9a-97fa-5fa6894cfae9,null
+
+
+# Created at 2019-06-26T18:27:53.886
+Unexpected IOException with stream: 18:27:52.285 [TestNG-PoolService-1] INFO  selenium.PageDriver - https://www.nasa.gov
+
+
+# Created at 2019-06-26T18:27:53.908
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:27:53.924
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:27:53.942
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:53.969
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:27:54.017
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:54.041
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:54.088
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:54.122
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:54.154
+Unexpected IOException with stream: 18:27:53.551 [TestNG-PoolService-0] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:27:54.202
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:27:54.225
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:27:54.354
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:54.481
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:54.575
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:54.598
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:54.636
+Unexpected IOException with stream: 18:27:53.886 [TestNG-tests-3] INFO  selenium.PageDriver - Test skipped: testWorld
+
+
+# Created at 2019-06-26T18:27:54.725
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:54.786
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:54.860
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:54.905
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:54.948
+Unexpected IOException: 9,1,selenium.DoreyTest,tearDown(selenium.DoreyTest),null,null,null
+
+
+# Created at 2019-06-26T18:27:55.007
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:55.059
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:55.154
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:55.185
+Unexpected IOException with stream: 18:27:55.135 [TestNG-tests-3] INFO  selenium.Utility - 
+Sending 'GET' request to URL : http://localhost:4200/api/getCompanies.php
+
+
+# Created at 2019-06-26T18:27:55.206
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:27:55.242
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:55.276
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:55.305
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:55.340
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:55.391
+Unexpected IOException with stream: 18:27:55.205 [TestNG-tests-3] INFO  selenium.Utility - Response Code : 200
+
+
+# Created at 2019-06-26T18:27:55.422
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:55.502
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:55.522
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:55.591
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:27:55.638
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:27:55.661
+Unexpected IOException with stream: 9
+
+# Created at 2019-06-26T18:27:55.693
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:27:55.717
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:27:55.738
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:55.757
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:55.788
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:55.806
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:55.827
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:55.849
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:55.871
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:27:55.918
+Unexpected IOException with stream: 18:27:55.642 [TestNG-PoolService-1] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:27:55.947
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:56.372
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:27:56.660
+Unexpected IOException with stream: 18:27:55.660 [TestNG-PoolService-0] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:27:56.700
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,An unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 2DD117C0-659C-4218-83A2-AF50F7D50938,null,An unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 2DD117C0-659C-4218-83A2-AF50F7D50938,PerformanceTest.testApp:71 \00BB WebDriver An unknown error occurred while process...,org.openqa.selenium.WebDriverException: \000AAn unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 2DD117C0-659C-4218-83A2-AF50F7D50938\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:71)\000A
+
+
+# Created at 2019-06-26T18:27:57.017
+Unexpected IOException with stream: 18:27:57.016 [TestNG-PoolService-1] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:27:57.076
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:27:57.105
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:27:57.189
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:57.207
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:27:57.298
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:27:57.354
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:27:57.405
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:27:57.439
+Unexpected IOException with stream: 18:27:57.353 [TestNG-PoolService-1] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:27:57.463
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:27:57.622
+Unexpected IOException with stream: Jun 26, 2019 6:27:57 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-26T18:27:57.648
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:57.851
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:57.869
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:57.972
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:27:57.984
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:58.096
+Unexpected IOException with stream: 18:27:57.647 [TestNG-PoolService-0] INFO  selenium.PerformanceTest - ESA(European Space Agency)
+
+
+# Created at 2019-06-26T18:27:58.251
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:58.372
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:58.393
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:58.554
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:27:58.635
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:27:58.697
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:58.769
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:27:58.912
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:59.013
+Unexpected IOException with stream: 18:27:58.247 [TestNG-PoolService-0] INFO  selenium.PageDriver - https://www.esa.int
+
+
+# Created at 2019-06-26T18:27:59.132
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:27:59.306
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:59.324
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:27:59.410
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:27:59.427
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:59.448
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:27:59.538
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:27:59.599
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:27:59.681
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:27:59.742
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:27:59.759
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:27:59.839
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,The specified window could not be found.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: EFE85D9E-EA14-447A-8510-97599307F9B4,null,The specified window could not be found.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: EFE85D9E-EA14-447A-8510-97599307F9B4,PerformanceTest.testApp:71 \00BB NoSuchWindow The specified window could not be fo...,org.openqa.selenium.NoSuchWindowException: \000AThe specified window could not be found.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: EFE85D9E-EA14-447A-8510-97599307F9B4\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:71)\000A
+
+
+# Created at 2019-06-26T18:27:59.855
+Unexpected IOException with stream: 18:27:59.854 [TestNG-PoolService-0] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:27:59.878
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:27:59.906
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:27:59.973
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:27:59.992
+Unexpected IOException with stream: 9
+
+# Created at 2019-06-26T18:28:00.065
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:00.164
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:00.242
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:00.302
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:00.363
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:28:00.427
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:00.444
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:00.493
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:00.578
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:00.623
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:00.659
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:00.689
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:00.748
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:00.785
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:00.892
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:28:00.980
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:01.095
+Unexpected IOException with stream: 18:28:00.425 [TestNG-PoolService-0] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:28:01.257
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:28:01.347
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:28:01.416
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:01.446
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:01.492
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:01.551
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:01.604
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:01.642
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:01.712
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:01.749
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:01.771
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:01.798
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:01.815
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:01.843
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:01.863
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:28:01.881
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:01.899
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:28:01.929
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:01.947
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:01.963
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:28:01.978
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:01.990
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:02.000
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:28:02.013
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:02.026
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:28:02.036
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:02.091
+Unexpected IOException with stream: 6
+
+# Created at 2019-06-26T18:28:02.110
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:02.124
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:02.135
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:02.151
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:02.179
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:02.203
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:02.246
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:02.276
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:02.290
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:28:02.316
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:02.333
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:28:02.380
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:02.457
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:02.490
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:02.524
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:02.595
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:02.682
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:02.772
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:02.815
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:03.016
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:03.049
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:03.071
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:03.280
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:03.693
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:03.712
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:03.729
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:03.742
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:03.759
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:03.772
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:03.799
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:03.832
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:04.143
+Unexpected IOException with stream: Jun 26, 2019 6:28:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-26T18:28:04.349
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,The new session could not be created. (WARNING: The server did not provide any stacktrace information)\000ACommand duration or timeout: 3.96 seconds\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: driver.version: EdgeDriver,null,The new session could not be created. (WARNING: The server did not provide any stacktrace information)\000ACommand duration or timeout: 3.96 seconds\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: driver.version: EdgeDriver,PerformanceTest.testApp:68->StartUp.getWebDriver:68 \00BB SessionNotCreated The ne...,org.openqa.selenium.SessionNotCreatedException: \000AThe new session could not be created. (WARNING: The server did not provide any stacktrace information)\000ACommand duration or timeout: 3.96 seconds\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: driver.version: EdgeDriver\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:68)\000A
+
+
+# Created at 2019-06-26T18:28:04.447
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:04.517
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:04.649
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:04.769
+Unexpected IOException with stream: 18:28:04.359 [TestNG-PoolService-0] INFO  selenium.PerformanceTest - ISRO(Indian Space Research Organisation)
+
+
+# Created at 2019-06-26T18:28:04.802
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:04.819
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:04.835
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:28:04.856
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:04.869
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:04.895
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:04.935
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:04.951
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:05.003
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:05.071
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:05.145
+Unexpected IOException with stream: 18:28:04.447 [TestNG-PoolService-1] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:28:05.200
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:28:05.302
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:05.343
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:05.382
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:28:05.406
+Unexpected IOException with stream: 18:28:04.801 [TestNG-PoolService-0] INFO  selenium.PageDriver - https://www.isro.gov.in
+
+
+# Created at 2019-06-26T18:28:05.432
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:28:05.452
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:05.475
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:05.501
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:05.531
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:28:05.563
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:05.587
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:05.602
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:05.618
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:28:05.640
+Unexpected IOException with stream: 18:28:05.451 [TestNG-PoolService-1] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:28:05.656
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:05.696
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:05.713
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:05.729
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:05.746
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:05.764
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:05.781
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:05.804
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:05.840
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:05.884
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:28:05.930
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:05.973
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:28:06.016
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:06.053
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:06.097
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:06.119
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:06.145
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:06.162
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:06.177
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:06.196
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:06.216
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:28:06.232
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:06.252
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:06.274
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:06.289
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:06.340
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:06.385
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:06.399
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:06.423
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:06.437
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:28:06.454
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:06.498
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:06.586
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:06.659
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:06.741
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:06.851
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:06.894
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:06.944
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:06.987
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,An unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: C2852B06-E987-42EF-B21A-6896F6508EBB,null,An unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: C2852B06-E987-42EF-B21A-6896F6508EBB,PerformanceTest.testApp:71 \00BB WebDriver An unknown error occurred while process...,org.openqa.selenium.WebDriverException: \000AAn unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: C2852B06-E987-42EF-B21A-6896F6508EBB\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:71)\000A
+
+
+# Created at 2019-06-26T18:28:07.010
+Unexpected IOException with stream: 18:28:07.009 [TestNG-PoolService-0] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:28:07.036
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:07.084
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:28:07.135
+Unexpected IOException with stream: 18:28:07.133 [TestNG-PoolService-0] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:28:07.195
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:07.211
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:28:07.286
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:07.343
+Unexpected IOException: 8,1,selenium.DoreyTest,testAuto(selenium.DoreyTest),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),DoreyTest.testAuto:150 \00BB Timeout Expected condition failed: waiting for presen...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)\000A\0009at selenium.DoreyTest.testAuto(DoreyTest.java:150)\000ACaused by: org.openqa.selenium.NoSuchElementException: \000Ano such element: Unable to locate element: {"method":"css selector"\002C"selector":"#nav\005C-derek\005C-tab"}\000A  (Session info: chrome=75.0.3770.80)\000AFor documentation on this error\002C please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.80\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: /tmp/.com.google.Chrome.DWskar}\002C goog:chromeOptions: {debuggerAddress: localhost:39725}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: aa8fb7eb6fad393e10d21cc0ce9...}\000ASession ID: aa8fb7eb6fad393e10d21cc0ce93ffa3\000A*** Element info: {Using=id\002C value=nav-derek-tab}\000A\0009at selenium.DoreyTest.testAuto(DoreyTest.java:150)\000A
+
+
+# Created at 2019-06-26T18:28:07.367
+Unexpected IOException with stream: 18:28:07.366 [TestNG-tests-1] INFO  selenium.PageDriver - Test failed: testAuto
+
+
+# Created at 2019-06-26T18:28:07.407
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:07.458
+Unexpected IOException: 5,1,selenium.DoreyTest,testHomePage(selenium.DoreyTest),selenium.DoreyTest,null,null
+
+
+# Created at 2019-06-26T18:28:07.505
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:07.532
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:07.550
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:07.567
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:28:07.597
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:07.620
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:07.639
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:07.684
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:07.704
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:07.728
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:07.747
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:07.788
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:07.818
+Unexpected IOException with stream: 18:28:07.504 [TestNG-tests-1] INFO  selenium.PageDriver - Starting test: testHomePage
+
+
+# Created at 2019-06-26T18:28:07.839
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:07.865
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:07.881
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:28:07.901
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:07.917
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:07.937
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:07.959
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:08.054
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:08.116
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:08.246
+Unexpected IOException with stream: 18:28:07.838 [TestNG-tests-1] INFO  selenium.PageDriver - Click element By.id: nav-home-tab
+
+
+# Created at 2019-06-26T18:28:08.336
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:08.437
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:08.556
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:08.769
+Unexpected IOException with stream: Jun 26, 2019 6:28:07 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-26T18:28:08.864
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:28:08.914
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:08.924
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:08.949
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:09.002
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:09.040
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:09.071
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:09.090
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:09.125
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:09.167
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:09.188
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:09.268
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:09.535
+Unexpected IOException with stream: 18:28:08.335 [TestNG-tests-1] INFO  selenium.PageDriver - Wait for element By.id: nav-home-tab
+
+
+# Created at 2019-06-26T18:28:09.552
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:09.571
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:09.605
+Unexpected IOException with stream: 18:28:08.864 [TestNG-PoolService-1] INFO  selenium.PerformanceTest - JAXA(Japan Aerospace Exploration Agency)
+
+
+# Created at 2019-06-26T18:28:09.622
+Unexpected IOException with stream: 4
+
+# Created at 2019-06-26T18:28:09.639
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:09.657
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:09.680
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:09.692
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:09.719
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:09.727
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:09.739
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:09.749
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:09.756
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:09.764
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:09.770
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:09.776
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:09.781
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:09.787
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:09.792
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:09.798
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:09.804
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:09.810
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:09.815
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:28:09.821
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:09.826
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:09.831
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:09.837
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:09.842
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:09.848
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:28:09.854
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:09.860
+Unexpected IOException with stream: o
+
+# Created at 2019-06-26T18:28:09.866
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:09.872
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:09.877
+Unexpected IOException with stream: h
+
+# Created at 2019-06-26T18:28:09.883
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:09.889
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:09.895
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:28:09.900
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:09.906
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:09.911
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:09.917
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:09.922
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:09.928
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:09.933
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:09.939
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:09.944
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:09.950
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:09.957
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:09.963
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:09.968
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:10.155
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:10.296
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:10.408
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:28:10.467
+Unexpected IOException with stream: p
+
+# Created at 2019-06-26T18:28:10.489
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:10.555
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:10.619
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:10.650
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:10.713
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:10.769
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:10.825
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:10.895
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:10.947
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:10.998
+Unexpected IOException with stream: 18:28:09.621 [TestNG-PoolService-1] INFO  selenium.PageDriver - https://global.jaxa.jp
+
+
+# Created at 2019-06-26T18:28:11.069
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:11.103
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:11.137
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:11.175
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:11.220
+Unexpected IOException with stream: 6
+
+# Created at 2019-06-26T18:28:11.258
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,The specified session ID does not exist or is no longer active.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 1AD24B24-978E-43E5-B70F-6C8C7B87058A,null,The specified session ID does not exist or is no longer active.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 1AD24B24-978E-43E5-B70F-6C8C7B87058A,PerformanceTest.testApp:71 \00BB NoSuchSession The specified session ID does not e...,org.openqa.selenium.NoSuchSessionException: \000AThe specified session ID does not exist or is no longer active.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 1AD24B24-978E-43E5-B70F-6C8C7B87058A\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:71)\000A
+
+
+# Created at 2019-06-26T18:28:11.292
+Unexpected IOException with stream: Jun 26, 2019 6:28:11 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-26T18:28:11.363
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:11.374
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:28:11.394
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:11.448
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:11.523
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:11.557
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:11.638
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:11.896
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:11.957
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:11.999
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:12.091
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:12.148
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:12.204
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:12.317
+Unexpected IOException with stream: 18:28:11.291 [TestNG-PoolService-1] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:28:12.387
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:12.414
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:12.555
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:12.666
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:28:12.692
+Unexpected IOException with stream: 18:28:11.362 [TestNG-PoolService-0] INFO  selenium.PerformanceTest - McAlister's Deli
+
+
+# Created at 2019-06-26T18:28:12.763
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:12.807
+Unexpected IOException with stream: 
+
+
+# Created at 2019-06-26T18:28:12.844
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:12.874
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:12.930
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:12.944
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:12.973
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:13.027
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:13.039
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:13.069
+Unexpected IOException with stream: 18:28:12.691 [TestNG-PoolService-1] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:28:13.091
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:13.110
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:13.125
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:13.150
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:28:13.170
+Unexpected IOException with stream: 18:28:12.761 [TestNG-PoolService-0] INFO  selenium.PageDriver - https://www.mcalistersdeli.com
+
+
+# Created at 2019-06-26T18:28:13.189
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:13.203
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:13.314
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:13.457
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:13.520
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:13.570
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:13.643
+Unexpected IOException with stream: [
+
+# Created at 2019-06-26T18:28:13.684
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:13.709
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:13.738
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:13.768
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:13.798
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:13.826
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:13.855
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:13.881
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:13.928
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:13.956
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:13.995
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:14.010
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:14.027
+Unexpected IOException with stream: 0
+
+# Created at 2019-06-26T18:28:14.054
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:14.095
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:28:14.128
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:14.182
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:14.211
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:14.260
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,An unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 2AF9431C-B303-445F-9B23-A9B8685EA671,null,An unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 2AF9431C-B303-445F-9B23-A9B8685EA671,PerformanceTest.testApp:71 \00BB WebDriver An unknown error occurred while process...,org.openqa.selenium.WebDriverException: \000AAn unknown error occurred while processing the specified command.\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.edge.EdgeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: MicrosoftEdge\002C browserVersion: 44.17763.1.0\002C javascriptEnabled: true\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}}\000ASession ID: 2AF9431C-B303-445F-9B23-A9B8685EA671\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:71)\000A
+
+
+# Created at 2019-06-26T18:28:14.304
+Unexpected IOException with stream: 2
+
+# Created at 2019-06-26T18:28:14.402
+Unexpected IOException with stream: 8
+
+# Created at 2019-06-26T18:28:14.463
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:14.548
+Unexpected IOException with stream: 9
+
+# Created at 2019-06-26T18:28:14.567
+Unexpected IOException with stream: 6
+
+# Created at 2019-06-26T18:28:14.584
+Unexpected IOException with stream: ]
+
+# Created at 2019-06-26T18:28:14.630
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:14.672
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:14.754
+Unexpected IOException with stream: -
+
+# Created at 2019-06-26T18:28:14.818
+Unexpected IOException with stream: .
+
+# Created at 2019-06-26T18:28:14.925
+Unexpected IOException with stream: :
+
+# Created at 2019-06-26T18:28:14.995
+Unexpected IOException with stream: 18:28:14.303 [TestNG-PoolService-0] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-26T18:28:15.074
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:15.126
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:15.227
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:15.299
+Unexpected IOException with stream: /
+
+# Created at 2019-06-26T18:28:15.403
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:15.443
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:15.474
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-26T18:28:15.510
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:15.543
+Unexpected IOException with stream: 5
+
+# Created at 2019-06-26T18:28:15.561
+Unexpected IOException with stream: 7
+
+# Created at 2019-06-26T18:28:15.644
+Unexpected IOException with stream:  
+
+# Created at 2019-06-26T18:28:15.702
+Unexpected IOException with stream: n
+
+# Created at 2019-06-26T18:28:15.772
+Unexpected IOException with stream: g
+
+# Created at 2019-06-26T18:28:15.811
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:15.825
+Unexpected IOException with stream: i
+
+# Created at 2019-06-26T18:28:15.845
+Unexpected IOException with stream: s
+
+# Created at 2019-06-26T18:28:15.856
+Unexpected IOException with stream: t
+
+# Created at 2019-06-26T18:28:15.881
+Unexpected IOException with stream: e
+
+# Created at 2019-06-26T18:28:15.924
+Unexpected IOException with stream: 1
+
+# Created at 2019-06-26T18:28:15.982
+Unexpected IOException with stream: 3
+
+# Created at 2019-06-26T18:28:16.123
+Unexpected IOException with stream: Jun 26, 2019 6:28:15 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-26T18:28:16.195
+Unexpected IOException with stream: 18:28:15.509 [TestNG-PoolService-0] INFO  selenium.PageDriver - Starting test: testApp
+
+
+# Created at 2019-06-26T18:28:16.231
+Unexpected IOException with stream: 
+
+# Created at 2019-06-26T18:28:16.397
+Unexpected IOException with stream: L
+
+# Created at 2019-06-26T18:28:16.801
+Unexpected IOException with stream: i
+

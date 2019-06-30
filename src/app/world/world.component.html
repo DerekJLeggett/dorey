@@ -17,7 +17,7 @@
   </div>
   <div class="row">
     <div class="col text-center" *ngIf="country">
-      <h3 class="text-center">{{country.Name}}</h3>
+      <h3 id="countryName" class="text-center">{{country.Name}}</h3>
       <img class="img-fluid" title="{{country.Name}}" src="assets/images/flags/svg/{{country.Code2 | lowercase}}.svg">
       <h4 class="text-center"><u>Languages Spoken</u></h4>
       <div class="progress" *ngFor="let language of country.Languages">

@@ -1,0 +1,208 @@
+# Created at 2019-06-21T16:39:22.442
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-06-21T16:39:23.467
+Unexpected IOException: 6,1,selenium.DoreyTest,testWorld(selenium.DoreyTest),null,null,null
+
+
+# Created at 2019-06-21T16:39:29.706
+Unexpected IOException: 6,1,selenium.DoreyTest,testWorld(selenium.DoreyTest),null,null,null
+
+
+# Created at 2019-06-21T16:39:30.231
+Unexpected IOException with stream: 
+Sending 'GET' request to URL : http://192.168.1.3/api/getCompanies.php
+
+
+# Created at 2019-06-21T16:39:30.242
+Unexpected IOException with stream: Response Code : 200
+
+
+# Created at 2019-06-21T16:39:30.277
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-21T16:39:30.285
+Unexpected IOException with stream: ChoiceHotels
+
+
+# Created at 2019-06-21T16:39:30.290
+Unexpected IOException with stream: Host: DESKTOP-0BUJ7PH
+
+
+# Created at 2019-06-21T16:39:30.299
+Unexpected IOException with stream: Operating System Name: Windows 10
+
+
+# Created at 2019-06-21T16:39:30.305
+Unexpected IOException with stream: Operating System Version: 10.0
+
+
+# Created at 2019-06-21T16:39:30.309
+Unexpected IOException with stream: Operating System Architecture: amd64
+
+
+# Created at 2019-06-21T16:39:31.029
+Unexpected IOException with stream: Jun 21, 2019 4:39:31 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-21T16:39:33.146
+Unexpected IOException with stream: 
+Sending 'GET' request to URL : http://192.168.1.3/api/getCompanies.php
+
+
+# Created at 2019-06-21T16:39:33.161
+Unexpected IOException with stream: Response Code : 200
+
+
+# Created at 2019-06-21T16:39:33.197
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-21T16:39:33.205
+Unexpected IOException with stream: ChoiceHotels
+
+
+# Created at 2019-06-21T16:39:33.212
+Unexpected IOException with stream: Host: DESKTOP-0BUJ7PH
+
+
+# Created at 2019-06-21T16:39:33.219
+Unexpected IOException with stream: Operating System Name: Windows 10
+
+
+# Created at 2019-06-21T16:39:33.225
+Unexpected IOException with stream: Operating System Version: 10.0
+
+
+# Created at 2019-06-21T16:39:33.229
+Unexpected IOException with stream: Operating System Architecture: amd64
+
+
+# Created at 2019-06-21T16:39:35.979
+Unexpected IOException with stream: Jun 21, 2019 4:39:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-21T16:40:03.602
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,script timeout: result was not received in 30 seconds\000A  (Session info: chrome=75.0.3770.80)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.80\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: /tmp/.com.google.Chrome.8GUsms}\002C goog:chromeOptions: {debuggerAddress: localhost:40235}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 42ae4ef435b4ed77ff3b6f1eca5...}\000ASession ID: 42ae4ef435b4ed77ff3b6f1eca5dcd6d,null,script timeout: result was not received in 30 seconds\000A  (Session info: chrome=75.0.3770.80)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.80\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: /tmp/.com.google.Chrome.8GUsms}\002C goog:chromeOptions: {debuggerAddress: localhost:40235}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 42ae4ef435b4ed77ff3b6f1eca5...}\000ASession ID: 42ae4ef435b4ed77ff3b6f1eca5dcd6d,PerformanceTest.testApp:65 \00BB ScriptTimeout script timeout: result was not rece...,org.openqa.selenium.ScriptTimeoutException: \000Ascript timeout: result was not received in 30 seconds\000A  (Session info: chrome=75.0.3770.80)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.80\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: /tmp/.com.google.Chrome.8GUsms}\002C goog:chromeOptions: {debuggerAddress: localhost:40235}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 42ae4ef435b4ed77ff3b6f1eca5...}\000ASession ID: 42ae4ef435b4ed77ff3b6f1eca5dcd6d\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:65)\000A
+
+
+# Created at 2019-06-21T16:40:03.637
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-21T16:40:03.655
+Unexpected IOException with stream: Best Western
+
+
+# Created at 2019-06-21T16:40:03.673
+Unexpected IOException with stream: Host: DESKTOP-0BUJ7PH
+
+
+# Created at 2019-06-21T16:40:03.689
+Unexpected IOException with stream: Operating System Name: Windows 10
+
+
+# Created at 2019-06-21T16:40:03.703
+Unexpected IOException with stream: Operating System Version: 10.0
+
+
+# Created at 2019-06-21T16:40:03.719
+Unexpected IOException with stream: Operating System Architecture: amd64
+
+
+# Created at 2019-06-21T16:40:05.702
+Unexpected IOException with stream: Jun 21, 2019 4:40:05 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+
+# Created at 2019-06-21T16:40:09.978
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Timed out after 30000 ms\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 103\002C moz:profile: /tmp/rust_mozprofile.9oKKAy...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 8075bd6f-42cf-4575-8db1-d65...}\000ASession ID: 8075bd6f-42cf-4575-8db1-d65fb9824d11,null,Timed out after 30000 ms\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 103\002C moz:profile: /tmp/rust_mozprofile.9oKKAy...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 8075bd6f-42cf-4575-8db1-d65...}\000ASession ID: 8075bd6f-42cf-4575-8db1-d65fb9824d11,PerformanceTest.testApp:65 \00BB ScriptTimeout Timed out after 30000 ms\000ABuild info...,org.openqa.selenium.ScriptTimeoutException: \000ATimed out after 30000 ms\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '10.0.75.1'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: true\002C browserName: firefox\002C browserVersion: 67.0.1\002C javascriptEnabled: true\002C moz:accessibilityChecks: false\002C moz:buildID: 20190529130856\002C moz:geckodriverVersion: 0.24.0\002C moz:headless: false\002C moz:processID: 103\002C moz:profile: /tmp/rust_mozprofile.9oKKAy...\002C moz:shutdownTimeout: 60000\002C moz:useNonSpecCompliantPointerOrigin: false\002C moz:webdriverClick: true\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C platformVersion: 4.18.0-22-generic\002C rotatable: false\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 8075bd6f-42cf-4575-8db1-d65...}\000ASession ID: 8075bd6f-42cf-4575-8db1-d65fb9824d11\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:65)\000A
+
+
+# Created at 2019-06-21T16:40:09.986
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-21T16:40:09.991
+Unexpected IOException with stream: Best Western
+
+
+# Created at 2019-06-21T16:40:09.997
+Unexpected IOException with stream: Host: DESKTOP-0BUJ7PH
+
+
+# Created at 2019-06-21T16:40:10.002
+Unexpected IOException with stream: Operating System Name: Windows 10
+
+
+# Created at 2019-06-21T16:40:10.008
+Unexpected IOException with stream: Operating System Version: 10.0
+
+
+# Created at 2019-06-21T16:40:10.014
+Unexpected IOException with stream: Operating System Architecture: amd64
+
+
+# Created at 2019-06-21T16:40:11.365
+Unexpected IOException with stream: www.bestwestern.com 5005.0
+
+
+# Created at 2019-06-21T16:40:11.667
+Unexpected IOException with stream: 
+Sending 'POST' request to URL : http://192.168.1.3/api/addTiming.php
+
+
+# Created at 2019-06-21T16:40:11.674
+Unexpected IOException with stream: Post parameters : [Content-Type: application/x-www-form-urlencoded,Content-Length: 103,Chunked: false]
+
+
+# Created at 2019-06-21T16:40:11.684
+Unexpected IOException with stream: Response Code : 200
+
+
+# Created at 2019-06-21T16:40:11.691
+Unexpected IOException with stream: null
+
+
+# Created at 2019-06-21T16:40:11.761
+Unexpected IOException: 6,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,null,null
+
+
+# Created at 2019-06-21T16:40:11.779
+Unexpected IOException: 5,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),selenium.PerformanceTest,null,null
+
+
+# Created at 2019-06-21T16:40:11.792
+Unexpected IOException with stream: Marriott
+
+
+# Created at 2019-06-21T16:40:11.798
+Unexpected IOException with stream: Host: DESKTOP-0BUJ7PH
+
+
+# Created at 2019-06-21T16:40:11.805
+Unexpected IOException with stream: Operating System Name: Windows 10
+
+
+# Created at 2019-06-21T16:40:11.815
+Unexpected IOException with stream: Operating System Version: 10.0
+
+
+# Created at 2019-06-21T16:40:11.830
+Unexpected IOException with stream: Operating System Architecture: amd64
+
+
+# Created at 2019-06-21T16:40:14.350
+Unexpected IOException with stream: Jun 21, 2019 4:40:14 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+
+

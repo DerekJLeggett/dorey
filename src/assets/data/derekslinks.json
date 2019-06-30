@@ -28,5 +28,10 @@
         "url": "/nps",
         "linkText": "National Parks",
         "imagePath": "assets/images/US-NationalParkService-Logo.svg"
+    },
+    {
+        "url": "/performance",
+        "linkText": "Website Performance",
+        "imagePath": "assets/images/HTML5_logo_and_wordmark.svg"
     }
 ]

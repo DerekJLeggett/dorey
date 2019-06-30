@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Dorey Smoke]" parallel="tests" data-provider-thread-count="5">
+  <listeners>
+    <listener class-name="selenium.ReportingListener"/>
+  </listeners>
+  <test thread-count="4" verbose="0" name="Dorey Test - Firefox(failed)" parallel="tests">
+    <parameter name="browserId" value="3"/>
+    <parameter name="browserName" value="Firefox"/>
+    <parameter name="location" value="GRID"/>
+    <classes>
+      <class name="selenium.DoreyTest">
+        <methods>
+          <include name="testLorisPage"/>
+          <include name="testNPS"/>
+          <include name="testNavy"/>
+          <include name="testStarWars"/>
+          <include name="tearDown"/>
+          <include name="testMarvel"/>
+          <include name="init"/>
+          <include name="testWorld"/>
+        </methods>
+      </class> <!-- selenium.DoreyTest -->
+    </classes>
+  </test> <!-- Dorey Test - Firefox(failed) -->
+  <test thread-count="4" verbose="0" name="Dorey Test - Chrome(failed)" parallel="tests">
+    <parameter name="browserId" value="1"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="location" value="GRID"/>
+    <classes>
+      <class name="selenium.DoreyTest">
+        <methods>
+          <include name="testNavy"/>
+          <include name="tearDown"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- selenium.DoreyTest -->
+    </classes>
+  </test> <!-- Dorey Test - Chrome(failed) -->
+</suite> <!-- Failed suite [Dorey Smoke] -->

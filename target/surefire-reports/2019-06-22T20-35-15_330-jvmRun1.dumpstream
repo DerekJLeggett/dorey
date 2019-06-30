@@ -1,0 +1,485 @@
+# Created at 2019-06-22T20:36:22.933
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-06-22T20:36:24.730
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Expected condition failed: waiting for selenium.PageDriver$1@3f362df0 (tried for 30 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for selenium.PageDriver$1@3f362df0 (tried for 30 second(s) with 500 milliseconds interval),PerformanceTest.testApp:76 \00BB Timeout Expected condition failed: waiting for se...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for selenium.PageDriver$1@3f362df0 (tried for 30 second(s) with 500 milliseconds interval)\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000ACaused by: org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=75.0.3770.100)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.100\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58888}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 597c1aad1fafb7e8ccd1250835e353f9\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000A
+
+
+# Created at 2019-06-22T20:36:24.742
+Unexpected IOException with stream: 20:36:24.741 [TestNG-PoolService-4] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-22T20:36:25.749
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Expected condition failed: waiting for selenium.PageDriver$1@62da8d08 (tried for 30 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for selenium.PageDriver$1@62da8d08 (tried for 30 second(s) with 500 milliseconds interval),PerformanceTest.testApp:76 \00BB Timeout Expected condition failed: waiting for se...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for selenium.PageDriver$1@62da8d08 (tried for 30 second(s) with 500 milliseconds interval)\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000ACaused by: org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=75.0.3770.100)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.100\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58888}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 597c1aad1fafb7e8ccd1250835e353f9\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000A
+
+
+# Created at 2019-06-22T20:36:25.773
+Unexpected IOException with stream: 20:36:25.772 [TestNG-PoolService-5] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-22T20:36:34.387
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Expected condition failed: waiting for selenium.PageDriver$1@32b43c83 (tried for 30 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for selenium.PageDriver$1@32b43c83 (tried for 30 second(s) with 500 milliseconds interval),PerformanceTest.testApp:76 \00BB Timeout Expected condition failed: waiting for se...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for selenium.PageDriver$1@32b43c83 (tried for 30 second(s) with 500 milliseconds interval)\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000ACaused by: org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=75.0.3770.100)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.100\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58888}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 597c1aad1fafb7e8ccd1250835e353f9\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000A
+
+
+# Created at 2019-06-22T20:36:34.412
+Unexpected IOException with stream: 20:36:34.410 [TestNG-PoolService-8] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-22T20:36:38.964
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Expected condition failed: waiting for selenium.PageDriver$1@814e08 (tried for 30 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for selenium.PageDriver$1@814e08 (tried for 30 second(s) with 500 milliseconds interval),PerformanceTest.testApp:76 \00BB Timeout Expected condition failed: waiting for se...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for selenium.PageDriver$1@814e08 (tried for 30 second(s) with 500 milliseconds interval)\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000ACaused by: org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=75.0.3770.100)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.100\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58888}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 597c1aad1fafb7e8ccd1250835e353f9\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000A
+
+
+# Created at 2019-06-22T20:36:38.984
+Unexpected IOException with stream: 20:36:38.983 [TestNG-PoolService-0] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-22T20:36:51.091
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Expected condition failed: waiting for selenium.PageDriver$1@61b5338 (tried for 30 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for selenium.PageDriver$1@61b5338 (tried for 30 second(s) with 500 milliseconds interval),PerformanceTest.testApp:76 \00BB Timeout Expected condition failed: waiting for se...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for selenium.PageDriver$1@61b5338 (tried for 30 second(s) with 500 milliseconds interval)\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000ACaused by: org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=75.0.3770.100)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.100\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58888}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 597c1aad1fafb7e8ccd1250835e353f9\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000A
+
+
+# Created at 2019-06-22T20:36:51.099
+Unexpected IOException with stream: 20:36:51.098 [TestNG-PoolService-7] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-22T20:36:51.117
+Unexpected IOException: 8,1,selenium.PerformanceTest,testApp(selenium.PerformanceTest),null,Expected condition failed: waiting for selenium.PageDriver$1@2f17960 (tried for 30 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for selenium.PageDriver$1@2f17960 (tried for 30 second(s) with 500 milliseconds interval),PerformanceTest.testApp:76 \00BB Timeout Expected condition failed: waiting for se...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for selenium.PageDriver$1@2f17960 (tried for 30 second(s) with 500 milliseconds interval)\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000ACaused by: org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=75.0.3770.100)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.100\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: C:\005CUsers\005Cderek\005CAppData\005CLoca...}\002C goog:chromeOptions: {debuggerAddress: localhost:58888}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: XP\002C platformName: XP\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify}\000ASession ID: 597c1aad1fafb7e8ccd1250835e353f9\000A\0009at selenium.PerformanceTest.testApp(PerformanceTest.java:76)\000A
+
+
+# Created at 2019-06-22T20:36:51.125
+Unexpected IOException with stream: 20:36:51.125 [TestNG-PoolService-6] INFO  selenium.PageDriver - Test failed: testApp
+
+
+# Created at 2019-06-22T20:36:52.656
+Unexpected IOException with stream: 20:36:52.655 [main] INFO  selenium.PageDriver - PASSED TEST CASES
+
+
+# Created at 2019-06-22T20:36:52.664
+Unexpected IOException with stream: 20:36:52.663 [main] INFO  selenium.PageDriver - FAILED TEST CASES
+
+
+# Created at 2019-06-22T20:36:52.671
+Unexpected IOException with stream: 20:36:52.671 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.679
+Unexpected IOException with stream: 20:36:52.678 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.687
+Unexpected IOException with stream: 20:36:52.686 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.696
+Unexpected IOException with stream: 20:36:52.695 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.705
+Unexpected IOException with stream: 20:36:52.704 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.711
+Unexpected IOException with stream: 20:36:52.710 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.717
+Unexpected IOException with stream: 20:36:52.716 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.726
+Unexpected IOException with stream: 20:36:52.725 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.734
+Unexpected IOException with stream: 20:36:52.733 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.743
+Unexpected IOException with stream: 20:36:52.742 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.751
+Unexpected IOException with stream: 20:36:52.750 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.761
+Unexpected IOException with stream: 20:36:52.760 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.771
+Unexpected IOException with stream: 20:36:52.771 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.780
+Unexpected IOException with stream: 20:36:52.779 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.789
+Unexpected IOException with stream: 20:36:52.788 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.797
+Unexpected IOException with stream: 20:36:52.796 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.806
+Unexpected IOException with stream: 20:36:52.805 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.815
+Unexpected IOException with stream: 20:36:52.814 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.823
+Unexpected IOException with stream: 20:36:52.822 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.832
+Unexpected IOException with stream: 20:36:52.831 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.842
+Unexpected IOException with stream: 20:36:52.841 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.853
+Unexpected IOException with stream: 20:36:52.852 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.862
+Unexpected IOException with stream: 20:36:52.862 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.871
+Unexpected IOException with stream: 20:36:52.870 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.881
+Unexpected IOException with stream: 20:36:52.880 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.889
+Unexpected IOException with stream: 20:36:52.889 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.898
+Unexpected IOException with stream: 20:36:52.897 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.905
+Unexpected IOException with stream: 20:36:52.905 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.914
+Unexpected IOException with stream: 20:36:52.913 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.922
+Unexpected IOException with stream: 20:36:52.922 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.931
+Unexpected IOException with stream: 20:36:52.930 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.939
+Unexpected IOException with stream: 20:36:52.938 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.946
+Unexpected IOException with stream: 20:36:52.945 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.954
+Unexpected IOException with stream: 20:36:52.953 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.962
+Unexpected IOException with stream: 20:36:52.961 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.970
+Unexpected IOException with stream: 20:36:52.969 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.977
+Unexpected IOException with stream: 20:36:52.976 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.985
+Unexpected IOException with stream: 20:36:52.984 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:52.992
+Unexpected IOException with stream: 20:36:52.992 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.001
+Unexpected IOException with stream: 20:36:53.000 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.009
+Unexpected IOException with stream: 20:36:53.008 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.016
+Unexpected IOException with stream: 20:36:53.015 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.024
+Unexpected IOException with stream: 20:36:53.023 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.032
+Unexpected IOException with stream: 20:36:53.031 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.040
+Unexpected IOException with stream: 20:36:53.039 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.048
+Unexpected IOException with stream: 20:36:53.047 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.054
+Unexpected IOException with stream: 20:36:53.053 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.067
+Unexpected IOException with stream: 20:36:53.065 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.075
+Unexpected IOException with stream: 20:36:53.074 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.083
+Unexpected IOException with stream: 20:36:53.082 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.095
+Unexpected IOException with stream: 20:36:53.094 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.106
+Unexpected IOException with stream: 20:36:53.105 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.121
+Unexpected IOException with stream: 20:36:53.115 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.162
+Unexpected IOException with stream: 20:36:53.159 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.180
+Unexpected IOException with stream: 20:36:53.178 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.209
+Unexpected IOException with stream: 20:36:53.208 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.227
+Unexpected IOException with stream: 20:36:53.227 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.245
+Unexpected IOException with stream: 20:36:53.244 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.272
+Unexpected IOException with stream: 20:36:53.271 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.295
+Unexpected IOException with stream: 20:36:53.293 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.323
+Unexpected IOException with stream: 20:36:53.322 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.344
+Unexpected IOException with stream: 20:36:53.343 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.363
+Unexpected IOException with stream: 20:36:53.362 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.397
+Unexpected IOException with stream: 20:36:53.396 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.440
+Unexpected IOException with stream: 20:36:53.439 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.460
+Unexpected IOException with stream: 20:36:53.459 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.494
+Unexpected IOException with stream: 20:36:53.493 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.525
+Unexpected IOException with stream: 20:36:53.524 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.554
+Unexpected IOException with stream: 20:36:53.551 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.590
+Unexpected IOException with stream: 20:36:53.587 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.607
+Unexpected IOException with stream: 20:36:53.606 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.616
+Unexpected IOException with stream: 20:36:53.615 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.628
+Unexpected IOException with stream: 20:36:53.627 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.640
+Unexpected IOException with stream: 20:36:53.639 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.650
+Unexpected IOException with stream: 20:36:53.649 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.663
+Unexpected IOException with stream: 20:36:53.662 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.676
+Unexpected IOException with stream: 20:36:53.675 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.690
+Unexpected IOException with stream: 20:36:53.689 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.702
+Unexpected IOException with stream: 20:36:53.701 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.727
+Unexpected IOException with stream: 20:36:53.726 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.741
+Unexpected IOException with stream: 20:36:53.741 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.757
+Unexpected IOException with stream: 20:36:53.755 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.767
+Unexpected IOException with stream: 20:36:53.766 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.794
+Unexpected IOException with stream: 20:36:53.791 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.866
+Unexpected IOException with stream: 20:36:53.847 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.902
+Unexpected IOException with stream: 20:36:53.900 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.916
+Unexpected IOException with stream: 20:36:53.914 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:53.945
+Unexpected IOException with stream: 20:36:53.944 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.045
+Unexpected IOException with stream: 20:36:54.044 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.060
+Unexpected IOException with stream: 20:36:54.060 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.072
+Unexpected IOException with stream: 20:36:54.071 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.081
+Unexpected IOException with stream: 20:36:54.080 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.093
+Unexpected IOException with stream: 20:36:54.092 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.108
+Unexpected IOException with stream: 20:36:54.107 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.117
+Unexpected IOException with stream: 20:36:54.116 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.141
+Unexpected IOException with stream: 20:36:54.134 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.155
+Unexpected IOException with stream: 20:36:54.149 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.193
+Unexpected IOException with stream: 20:36:54.192 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.213
+Unexpected IOException with stream: 20:36:54.211 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.252
+Unexpected IOException with stream: 20:36:54.250 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.264
+Unexpected IOException with stream: 20:36:54.263 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.327
+Unexpected IOException with stream: 20:36:54.325 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.384
+Unexpected IOException with stream: 20:36:54.383 [main] INFO  selenium.PageDriver - testApp
+
+
+# Created at 2019-06-22T20:36:54.398
+Unexpected IOException with stream: 20:36:54.397 [main] INFO  selenium.PageDriver - Test completed on: Sat Jun 22 20:36:51 MST 2019
+
+
+# Created at 2019-06-22T20:37:07.949
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGXmlTestSuite,TestSuite,null,null,null
+
+

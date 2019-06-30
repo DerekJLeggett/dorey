@@ -1,0 +1,57 @@
+# Created at 2019-06-29T11:26:22.337
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-06-29T11:26:35.196
+Unexpected IOException: 8,1,selenium.DoreyTest,testNavy(selenium.DoreyTest),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),DoreyTest.testNavy:134 \00BB Timeout Expected condition failed: waiting for presen...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)\000A\0009at selenium.DoreyTest.testNavy(DoreyTest.java:134)\000ACaused by: org.openqa.selenium.NoSuchElementException: \000Ano such element: Unable to locate element: {"method":"css selector"\002C"selector":"#nav\005C-derek\005C-tab"}\000A  (Session info: chrome=75.0.3770.80)\000AFor documentation on this error\002C please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.80\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: /tmp/.com.google.Chrome.CC9GE3}\002C goog:chromeOptions: {debuggerAddress: localhost:46021}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 97aaa457ccfaf91462bd6890dd8...}\000ASession ID: 97aaa457ccfaf91462bd6890dd86e828\000A*** Element info: {Using=id\002C value=nav-derek-tab}\000A\0009at selenium.DoreyTest.testNavy(DoreyTest.java:134)\000A
+
+
+# Created at 2019-06-29T11:26:35.208
+Unexpected IOException with stream: 11:26:35.207 [TestNG-tests-1] INFO  selenium.PageDriver - Test failed: testNavy
+
+
+# Created at 2019-06-29T11:26:35.234
+Unexpected IOException: 5,1,selenium.DoreyTest,testStarWars(selenium.DoreyTest),selenium.DoreyTest,null,null
+
+
+# Created at 2019-06-29T11:26:35.242
+Unexpected IOException with stream: 11:26:35.241 [TestNG-tests-1] INFO  selenium.PageDriver - Starting test: testStarWars
+
+
+# Created at 2019-06-29T11:26:35.247
+Unexpected IOException with stream: 11:26:35.246 [TestNG-tests-1] INFO  selenium.PageDriver - Click element By.id: nav-derek-tab
+
+
+# Created at 2019-06-29T11:26:35.253
+Unexpected IOException with stream: 11:26:35.253 [TestNG-tests-1] INFO  selenium.PageDriver - Wait for element By.id: nav-derek-tab
+
+
+# Created at 2019-06-29T11:26:55.602
+Unexpected IOException: 8,1,selenium.DoreyTest,testStarWars(selenium.DoreyTest),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),null,Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval),DoreyTest.testStarWars:117 \00BB Timeout Expected condition failed: waiting for pr...,org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)\000A\0009at selenium.DoreyTest.testStarWars(DoreyTest.java:117)\000ACaused by: org.openqa.selenium.NoSuchElementException: \000Ano such element: Unable to locate element: {"method":"css selector"\002C"selector":"#nav\005C-derek\005C-tab"}\000A  (Session info: chrome=75.0.3770.80)\000AFor documentation on this error\002C please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-0BUJ7PH'\002C ip: '192.168.1.15'\002C os.name: 'Windows 10'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '1.8.0_201'\000ADriver info: org.openqa.selenium.remote.RemoteWebDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 75.0.3770.80\002C chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7...\002C userDataDir: /tmp/.com.google.Chrome.CC9GE3}\002C goog:chromeOptions: {debuggerAddress: localhost:46021}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: LINUX\002C platformName: LINUX\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webdriver.remote.sessionid: 97aaa457ccfaf91462bd6890dd8...}\000ASession ID: 97aaa457ccfaf91462bd6890dd86e828\000A*** Element info: {Using=id\002C value=nav-derek-tab}\000A\0009at selenium.DoreyTest.testStarWars(DoreyTest.java:117)\000A
+
+
+# Created at 2019-06-29T11:26:55.646
+Unexpected IOException with stream: 11:26:55.645 [TestNG-tests-1] INFO  selenium.PageDriver - Test failed: testStarWars
+
+
+# Created at 2019-06-29T11:26:55.729
+Unexpected IOException: 5,1,selenium.DoreyTest,testWorld(selenium.DoreyTest),selenium.DoreyTest,null,null
+
+
+# Created at 2019-06-29T11:26:55.788
+Unexpected IOException with stream: 11:26:55.783 [TestNG-tests-1] INFO  selenium.PageDriver - Starting test: testWorld
+
+
+# Created at 2019-06-29T11:26:55.813
+Unexpected IOException with stream: 11:26:55.811 [TestNG-tests-1] INFO  selenium.PageDriver - Click element By.id: nav-derek-tab
+
+
+# Created at 2019-06-29T11:26:55.830
+Unexpected IOException with stream: 11:26:55.829 [TestNG-tests-1] INFO  selenium.PageDriver - Wait for element By.id: nav-derek-tab
+
+

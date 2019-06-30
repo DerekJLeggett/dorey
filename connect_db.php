@@ -1,7 +1,7 @@
 <?php # CONNECT TO MySQL DATABASE.
 
 # Connect  on 'localhost' for user 'mike' with password 'easysteps' to database 'site_db'.
-$dbc = @mysqli_connect ( 'localhost', 'root', 'raspberry', 'world' )
+$dbc = @mysqli_connect ( 'localhost', 'root', 'Nuggets', 'world' )
 
 # Otherwise fail gracefully and explain the error. 
 OR die ( mysqli_connect_error() ) ;

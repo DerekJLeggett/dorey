@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Dorey Smoke" parallel="tests" thread-count="4" data-provider-thread-count="5">
+    <listeners>
+        <listener class-name="selenium.ReportingListener" />
+    </listeners>
+    <test name="Dorey Test - Chrome">
+        <parameter name="browserId" value="1" />
+        <parameter name="browserName" value="Chrome" />
+        <parameter name="location" value="GRID" />
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test>
+    <!-- <test name="Dorey Test - Edge">
+        <parameter name="browserId" value="2" />
+        <parameter name="browserName" value="Edge" />
+        <parameter name="location" value="LOCALHOST" />
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test> -->
+    <test name="Dorey Test - Firefox">
+        <parameter name="browserId" value="3" />
+        <parameter name="browserName" value="Firefox" />
+        <parameter name="location" value="GRID" />
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test>
+    <!-- <test name="Dorey Test - Opera">
+        <parameter name="browserId" value="4" />
+        <parameter name="browserName" value="Opera" />
+        <parameter name="location" value="LOCALHOST" />
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test> -->
+</suite>

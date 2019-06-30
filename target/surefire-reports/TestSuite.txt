@@ -1,0 +1,96 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 273.374 s <<< FAILURE! - in TestSuite
+testLorisPage(selenium.DoreyTest)  Time elapsed: 3.733 s  <<< FAILURE!
+org.openqa.selenium.JavascriptException: 
+Cyclic object value
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190529130856, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2397, moz:profile: /tmp/rust_mozprofile.AaF9uU..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.18.0-24-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3be293e5-c9e0-4f84-a3d6-05f...}
+Session ID: 3be293e5-c9e0-4f84-a3d6-05f06c520f94
+	at selenium.DoreyTest.testLorisPage(DoreyTest.java:95)
+
+testMarvel(selenium.DoreyTest)  Time elapsed: 11.096 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)
+	at selenium.DoreyTest.testMarvel(DoreyTest.java:191)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: #nav\-derek\-tab
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190529130856, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2397, moz:profile: /tmp/rust_mozprofile.AaF9uU..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.18.0-24-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3be293e5-c9e0-4f84-a3d6-05f...}
+Session ID: 3be293e5-c9e0-4f84-a3d6-05f06c520f94
+*** Element info: {Using=id, value=nav-derek-tab}
+	at selenium.DoreyTest.testMarvel(DoreyTest.java:191)
+
+testNPS(selenium.DoreyTest)  Time elapsed: 20.064 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)
+	at selenium.DoreyTest.testNPS(DoreyTest.java:175)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: #nav\-derek\-tab
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190529130856, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2397, moz:profile: /tmp/rust_mozprofile.AaF9uU..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.18.0-24-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3be293e5-c9e0-4f84-a3d6-05f...}
+Session ID: 3be293e5-c9e0-4f84-a3d6-05f06c520f94
+*** Element info: {Using=id, value=nav-derek-tab}
+	at selenium.DoreyTest.testNPS(DoreyTest.java:175)
+
+testNavy(selenium.DoreyTest)  Time elapsed: 20.498 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)
+	at selenium.DoreyTest.testNavy(DoreyTest.java:134)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: #nav\-derek\-tab
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190529130856, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2397, moz:profile: /tmp/rust_mozprofile.AaF9uU..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.18.0-24-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3be293e5-c9e0-4f84-a3d6-05f...}
+Session ID: 3be293e5-c9e0-4f84-a3d6-05f06c520f94
+*** Element info: {Using=id, value=nav-derek-tab}
+	at selenium.DoreyTest.testNavy(DoreyTest.java:134)
+
+testStarWars(selenium.DoreyTest)  Time elapsed: 20.366 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)
+	at selenium.DoreyTest.testStarWars(DoreyTest.java:117)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: #nav\-derek\-tab
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190529130856, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2397, moz:profile: /tmp/rust_mozprofile.AaF9uU..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.18.0-24-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3be293e5-c9e0-4f84-a3d6-05f...}
+Session ID: 3be293e5-c9e0-4f84-a3d6-05f06c520f94
+*** Element info: {Using=id, value=nav-derek-tab}
+	at selenium.DoreyTest.testStarWars(DoreyTest.java:117)
+
+testWorld(selenium.DoreyTest)  Time elapsed: 20.493 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: nav-derek-tab (tried for 20 second(s) with 500 milliseconds interval)
+	at selenium.DoreyTest.testWorld(DoreyTest.java:101)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: #nav\-derek\-tab
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 67.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190529130856, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 2397, moz:profile: /tmp/rust_mozprofile.AaF9uU..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.18.0-24-generic, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3be293e5-c9e0-4f84-a3d6-05f...}
+Session ID: 3be293e5-c9e0-4f84-a3d6-05f06c520f94
+*** Element info: {Using=id, value=nav-derek-tab}
+	at selenium.DoreyTest.testWorld(DoreyTest.java:101)
+
+testNavy(selenium.DoreyTest)  Time elapsed: 3.477 s  <<< FAILURE!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=75.0.3770.80)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-0BUJ7PH', ip: '192.168.1.15', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 75.0.3770.80, chrome: {chromedriverVersion: 75.0.3770.8 (681f24ea911fe7..., userDataDir: /tmp/.com.google.Chrome.ylE49j}, goog:chromeOptions: {debuggerAddress: localhost:34657}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 0d7148c0b296cf0014bb54f257c...}
+Session ID: 0d7148c0b296cf0014bb54f257c67907
+	at selenium.DoreyTest.testNavy(DoreyTest.java:142)
+
