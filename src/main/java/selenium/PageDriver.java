@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import com.paulhammant.ngwebdriver.NgWebDriver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,11 +16,16 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import net.sf.uadetector.ReadableUserAgent;
+import net.sf.uadetector.UserAgentStringParser;
+import net.sf.uadetector.service.UADetectorServiceFactory;
 
 public class PageDriver {
     WebDriver webDriver;
     NgWebDriver ngWebDriver;
+    Utility utility = new Utility();
     private static Logger logger = LoggerFactory.getLogger(PageDriver.class);
+    private String currentURL = "";
 
     /**
      * The Constructor
@@ -36,7 +39,7 @@ public class PageDriver {
      * Visit the specified url
      */
     public void navigateTo(String url) {
-        logger.info(url);
+        logger.info("Navigate to: {}", url);
         webDriver.navigate().to(url);
         waitForBrowser();
     }
@@ -76,8 +79,8 @@ public class PageDriver {
      */
     public void waitForElement(By by) {
         logger.info("Wait for element {}", by);
-        WebElement myDynamicElement = (new WebDriverWait(webDriver, 20))
-                .until(ExpectedConditions.presenceOfElementLocated(by));
+        new WebDriverWait(webDriver, 20).until(ExpectedConditions.presenceOfElementLocated(by));
+        waitForBrowser();
     }
 
     /**
@@ -92,10 +95,14 @@ public class PageDriver {
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
         wait.until(pageLoadCondition);
         ngWebDriver.waitForAngularRequestsToFinish();
-        getCookies();
-        getResources();
-        getUserAgent();
-        getTimings();
+        // Get browser metrics if the url/path changed.
+        if (!currentURL.equalsIgnoreCase(webDriver.getCurrentUrl())) {
+            getCookies();
+            getResources();
+            getUserAgent();
+            getTimings();
+            currentURL = webDriver.getCurrentUrl();
+        }
     }
 
     /**
@@ -123,7 +130,7 @@ public class PageDriver {
      */
     public String selectRandomOption(By by) {
         List<WebElement> options = getSelectOptions(by);
-        String text = options.get(Utility.getRandomNumberInRange(1, options.size())).getText();
+        String text = options.get(Utility.getRandomNumberInRange(1, options.size() - 1)).getText();
         selectByVisibleText(by, text);
         return text;
     }
@@ -175,12 +182,13 @@ public class PageDriver {
     /**
      * Get cookies for the current domain
      */
-    public void getCookies() {
+    public Set<Cookie> getCookies() {
         Set<Cookie> cookies = webDriver.manage().getCookies();
         logger.info("Number of cookies: {}", cookies.size());
         for (Cookie cookie : cookies) {
             logger.info("Cookie: {}-{}-{}", cookie.getDomain(), cookie.getName(), cookie.getValue());
         }
+        return cookies;
     }
 
     /**
@@ -199,7 +207,6 @@ public class PageDriver {
         Double loadEventEnd = Double.parseDouble(pagePerformance.get("loadEventEnd").toString());
         Double responseEnd = Double.parseDouble(pagePerformance.get("responseEnd").toString());
         Double responseStart = Double.parseDouble(pagePerformance.get("responseStart").toString());
-        Double domComplete = Double.parseDouble(pagePerformance.get("domComplete").toString());
         Double domInteractive = Double.parseDouble(pagePerformance.get("domInteractive").toString());
         Double domContentLoadedEventEnd = Double
                 .parseDouble(pagePerformance.get("domContentLoadedEventEnd").toString());
@@ -210,66 +217,54 @@ public class PageDriver {
         timings.setPageLoadTime(loadEventEnd - responseEnd);
         timings.setCompleteTime(loadEventEnd - navigationStart);
         timings.setRedirectTime(redirectEnd - redirectStart);
-        Double timeToFirstByte = responseStart - fetchStart;
-        Double timeToLastByte = responseEnd - fetchStart;
-        Double timeToInteract = domInteractive - responseStart;
-        Double docLoaded = domContentLoadedEventEnd - fetchStart;
-        logger.info("Network: {}, Redirect: {}, Page Render: {}, Complete: {}", timings.getNetworkLatency(),
-                timings.getRedirectTime(), timings.getPageLoadTime(), timings.getCompleteTime());
-        logger.info("TTFB: {}, TTLB {}, TTI {}, DocLoad {}", timeToFirstByte, timeToLastByte, timeToInteract,
-                docLoaded);
+        timings.setTimeToFirstByte(responseStart - fetchStart);
+        timings.setTimeToLastByte(responseEnd - fetchStart);
+        timings.setTimeToInteract(domInteractive - responseStart);
+        timings.setDocLoaded(domContentLoadedEventEnd - fetchStart);
+        utility.logTimings(timings, currentURL, StartUp.baseUrl);
         return timings;
     }
 
     /**
-     * Get artifacts like .css, .js, etc...
+     * Get artifact counts like .css, .js, etc...
      * 
      * @param webDriver
      */
-    public void getResources() {
-        int numLink = 0;
-        int numScript = 0;
-        int numImage = 0;
-        int numXmlHttp = 0;
-        int numCss = 0;
-        int numIframe = 0;
-        int numOther = 0;
-        int numUnknown = 0;
+    public Resources getResources() {
+        Resources resources = new Resources();
         @SuppressWarnings("unchecked")
         ArrayList<Object> pageResources = (ArrayList<Object>) ((JavascriptExecutor) webDriver)
                 .executeScript("return window.performance.getEntriesByType('resource');");
-        logger.info("Page Resources: {}", pageResources.size());
         for (Object resourceObj : pageResources) {
             @SuppressWarnings("unchecked")
             Map<String, Object> resource = (Map<String, Object>) resourceObj;
             switch (resource.get("initiatorType").toString()) {
             case "link":
-                numLink += 1;
+                resources.setNumLink(resources.getNumLink() + 1);
                 break;
             case "script":
-                numScript += 1;
+                resources.setNumScript(resources.getNumScript() + 1);
                 break;
             case "img":
-                numImage += 1;
+                resources.setNumImage(resources.getNumImage() + 1);
                 break;
             case "xmlhttprequest":
-                numXmlHttp += 1;
+                resources.setNumXmlHttp(resources.getNumXmlHttp() + 1);
                 break;
             case "css":
-                numCss += 1;
+                resources.setNumCss(resources.getNumCss() + 1);
                 break;
             case "iframe":
-                numIframe += 1;
+                resources.setNumIframe(resources.getNumIframe() + 1);
                 break;
             case "other":
-                numOther += 1;
+                resources.setNumOther(resources.getNumOther() + 1);
                 break;
             default:
-                numUnknown += 1;
+                resources.setNumUnknown(resources.getNumUnknown() + 1);
             }
         }
-        logger.info("Links: {}, Scripts: {}, Images: {}, XMLHttp: {}, CSS: {}, IFrame: {}, Other: {}, Unknown {}",
-                numLink, numScript, numImage, numXmlHttp, numCss, numIframe, numOther, numUnknown);
+        return resources;
     }
 
     /**
@@ -281,6 +276,12 @@ public class PageDriver {
     public String getUserAgent() {
         String userAgent = (String) ((JavascriptExecutor) webDriver).executeScript("return navigator.userAgent;");
         logger.info("User agent: {}", userAgent);
-        return userAgent.toString();
+        UserAgentStringParser parser = UADetectorServiceFactory.getResourceModuleParser();
+        ReadableUserAgent agent = parser.parse(userAgent);
+        StartUp.browser.setName(agent.getName());
+        StartUp.browser.setVersion(agent.getVersionNumber().getMajor() + "." + agent.getVersionNumber().getMinor());
+        StartUp.operatingSystem.setName(agent.getOperatingSystem().getName());
+        StartUp.operatingSystem.setVersion(agent.getOperatingSystem().getVersionNumber().toString());
+        return userAgent;
     }
 }

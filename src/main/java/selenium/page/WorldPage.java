@@ -1,9 +1,7 @@
 package selenium.page;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -11,16 +9,17 @@ import selenium.PageDriver;
 public class WorldPage {
 
     PageDriver pageDriver;
-    By countrySelect = By.id("countrySelect");
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public WorldPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public WorldPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
+
+    By countrySelect = By.id("countrySelect");
 
     /**
      * Select a country

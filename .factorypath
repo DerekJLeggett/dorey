@@ -33,4 +33,8 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-core/2.7/log4j-core-2.7.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-slf4j-impl/2.7/log4j-slf4j-impl-2.7.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/sf/uadetector/uadetector-resources/2014.10/uadetector-resources-2014.10.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/sf/uadetector/uadetector-core/0.9.22/uadetector-core-0.9.22.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/net/sf/qualitycheck/quality-check/1.3/quality-check-1.3.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>

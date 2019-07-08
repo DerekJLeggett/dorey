@@ -1,9 +1,7 @@
 package selenium.page;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -11,16 +9,17 @@ import selenium.PageDriver;
 public class StarWarsPage {
 
     PageDriver pageDriver;
-    By filmSelect = By.id("filmSelect");
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public StarWarsPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public StarWarsPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
+
+    By filmSelect = By.id("filmSelect");
 
     /**
      * Selct a film

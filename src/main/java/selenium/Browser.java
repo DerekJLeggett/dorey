@@ -3,10 +3,14 @@ package selenium;
 public class Browser {
     Integer id;
     String name;
+    String version;
     Location location;
 
     enum Location {
         LOCALHOST, GRID;
+
+        private Location() {
+        }
     }
 
     public Integer getId() {
@@ -31,5 +35,13 @@ public class Browser {
 
     public Location getLocation() {
         return this.location;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

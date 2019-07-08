@@ -3,7 +3,6 @@ package selenium.page;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -11,16 +10,17 @@ import selenium.PageDriver;
 public class NavyPage {
 
     PageDriver pageDriver;
-    By shipTypeSelect = By.id("shipTypeSelect");
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public NavyPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public NavyPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
+
+    By shipTypeSelect = By.id("shipTypeSelect");
 
     /**
      * Selct a country

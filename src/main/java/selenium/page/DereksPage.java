@@ -1,21 +1,21 @@
 package selenium.page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import selenium.PageDriver;
+import selenium.StartUp;
 
-public class DereksPage {
+public class DereksPage extends StartUp {
 
     PageDriver pageDriver;
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public DereksPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public DereksPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
 
     /**

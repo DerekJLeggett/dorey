@@ -1,7 +1,6 @@
 package selenium.page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 import selenium.PageDriver;
 
@@ -9,8 +8,13 @@ public class HomePage {
 
     PageDriver pageDriver;
 
-    public HomePage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    /**
+     * The constructor
+     * 
+     * @param pageDriver
+     */
+    public HomePage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
 
     /**

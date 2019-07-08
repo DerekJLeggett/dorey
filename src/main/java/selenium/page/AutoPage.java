@@ -1,9 +1,7 @@
 package selenium.page;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -11,17 +9,18 @@ import selenium.PageDriver;
 public class AutoPage {
 
     PageDriver pageDriver;
-    By typeSelect = By.id("typeSelect");
-    By makeSelect = By.id("makeSelect");
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public AutoPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public AutoPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
+
+    By typeSelect = By.id("typeSelect");
+    By makeSelect = By.id("makeSelect");
 
     /**
      * Select a vehicle type

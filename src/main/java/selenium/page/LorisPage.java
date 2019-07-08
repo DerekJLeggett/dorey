@@ -3,7 +3,6 @@ package selenium.page;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -13,12 +12,12 @@ public class LorisPage {
     PageDriver pageDriver;
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public LorisPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public LorisPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
 
     /**

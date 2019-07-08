@@ -1,9 +1,7 @@
 package selenium.page;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -11,16 +9,17 @@ import selenium.PageDriver;
 public class MarvelPage {
 
     PageDriver pageDriver;
-    By characterSelect = By.id("characterSelect");
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public MarvelPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public MarvelPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
+
+    By characterSelect = By.id("characterSelect");
 
     /**
      * Selct a character

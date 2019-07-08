@@ -1,23 +1,12 @@
 package selenium;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.UnknownHostException;
 import java.util.List;
-import java.util.Properties;
-
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import selenium.Browser.Location;
 import selenium.page.AutoPage;
 import selenium.page.DereksPage;
 import selenium.page.HomePage;
@@ -42,39 +31,18 @@ public class DoreyTest extends StartUp {
     private PerformancePage performancePage;
     private static Logger logger = LoggerFactory.getLogger(DoreyTest.class);
 
-    @Override
-    @Parameters({ "browserId", "browserName", "location" })
     @BeforeClass
-    public void init(@Optional("1") Integer browserId, @Optional("Chrome") String browserName,
-            @Optional("LOCALHOST") Location location) throws MalformedURLException, UnknownHostException {
-        utility = new Utility();
-        Properties props = utility.loadProperties();
-        baseURL = props.getProperty("baseUrl");
-        gridUrl = props.getProperty("gridUrl");
-        browser = new Browser();
-        browser.setId(browserId);
-        browser.setName(browserName);
-        browser.setLocation(location);
-        webDriver = getWebDriver(browser);
-        pageDriver = new PageDriver(webDriver);
-        homePage = new HomePage(webDriver);
-        lorisPage = new LorisPage(webDriver);
-        dereksPage = new DereksPage(webDriver);
-        worldPage = new WorldPage(webDriver);
-        starWarsPage = new StarWarsPage(webDriver);
-        marvelPage = new MarvelPage(webDriver);
-        navyPage = new NavyPage(webDriver);
-        npsPage = new NpsPage(webDriver);
-        autoPage = new AutoPage(webDriver);
-        performancePage = new PerformancePage(webDriver);
-        webDriver.manage().window().maximize();
-        pageDriver.navigateTo(baseURL);
-    }
-
-    @Override
-    @AfterClass
-    public void tearDown() {
-        webDriver.quit();
+    public void init() {
+        homePage = new HomePage(pageDriver);
+        lorisPage = new LorisPage(pageDriver);
+        dereksPage = new DereksPage(pageDriver);
+        worldPage = new WorldPage(pageDriver);
+        starWarsPage = new StarWarsPage(pageDriver);
+        marvelPage = new MarvelPage(pageDriver);
+        navyPage = new NavyPage(pageDriver);
+        npsPage = new NpsPage(pageDriver);
+        autoPage = new AutoPage(pageDriver);
+        performancePage = new PerformancePage(pageDriver);
     }
 
     @Test(enabled = true)
@@ -137,17 +105,10 @@ public class DoreyTest extends StartUp {
         for (WebElement shipType : shipTypes) {
             logger.info("Ship type: {}", shipType);
             navyPage.selectShipType(shipType.getText());
-            List<WebElement> ships = navyPage.getShips();
-            for (WebElement ship : ships) {
-                logger.info("Ship name: {}", ship.getText());
-                // String originalHandle = webDriver.getWindowHandle();
-                // ship.click();
-                // pageDriver.closeNewTab(originalHandle);
-            }
         }
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testPerformance() {
         homePage.clickDereksTab();
         dereksPage.clickPerformance();

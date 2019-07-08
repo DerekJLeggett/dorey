@@ -3,7 +3,6 @@ package selenium.page;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import selenium.PageDriver;
@@ -11,16 +10,17 @@ import selenium.PageDriver;
 public class NpsPage {
 
     PageDriver pageDriver;
-    By stateSelect = By.id("stateSelect");
 
     /**
-     * The Constructor
+     * The constructor
      * 
-     * @param webDriver
+     * @param pageDriver
      */
-    public NpsPage(WebDriver webDriver) {
-        pageDriver = new PageDriver(webDriver);
+    public NpsPage(PageDriver pageDriver) {
+        this.pageDriver = pageDriver;
     }
+
+    By stateSelect = By.id("stateSelect");
 
     /**
      * Selct a state
@@ -45,6 +45,9 @@ public class NpsPage {
         return pageDriver.selectRandomOption(stateSelect);
     }
 
+    /**
+     * Get a the list of park names displayed
+     */
     public List<WebElement> getParkNames() {
         return pageDriver.getElements(By.xpath("//h2//a[@target='_blank']"));
     }

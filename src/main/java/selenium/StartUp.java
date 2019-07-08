@@ -2,7 +2,6 @@ package selenium;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -26,41 +25,48 @@ import org.testng.annotations.Parameters;
 import selenium.Browser.Location;
 
 public class StartUp {
-    public String baseURL;
+    public static String baseUrl;
     public String gridUrl;
     public WebDriver webDriver;
     public PageDriver pageDriver;
-    public Browser browser;
+    public static OperatingSystem operatingSystem = new OperatingSystem();
+    public static Browser browser = new Browser();
     public Utility utility;
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
 
-    @Parameters({ "browserId", "browserName", "location" })
+    @Parameters({ "browserName", "location" })
     @BeforeSuite(alwaysRun = true)
-    public void init(@Optional("3") Integer browserId, @Optional("Firefox") String browserName,
-            @Optional("LOCALHOST") Location location) throws UnknownHostException, MalformedURLException {
-        browser = new Browser();
-        browser.setId(browserId);
-        browser.setName(browserName);
-        browser.setLocation(location);
+    public void init(@Optional("Chrome") String browserName, @Optional("LOCALHOST") String location) {
         utility = new Utility();
+        browser.setName(browserName);
+        if (location.equalsIgnoreCase("LOCALHOST")) {
+            browser.setLocation(Location.LOCALHOST);
+        } else if (location.equalsIgnoreCase("GRID")) {
+            browser.setLocation(Location.GRID);
+        }
         Properties props = utility.loadProperties();
-        baseURL = props.getProperty("baseUrl");
+        baseUrl = props.getProperty("baseUrl");
         gridUrl = props.getProperty("gridUrl");
+        logger.info("Base URL: {}, Grid URL: {}", baseUrl, gridUrl);
         webDriver = getWebDriver(browser);
         pageDriver = new PageDriver(webDriver);
         pageDriver.maximizeBrowser();
+        pageDriver.navigateTo(baseUrl);
     }
 
-    public WebDriver getWebDriver(Browser browser) throws MalformedURLException, UnknownHostException {
-        switch (browser.name) {
+    public WebDriver getWebDriver(Browser browser) {
+        switch (browser.getName()) {
         case "Chrome":
             System.setProperty("webdriver.chrome.driver", System.getenv("webdriver.chrome.driver"));
             ChromeOptions chromeOptions = new ChromeOptions();
-            // chromeOptions.addArguments("headless");
-            if (browser.location == Browser.Location.LOCALHOST) {
+            if (browser.getLocation() == Location.LOCALHOST) {
                 webDriver = new ChromeDriver(chromeOptions);
-            } else if (browser.location == Browser.Location.GRID) {
-                webDriver = new RemoteWebDriver(new URL(gridUrl), chromeOptions);
+            } else if (browser.getLocation() == Location.GRID) {
+                try {
+                    webDriver = new RemoteWebDriver(new URL(gridUrl), chromeOptions);
+                } catch (MalformedURLException e) {
+                    logger.error(e.getMessage());
+                }
             }
             break;
         case "Edge":
@@ -70,20 +76,27 @@ public class StartUp {
         case "Firefox":
             System.setProperty("webdriver.gecko.driver", System.getenv("webdriver.gecko.driver"));
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            // firefoxOptions.addArguments("-headless");
-            if (browser.location == Browser.Location.LOCALHOST) {
+            if (browser.getLocation() == Location.LOCALHOST) {
                 webDriver = new FirefoxDriver(firefoxOptions);
-            } else if (browser.location == Browser.Location.GRID) {
-                webDriver = new RemoteWebDriver(new URL(gridUrl), firefoxOptions);
+            } else if (browser.getLocation() == Location.GRID) {
+                try {
+                    webDriver = new RemoteWebDriver(new URL(gridUrl), firefoxOptions);
+                } catch (MalformedURLException e) {
+                    logger.error(e.getMessage());
+                }
             }
             break;
         case "Safari":
             SafariOptions safariOptions = new SafariOptions();
-            webDriver = new RemoteWebDriver(new URL("http://ondemand.saucelabs.com:80/wd/hub"), safariOptions);
+            try {
+                webDriver = new RemoteWebDriver(new URL("http://ondemand.saucelabs.com:80/wd/hub"), safariOptions);
+            } catch (MalformedURLException e) {
+                logger.error(e.getMessage());
+            }
             break;
         case "Opera":
             OperaOptions operaOptions = new OperaOptions();
-            if (browser.location == Browser.Location.LOCALHOST) {
+            if (browser.getLocation() == Location.LOCALHOST) {
                 operaOptions.setBinary("C:\\Users\\derek\\AppData\\Local\\Programs\\Opera\\60.0.3255.170\\opera.exe");
                 webDriver = new OperaDriver(operaOptions);
             }
