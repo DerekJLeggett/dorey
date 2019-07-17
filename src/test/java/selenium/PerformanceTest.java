@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 
 /**
  * Visit various websites and record performance metrics.
@@ -12,16 +13,23 @@ import org.testng.annotations.Test;
 public class PerformanceTest extends StartUp {
 
         private static Logger logger = LoggerFactory.getLogger(PerformanceTest.class);
+        Company[] companies;
+        Gson gson;
+        String company_json;
+        Utility utility;
+
+        @BeforeClass
+        public void initializeAll() {
+                gson = new Gson();
+                utility = new Utility();
+                company_json = utility.sendGet(baseUrl + "/api/getCompanies.php");
+                companies = gson.fromJson(company_json, Company[].class);
+        }
 
         @DataProvider(parallel = false)
         public Object[][] companyList() throws Exception {
-                Company[] companies;
-                Gson gson = new Gson();
-                String company_json;
                 Object[][] returnValue = null;
                 try {
-                        company_json = utility.sendGet(baseUrl + "/api/getCompanies.php");
-                        companies = gson.fromJson(company_json, Company[].class);
                         returnValue = new Object[companies.length][1];
                         int index = 0;
                         for (Object[] each : returnValue) {
@@ -35,6 +43,7 @@ public class PerformanceTest extends StartUp {
 
         @Test(dataProvider = "companyList")
         public void testPagePerformance(String url) {
-                pageDriver.navigateTo("https://" + url);
+                logger.info("Url: {}", url);
+                pageDriver.navigateTo(url);
         }
 }

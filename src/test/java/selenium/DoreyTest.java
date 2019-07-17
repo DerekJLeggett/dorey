@@ -32,7 +32,7 @@ public class DoreyTest extends StartUp {
     private static Logger logger = LoggerFactory.getLogger(DoreyTest.class);
 
     @BeforeClass
-    public void init() {
+    public void initializeAll() {
         homePage = new HomePage(pageDriver);
         lorisPage = new LorisPage(pageDriver);
         dereksPage = new DereksPage(pageDriver);
@@ -136,15 +136,13 @@ public class DoreyTest extends StartUp {
         homePage.clickDereksTab();
         dereksPage.clickNPS();
         String state = npsPage.selectRandomState();
-        List<WebElement> parks = npsPage.getParkNames();
-        Assert.assertNotNull(parks.get(0).getText());
         logger.info("State selected: {}", state);
-        for (WebElement park : parks) {
-            logger.info("Park name: {}", park.getText());
-            String originalHandle = webDriver.getWindowHandle();
-            park.click();
-            pageDriver.closeNewTab(originalHandle);
-        }
+        List<WebElement> parks = npsPage.getParkNames();
+        WebElement park = parks.get(Utility.getRandomNumberInRange(0, parks.size() - 1));
+        logger.info("Park name: {}", park.getText());
+        String originalHandle = webDriver.getWindowHandle();
+        park.click();
+        pageDriver.closeNewTab(originalHandle);
     }
 
     @Test(enabled = true)

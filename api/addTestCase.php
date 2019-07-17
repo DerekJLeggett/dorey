@@ -7,8 +7,9 @@
    $testSuiteId = $_POST['testSuiteId'];
    $name = $_POST['name'];
    $didPass = $_POST['didPass'];
-   $q = "INSERT INTO `testCases`(`browserName`, `browserVersion`, `operatingSystem`, `operatingSystemVersion`, `testSuiteId`, `name`, `didPass`, `dateTime`) VALUES 
-                             ('$browserName', '$browserVersion', '$operatingSystem', '$operatingSystemVersion', '$testSuiteId', '$name', '$didPass', NOW());"; 
+   $error = $_POST['error'];
+   $q = "INSERT INTO `testCases`(`browserName`, `browserVersion`, `operatingSystem`, `operatingSystemVersion`, `testSuiteId`, `name`, `didPass`, `error`, `dateTime`) VALUES 
+                             ('$browserName', '$browserVersion', '$operatingSystem', '$operatingSystemVersion', '$testSuiteId', '$name', '$didPass', '$error', NOW());"; 
    if (mysqli_query($dbc, $q)) {
         $last_id = mysqli_insert_id($dbc);
         echo $last_id;

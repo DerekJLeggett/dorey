@@ -13,14 +13,15 @@ import org.testng.ITestResult;
 public class ReportingListener implements ITestListener {
     private static Logger logger = LoggerFactory.getLogger(ReportingListener.class);
     Utility utility = new Utility();
-    private String testSuiteId;
+    public static Integer testSuiteId;
+    public static Integer testCaseId;
 
     @Override
     public void onStart(ITestContext testContext) {
         logger.info("Starting suite: {}", testContext.getName());
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
         urlParameters.add(new BasicNameValuePair("name", testContext.getName()));
-        testSuiteId = utility.sendPost(StartUp.baseUrl + "/api/addTestSuite.php", urlParameters);
+        testSuiteId = Integer.parseInt(utility.sendPost(StartUp.baseUrl + "/api/addTestSuite.php", urlParameters));
         logger.info("Test Suite Id: {}", testSuiteId);
     }
 
@@ -45,7 +46,8 @@ public class ReportingListener implements ITestListener {
             logger.info("Paramter: {}", parameter.toString());
         }
         logger.info("Test passed: {}", testResult.getName());
-        utility.logTestCase(testResult, testSuiteId, "1", StartUp.browser, StartUp.operatingSystem, StartUp.baseUrl);
+        testCaseId = Integer.parseInt(utility.logTestCase(testResult, testSuiteId.toString(), "1", StartUp.browser,
+                StartUp.operatingSystem, StartUp.baseUrl));
     }
 
     @Override
@@ -61,7 +63,8 @@ public class ReportingListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult testResult) {
         logger.info("Test failed: {}", testResult.getName());
-        utility.logTestCase(testResult, testSuiteId, "0", StartUp.browser, StartUp.operatingSystem, StartUp.baseUrl);
+        utility.logTestCase(testResult, testSuiteId.toString(), "0", StartUp.browser, StartUp.operatingSystem,
+                StartUp.baseUrl);
     }
 
     @Override

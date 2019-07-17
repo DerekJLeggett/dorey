@@ -163,6 +163,7 @@ public class Utility {
         urlParameters.add(new BasicNameValuePair("testSuiteId", testSuiteId));
         urlParameters.add(new BasicNameValuePair("name", testResult.getName()));
         urlParameters.add(new BasicNameValuePair("didPass", didPass));
+        urlParameters.add(new BasicNameValuePair("error", ""));
         return sendPost(baseUrl + "/api/addTestCase.php", urlParameters);
     }
 

@@ -19,9 +19,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
 import selenium.Browser.Location;
 
 public class StartUp {
@@ -31,20 +28,18 @@ public class StartUp {
     public PageDriver pageDriver;
     public static OperatingSystem operatingSystem = new OperatingSystem();
     public static Browser browser = new Browser();
-    public Utility utility;
+    public Utility utility = new Utility();
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
+    Properties props = utility.loadProperties();
 
-    @Parameters({ "browserName", "location" })
     @BeforeSuite(alwaysRun = true)
-    public void init(@Optional("Chrome") String browserName, @Optional("LOCALHOST") String location) {
-        utility = new Utility();
-        browser.setName(browserName);
-        if (location.equalsIgnoreCase("LOCALHOST")) {
+    public void init() {
+        browser.setName(props.getProperty("browser"));
+        if (props.getProperty("location").equalsIgnoreCase("LOCALHOST")) {
             browser.setLocation(Location.LOCALHOST);
-        } else if (location.equalsIgnoreCase("GRID")) {
+        } else if (props.getProperty("location").equalsIgnoreCase("GRID")) {
             browser.setLocation(Location.GRID);
         }
-        Properties props = utility.loadProperties();
         baseUrl = props.getProperty("baseUrl");
         gridUrl = props.getProperty("gridUrl");
         logger.info("Base URL: {}, Grid URL: {}", baseUrl, gridUrl);
@@ -52,6 +47,11 @@ public class StartUp {
         pageDriver = new PageDriver(webDriver);
         pageDriver.maximizeBrowser();
         pageDriver.navigateTo(baseUrl);
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void tearDown() {
+        webDriver.quit();
     }
 
     public WebDriver getWebDriver(Browser browser) {
@@ -105,8 +105,4 @@ public class StartUp {
         return webDriver;
     }
 
-    @AfterSuite(alwaysRun = true)
-    public void tearDown() {
-        webDriver.quit();
-    }
 }

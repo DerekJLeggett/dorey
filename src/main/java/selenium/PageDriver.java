@@ -96,13 +96,11 @@ public class PageDriver {
         wait.until(pageLoadCondition);
         ngWebDriver.waitForAngularRequestsToFinish();
         // Get browser metrics if the url/path changed.
-        if (!currentURL.equalsIgnoreCase(webDriver.getCurrentUrl())) {
-            getCookies();
-            getResources();
-            getUserAgent();
-            getTimings();
-            currentURL = webDriver.getCurrentUrl();
-        }
+        getCookies();
+        getResources();
+        getUserAgent();
+        getTimings();
+        currentURL = webDriver.getCurrentUrl();
     }
 
     /**
@@ -160,7 +158,6 @@ public class PageDriver {
         for (String handle : webDriver.getWindowHandles()) {
             if (!handle.equals(originalHandle)) {
                 webDriver.switchTo().window(handle);
-                waitForBrowser();
                 webDriver.close();
             }
         }

@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Dorey Smoke Test Suite">
+<suite name="Performance Smoke Test Suite">
     <listeners>
         <listener class-name="selenium.ReportingListener" />
     </listeners>
-    <test name="Dorey Smoke Test">
+    <test name="Performance Smoke Test">
         <classes>
-            <class name="selenium.DoreyTest" />
+            <class name="selenium.PerformanceTest" />
         </classes>
     </test>
 </suite>
