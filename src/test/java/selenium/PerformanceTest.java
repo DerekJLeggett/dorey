@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 public class PerformanceTest extends StartUp {
 
         private static Logger logger = LoggerFactory.getLogger(PerformanceTest.class);
+        Timings timings;
         Company[] companies;
         Gson gson;
         String company_json;
@@ -33,7 +34,7 @@ public class PerformanceTest extends StartUp {
                         returnValue = new Object[companies.length][1];
                         int index = 0;
                         for (Object[] each : returnValue) {
-                                each[0] = companies[index++].url;
+                                each[0] = companies[index++];
                         }
                 } catch (Exception e) {
                         logger.error(e.getMessage());
@@ -42,8 +43,9 @@ public class PerformanceTest extends StartUp {
         }
 
         @Test(dataProvider = "companyList")
-        public void testPagePerformance(String url) {
-                logger.info("Url: {}", url);
-                pageDriver.navigateTo(url);
+        public void testPagePerformance(Company company) {
+                logger.info("Url: {}", company.url);
+                pageDriver.navigateTo(company.url);
+                utility.logTimings(pageDriver.getTimings(), company, StartUp.browser);
         }
 }

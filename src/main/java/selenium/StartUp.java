@@ -19,6 +19,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 import selenium.Browser.Location;
 
 public class StartUp {
@@ -32,12 +35,20 @@ public class StartUp {
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
     Properties props = utility.loadProperties();
 
+    @Parameters({ "browserName", "locationParam" })
     @BeforeSuite(alwaysRun = true)
-    public void init() {
-        browser.setName(props.getProperty("browser"));
-        if (props.getProperty("location").equalsIgnoreCase("LOCALHOST")) {
+    public void init(@Optional("") String browserParam, @Optional("") String locationParam) {
+        String locationString;
+        if (browserParam != "") {
+            browser.setName(browserParam);
+            locationString = locationParam;
+        } else {
+            browser.setName(props.getProperty("browser"));
+            locationString = props.getProperty("location");
+        }
+        if (locationString.equalsIgnoreCase("LOCALHOST")) {
             browser.setLocation(Location.LOCALHOST);
-        } else if (props.getProperty("location").equalsIgnoreCase("GRID")) {
+        } else if (locationString.equalsIgnoreCase("GRID")) {
             browser.setLocation(Location.GRID);
         }
         baseUrl = props.getProperty("baseUrl");
@@ -57,6 +68,7 @@ public class StartUp {
     public WebDriver getWebDriver(Browser browser) {
         switch (browser.getName()) {
         case "Chrome":
+            browser.setId("1");
             System.setProperty("webdriver.chrome.driver", System.getenv("webdriver.chrome.driver"));
             ChromeOptions chromeOptions = new ChromeOptions();
             if (browser.getLocation() == Location.LOCALHOST) {
@@ -70,10 +82,12 @@ public class StartUp {
             }
             break;
         case "Edge":
+            browser.setId("2");
             EdgeOptions edgeOptions = new EdgeOptions();
             webDriver = new EdgeDriver(edgeOptions);
             break;
         case "Firefox":
+            browser.setId("3");
             System.setProperty("webdriver.gecko.driver", System.getenv("webdriver.gecko.driver"));
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             if (browser.getLocation() == Location.LOCALHOST) {
@@ -95,6 +109,7 @@ public class StartUp {
             }
             break;
         case "Opera":
+            browser.setId("4");
             OperaOptions operaOptions = new OperaOptions();
             if (browser.getLocation() == Location.LOCALHOST) {
                 operaOptions.setBinary("C:\\Users\\derek\\AppData\\Local\\Programs\\Opera\\60.0.3255.170\\opera.exe");

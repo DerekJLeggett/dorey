@@ -3,6 +3,8 @@
     <listeners>
         <listener class-name="selenium.ReportingListener" />
     </listeners>
+    <parameter name="browserParam" value="Chrome"></parameter>
+    <parameter name="locationParam" value="GRID"></parameter>
     <test name="Dorey Smoke Test">
         <classes>
             <class name="selenium.DoreyTest" />

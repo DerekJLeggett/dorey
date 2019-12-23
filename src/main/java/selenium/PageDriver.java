@@ -25,7 +25,6 @@ public class PageDriver {
     NgWebDriver ngWebDriver;
     Utility utility = new Utility();
     private static Logger logger = LoggerFactory.getLogger(PageDriver.class);
-    private String currentURL = "";
 
     /**
      * The Constructor
@@ -95,12 +94,6 @@ public class PageDriver {
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
         wait.until(pageLoadCondition);
         ngWebDriver.waitForAngularRequestsToFinish();
-        // Get browser metrics if the url/path changed.
-        getCookies();
-        getResources();
-        getUserAgent();
-        getTimings();
-        currentURL = webDriver.getCurrentUrl();
     }
 
     /**
@@ -218,7 +211,6 @@ public class PageDriver {
         timings.setTimeToLastByte(responseEnd - fetchStart);
         timings.setTimeToInteract(domInteractive - responseStart);
         timings.setDocLoaded(domContentLoadedEventEnd - fetchStart);
-        utility.logTimings(timings, currentURL, StartUp.baseUrl);
         return timings;
     }
 

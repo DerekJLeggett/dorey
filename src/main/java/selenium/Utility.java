@@ -164,7 +164,7 @@ public class Utility {
         urlParameters.add(new BasicNameValuePair("name", testResult.getName()));
         urlParameters.add(new BasicNameValuePair("didPass", didPass));
         urlParameters.add(new BasicNameValuePair("error", ""));
-        return sendPost(baseUrl + "/api/addTestCase.php", urlParameters);
+        return sendPost(StartUp.baseUrl + "/api/addTestCase.php", urlParameters);
     }
 
     /**
@@ -172,13 +172,14 @@ public class Utility {
      * 
      * @param timings
      */
-    public void logTimings(Timings timings, String url, String baseUrl) {
+    public void logTimings(Timings timings, Company company, Browser browser) {
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
-        urlParameters.add(new BasicNameValuePair("url", url));
+        urlParameters.add(new BasicNameValuePair("companyId", company.id));
+        urlParameters.add(new BasicNameValuePair("browserId", browser.id));
         urlParameters.add(new BasicNameValuePair("networkLatency", timings.networkLatency.toString()));
         urlParameters.add(new BasicNameValuePair("redirectTime", timings.redirectTime.toString()));
         urlParameters.add(new BasicNameValuePair("pageLoadTime", timings.pageLoadTime.toString()));
         urlParameters.add(new BasicNameValuePair("completeTime", timings.completeTime.toString()));
-        sendPost(baseUrl + "/api/addTiming.php", urlParameters);
+        sendPost(StartUp.baseUrl + "/api/addTiming.php", urlParameters);
     }
 }
