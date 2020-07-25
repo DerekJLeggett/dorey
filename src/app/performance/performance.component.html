@@ -12,53 +12,25 @@
       </p>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <label for="industrySelect" class="sr-only">Select an Industry</label>
-      <select class="custom-select" id="makeSelect" (change)="getTimingsByIndustryId($event.target.value)">
-        <option selected class="text-center">Select an Industry</option>
-        <option *ngFor="let industry of industries" class="text-center" value="{{industry.id}}">
-          {{industry.name}}
-        </option>
-      </select>
-    </div>
-  </div>
-  <div *ngFor="let company of performance">
-    <div class="row">
-      <div class="col">
-        <div>{{company.Company}} - https://www.{{company.url}}</div>
-      </div>
-    </div>
-
-    <div class="row" *ngFor="let perf of company.Timings">
-      <div class="col-1">
-        <img *ngIf="perf.browserName=='Chrome'" class="img-fluid" src="assets/images/Chrome.svg"
-          alt="Chrome browser logo">
-        <img *ngIf="perf.browserName=='Firefox'" class="img-fluid" src="assets/images/Firefox.svg"
-          alt="Firefox browser logo">
-        <img *ngIf="perf.browserName=='Edge'" class="img-fluid" src="assets/images/Edge.svg" alt="Edge browser logo">
-        <img *ngIf="perf.browserName=='Opera'" class="img-fluid" src="assets/images/Opera_O.svg"
-          alt="Opera browser logo">
-      </div>
-      <div class="col-11">
+     <div class="row" *ngFor="let timing of timings">
+      <div class="col-12">
         <div class="progress" style="height: 30px;">
           <div class="progress-bar" role="progressbar"
-            [style.width.%]="((perf.networkLatency/company.Timings[0].completeTime)*100)"
-            aria-valuenow="((perf.networkLatency/company.Timings[0].completeTime)*100)" aria-valuemin="0"
+            [style.width.%]="((timing.networkLatency/timings[0].completeTime)*100)"
+            aria-valuenow="((timing.networkLatency/timings[0].completeTime)*100)" aria-valuemin="0"
             aria-valuemax="100">
-            {{perf.network}}</div>
+            {{timing.networkLatency}}</div>
           <div class="progress-bar bg-danger" role="progressbar"
-            [style.width.%]="((perf.redirectTime/company.Timings[0].completeTime)*100)"
-            aria-valuenow="((perf.redirectTime/company.Timings[0].completeTime)*100)" aria-valuemin="0"
+            [style.width.%]="((timing.redirectTime/timings[0].completeTime)*100)"
+            aria-valuenow="((timing.redirectTime/timings[0].completeTime)*100)" aria-valuemin="0"
             aria-valuemax="100">
-            {{perf.redirectTime}}</div>
+            {{timing.redirectTime}}</div>
           <div class="progress-bar bg-warning" role="progressbar"
-            [style.width.%]="((perf.pageLoadTime/company.Timings[0].completeTime)*100)"
-            aria-valuenow="((perf.pageLoadTime/company.Timings[0].completeTime)*100)" aria-valuemin="0"
+            [style.width.%]="((timing.pageLoadTime/timings[0].completeTime)*100)"
+            aria-valuenow="((timing.pageLoadTime/timings[0].completeTime)*100)" aria-valuemin="0"
             aria-valuemax="100">
-            <a class="h4" href="https://{{company.url}}" target="_blank">{{perf.pageLoadTime}}</a>
+            <a class="h4" href="https://{{timing.url}}" target="_blank">{{timing.pageLoadTime}} - {{timing.url}}</a>
           </div>
         </div>
       </div>
-    </div>
   </div>
