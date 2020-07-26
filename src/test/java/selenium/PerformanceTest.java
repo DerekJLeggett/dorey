@@ -27,7 +27,7 @@ public class PerformanceTest extends StartUp {
                 companies = gson.fromJson(company_json, Company[].class);
         }
 
-        @DataProvider(parallel = false)
+        @DataProvider(parallel = true)
         public Object[][] companyList() throws Exception {
                 Object[][] returnValue = null;
                 try {
@@ -45,7 +45,7 @@ public class PerformanceTest extends StartUp {
         @Test(dataProvider = "companyList")
         public void testPagePerformance(Company company) {
                 logger.info("Url: {}", company.url);
-                pageDriver.navigateTo(company.url);
-                utility.logTimings(pageDriver.getTimings(), company, StartUp.browser);
+                pageDriver.navigateTo("https://www." + company.url);
+                utility.logTimings(pageDriver.getTimings(), company);
         }
 }

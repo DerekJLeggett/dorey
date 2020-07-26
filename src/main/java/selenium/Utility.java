@@ -172,10 +172,9 @@ public class Utility {
      * 
      * @param timings
      */
-    public void logTimings(Timings timings, Company company, Browser browser) {
+    public void logTimings(Timings timings, Company company) {
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
         urlParameters.add(new BasicNameValuePair("companyId", company.id));
-        urlParameters.add(new BasicNameValuePair("browserId", browser.id));
         urlParameters.add(new BasicNameValuePair("networkLatency", timings.networkLatency.toString()));
         urlParameters.add(new BasicNameValuePair("redirectTime", timings.redirectTime.toString()));
         urlParameters.add(new BasicNameValuePair("pageLoadTime", timings.pageLoadTime.toString()));

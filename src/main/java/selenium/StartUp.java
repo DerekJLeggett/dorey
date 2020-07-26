@@ -22,6 +22,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import selenium.Browser.Location;
 
 public class StartUp {
@@ -35,22 +36,22 @@ public class StartUp {
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
     Properties props = utility.loadProperties();
 
-    @Parameters({ "browserName", "locationParam" })
+    //@Parameters({ "browserName", "locationParam" })
     @BeforeSuite(alwaysRun = true)
-    public void init(@Optional("") String browserParam, @Optional("") String locationParam) {
+    public void init() {
         String locationString;
-        if (browserParam != "") {
-            browser.setName(browserParam);
-            locationString = locationParam;
-        } else {
-            browser.setName(props.getProperty("browser"));
-            locationString = props.getProperty("location");
-        }
-        if (locationString.equalsIgnoreCase("LOCALHOST")) {
-            browser.setLocation(Location.LOCALHOST);
-        } else if (locationString.equalsIgnoreCase("GRID")) {
-            browser.setLocation(Location.GRID);
-        }
+        // if (browserParam != "") {
+        //     browser.setName(browserParam);
+        //     locationString = locationParam;
+        // } else {
+        browser.setName(props.getProperty("browser"));
+        locationString = props.getProperty("location");
+        // }
+        // if (locationString.equalsIgnoreCase("LOCALHOST")) {
+        browser.setLocation(Location.LOCALHOST);
+        // } else if (locationString.equalsIgnoreCase("GRID")) {
+        //     browser.setLocation(Location.GRID);
+        // }
         baseUrl = props.getProperty("baseUrl");
         gridUrl = props.getProperty("gridUrl");
         logger.info("Base URL: {}, Grid URL: {}", baseUrl, gridUrl);
@@ -69,8 +70,10 @@ public class StartUp {
         switch (browser.getName()) {
         case "Chrome":
             browser.setId("1");
-            System.setProperty("webdriver.chrome.driver", System.getenv("webdriver.chrome.driver"));
+            //System.setProperty("webdriver.chrome.driver", System.getenv("webdriver.chrome.driver"));
+            //WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setHeadless(true);
             if (browser.getLocation() == Location.LOCALHOST) {
                 webDriver = new ChromeDriver(chromeOptions);
             } else if (browser.getLocation() == Location.GRID) {
