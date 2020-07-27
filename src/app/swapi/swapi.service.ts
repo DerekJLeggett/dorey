@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class SwapiService {
-  baseUrl = 'https://swapi.co/api/';
+  baseUrl = 'https://swapi.dev/api/';
   constructor(private http: HttpClient) { }
   getFilms(): Observable<IFilm[]> {
     return this.http.get<IFilm[]>(this.baseUrl + 'films/')

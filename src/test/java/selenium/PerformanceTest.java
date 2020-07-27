@@ -27,7 +27,7 @@ public class PerformanceTest extends StartUp {
                 companies = gson.fromJson(company_json, Company[].class);
         }
 
-        @DataProvider(parallel = false)
+        @DataProvider(parallel = true)
         public Object[][] companyList() throws Exception {
                 Object[][] returnValue = null;
                 try {
