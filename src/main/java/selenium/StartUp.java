@@ -71,7 +71,7 @@ public class StartUp {
         case "Chrome":
             browser.setId("1");
             //System.setProperty("webdriver.chrome.driver", System.getenv("webdriver.chrome.driver"));
-            WebDriverManager.chromedriver().setup();
+            //WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setHeadless(true);
             if (browser.getLocation() == Location.LOCALHOST) {
