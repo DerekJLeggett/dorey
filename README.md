@@ -3,6 +3,7 @@ mvn test -DsuiteXmlFile=testsuite.xml
 mvn test -Dtest=DoreyTest
 mvn test -Dtest=PerformanceTest
 mvn -U clean install -Dmaven.test.skip=true
+mvn versions:use-latest-releases
 
 sudo docker-compose up --scale chrome=5 --scale firefox=5 -d
 
