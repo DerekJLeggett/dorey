@@ -14,15 +14,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 import selenium.Browser.Location;
 import selenium.Browser.Name;
 
@@ -72,11 +69,8 @@ public class StartUp {
         switch (browser.name) {
             case CHROME:
                 browser.setId("1");
-                // System.setProperty("webdriver.chrome.driver",
-                // System.getenv("webdriver.chrome.driver"));
                 ChromeOptions chromeOptions = new ChromeOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
-                    WebDriverManager.chromedriver().setup();
                     chromeOptions.setHeadless(true);
                     webDriver = new ChromeDriver(chromeOptions);
                 } else if (browser.getLocation() == Location.GRID) {
@@ -89,17 +83,23 @@ public class StartUp {
                 break;
             case EDGE:
                 browser.setId("2");
-                WebDriverManager.edgedriver().setup();
                 EdgeOptions edgeOptions = new EdgeOptions();
-                webDriver = new EdgeDriver(edgeOptions);
+                if (browser.getLocation() == Location.LOCALHOST) {
+                    edgeOptions.setHeadless(true);
+                    webDriver = new EdgeDriver(edgeOptions);
+                } else if (browser.getLocation() == Location.GRID) {
+                    try {
+                        webDriver = new RemoteWebDriver(new URL(props.getProperty("gridUrl")), edgeOptions);
+                    } catch (MalformedURLException e) {
+                        logger.error(e.getMessage());
+                    }
+                }
                 break;
             case FIREFOX:
                 browser.setId("3");
-                // System.setProperty("webdriver.gecko.driver",
-                // System.getenv("webdriver.gecko.driver"));
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
-                    WebDriverManager.firefoxdriver().setup();
+                    firefoxOptions.setHeadless(true);
                     webDriver = new FirefoxDriver(firefoxOptions);
                 } else if (browser.getLocation() == Location.GRID) {
                     try {
@@ -111,17 +111,20 @@ public class StartUp {
                 break;
             case SAFARI:
                 SafariOptions safariOptions = new SafariOptions();
-                try {
-                    webDriver = new RemoteWebDriver(new URL("http://ondemand.saucelabs.com:80/wd/hub"), safariOptions);
-                } catch (MalformedURLException e) {
-                    logger.error(e.getMessage());
+                if (browser.getLocation() == Location.LOCALHOST) {
+                    webDriver = new SafariDriver(safariOptions);
+                } else if (browser.getLocation() == Location.GRID) {
+                    try {
+                        webDriver = new RemoteWebDriver(new URL(props.getProperty("gridUrl")), safariOptions);
+                    } catch (MalformedURLException e) {
+                        logger.error(e.getMessage());
+                    }
                 }
                 break;
             case OPERA:
                 browser.setId("4");
                 OperaOptions operaOptions = new OperaOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
-                    WebDriverManager.operadriver().setup();
                     webDriver = new OperaDriver(operaOptions);
                 } else if (browser.getLocation() == Location.GRID) {
                     try {

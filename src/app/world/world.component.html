@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col text-center" *ngIf="country">
       <h3 id="countryName" class="text-center">{{country.Name}}</h3>
-      <img class="img-fluid flag" title="{{country.Name}}"
+      <img class="img-fluid svg" title="{{country.Name}}"
         src="assets/images/flags/svg/{{country.Code2 | lowercase}}.svg">
       <h4 class="text-center"><u>Languages Spoken</u></h4>
       <div class="progress" *ngFor="let language of country.Languages">
@@ -32,7 +32,7 @@
   <div class="row" *ngFor="let state of states">
     <div class="col text-center">
       <h3 class="text-center">{{state.State}}</h3>
-      <img class="img-fluid text-center" title="{{state.State}}"
+      <img class="img-fluid text-center svg" title="{{state.State}}"
         src="assets/images/flags/svg/{{country.Code2 | lowercase}}/{{state.StateCode | lowercase}}.svg">
       <h4 class="text-center"><u>Population by City</u></h4>
       <div class="progress" *ngFor="let city of state.Cities">

@@ -97167,18 +97167,20 @@ class ConnectableObservable extends _Observable__WEBPACK_IMPORTED_MODULE_1__["Ob
         return Object(_operators_refCount__WEBPACK_IMPORTED_MODULE_4__["refCount"])()(this);
     }
 }
-const connectableProto = ConnectableObservable.prototype;
-const connectableObservableDescriptor = {
-    operator: { value: null },
-    _refCount: { value: 0, writable: true },
-    _subject: { value: null, writable: true },
-    _connection: { value: null, writable: true },
-    _subscribe: { value: connectableProto._subscribe },
-    _isComplete: { value: connectableProto._isComplete, writable: true },
-    getSubject: { value: connectableProto.getSubject },
-    connect: { value: connectableProto.connect },
-    refCount: { value: connectableProto.refCount }
-};
+const connectableObservableDescriptor = (() => {
+    const connectableProto = ConnectableObservable.prototype;
+    return {
+        operator: { value: null },
+        _refCount: { value: 0, writable: true },
+        _subject: { value: null, writable: true },
+        _connection: { value: null, writable: true },
+        _subscribe: { value: connectableProto._subscribe },
+        _isComplete: { value: connectableProto._isComplete, writable: true },
+        getSubject: { value: connectableProto.getSubject },
+        connect: { value: connectableProto.connect },
+        refCount: { value: connectableProto.refCount }
+    };
+})();
 class ConnectableSubscriber extends _Subject__WEBPACK_IMPORTED_MODULE_0__["SubjectSubscriber"] {
     constructor(destination, connectable) {
         super(destination);
@@ -97865,7 +97867,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const toString = Object.prototype.toString;
+const toString = (() => Object.prototype.toString)();
 function fromEvent(target, eventName, options, resultSelector) {
     if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(options)) {
         resultSelector = options;
@@ -99525,7 +99527,10 @@ class CatchSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MODULE_0__["Out
             this._unsubscribeAndRecycle();
             const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](this, undefined, undefined);
             this.add(innerSubscriber);
-            Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, result, undefined, undefined, innerSubscriber);
+            const innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, result, undefined, undefined, innerSubscriber);
+            if (innerSubscription !== innerSubscriber) {
+                this.add(innerSubscription);
+            }
         }
     }
 }
@@ -100576,10 +100581,13 @@ class ExhaustMapSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MODULE_0__
         this._innerSub(result, value, index);
     }
     _innerSub(result, value, index) {
-        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](this, undefined, undefined);
+        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](this, value, index);
         const destination = this.destination;
         destination.add(innerSubscriber);
-        Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, result, value, index, innerSubscriber);
+        const innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, result, undefined, undefined, innerSubscriber);
+        if (innerSubscription !== innerSubscriber) {
+            destination.add(innerSubscription);
+        }
     }
     _complete() {
         this.hasCompleted = true;
@@ -101468,10 +101476,13 @@ class MergeMapSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MODULE_1__["
         this._innerSub(result, value, index);
     }
     _innerSub(ish, value, index) {
-        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_2__["InnerSubscriber"](this, undefined, undefined);
+        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_2__["InnerSubscriber"](this, value, index);
         const destination = this.destination;
         destination.add(innerSubscriber);
-        Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_0__["subscribeToResult"])(this, ish, value, index, innerSubscriber);
+        const innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_0__["subscribeToResult"])(this, ish, undefined, undefined, innerSubscriber);
+        if (innerSubscription !== innerSubscriber) {
+            destination.add(innerSubscription);
+        }
     }
     _complete() {
         this.hasCompleted = true;
@@ -101587,10 +101598,13 @@ class MergeScanSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MODULE_1__[
         }
     }
     _innerSub(ish, value, index) {
-        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_2__["InnerSubscriber"](this, undefined, undefined);
+        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_2__["InnerSubscriber"](this, value, index);
         const destination = this.destination;
         destination.add(innerSubscriber);
-        Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_0__["subscribeToResult"])(this, ish, value, index, innerSubscriber);
+        const innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_0__["subscribeToResult"])(this, ish, undefined, undefined, innerSubscriber);
+        if (innerSubscription !== innerSubscriber) {
+            destination.add(innerSubscription);
+        }
     }
     _complete() {
         this.hasCompleted = true;
@@ -101837,7 +101851,10 @@ class OnErrorResumeNextSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MOD
             const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_3__["InnerSubscriber"](this, undefined, undefined);
             const destination = this.destination;
             destination.add(innerSubscriber);
-            Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_4__["subscribeToResult"])(this, next, undefined, undefined, innerSubscriber);
+            const innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_4__["subscribeToResult"])(this, next, undefined, undefined, innerSubscriber);
+            if (innerSubscription !== innerSubscriber) {
+                destination.add(innerSubscription);
+            }
         }
         else {
             this.destination.complete();
@@ -102820,6 +102837,7 @@ function shareReplayOperator({ bufferSize = Number.POSITIVE_INFINITY, windowTime
                 },
                 complete() {
                     isComplete = true;
+                    subscription = undefined;
                     subject.complete();
                 },
             });
@@ -103049,7 +103067,11 @@ class SkipUntilSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MODULE_0__[
         const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](this, undefined, undefined);
         this.add(innerSubscriber);
         this.innerSubscription = innerSubscriber;
-        Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, notifier, undefined, undefined, innerSubscriber);
+        const innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, notifier, undefined, undefined, innerSubscriber);
+        if (innerSubscription !== innerSubscriber) {
+            this.add(innerSubscription);
+            this.innerSubscription = innerSubscription;
+        }
     }
     _next(value) {
         if (this.hasValue) {
@@ -103258,10 +103280,13 @@ class SwitchMapSubscriber extends _OuterSubscriber__WEBPACK_IMPORTED_MODULE_0__[
         if (innerSubscription) {
             innerSubscription.unsubscribe();
         }
-        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](this, undefined, undefined);
+        const innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](this, value, index);
         const destination = this.destination;
         destination.add(innerSubscriber);
-        this.innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, result, value, index, innerSubscriber);
+        this.innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(this, result, undefined, undefined, innerSubscriber);
+        if (this.innerSubscription !== innerSubscriber) {
+            destination.add(this.innerSubscription);
+        }
     }
     _complete() {
         const { innerSubscription } = this;
@@ -105565,7 +105590,7 @@ const $$iterator = iterator;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
-const observable = typeof Symbol === 'function' && Symbol.observable || '@@observable';
+const observable = (() => typeof Symbol === 'function' && Symbol.observable || '@@observable')();
 //# sourceMappingURL=observable.js.map
 
 /***/ }),
@@ -105581,9 +105606,9 @@ const observable = typeof Symbol === 'function' && Symbol.observable || '@@obser
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rxSubscriber", function() { return rxSubscriber; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$$rxSubscriber", function() { return $$rxSubscriber; });
-const rxSubscriber = typeof Symbol === 'function'
+const rxSubscriber = (() => typeof Symbol === 'function'
     ? Symbol('rxSubscriber')
-    : '@@rxSubscriber_' + Math.random();
+    : '@@rxSubscriber_' + Math.random())();
 const $$rxSubscriber = rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
@@ -105599,13 +105624,16 @@ const $$rxSubscriber = rxSubscriber;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArgumentOutOfRangeError", function() { return ArgumentOutOfRangeError; });
-function ArgumentOutOfRangeErrorImpl() {
-    Error.call(this);
-    this.message = 'argument out of range';
-    this.name = 'ArgumentOutOfRangeError';
-    return this;
-}
-ArgumentOutOfRangeErrorImpl.prototype = Object.create(Error.prototype);
+const ArgumentOutOfRangeErrorImpl = (() => {
+    function ArgumentOutOfRangeErrorImpl() {
+        Error.call(this);
+        this.message = 'argument out of range';
+        this.name = 'ArgumentOutOfRangeError';
+        return this;
+    }
+    ArgumentOutOfRangeErrorImpl.prototype = Object.create(Error.prototype);
+    return ArgumentOutOfRangeErrorImpl;
+})();
 const ArgumentOutOfRangeError = ArgumentOutOfRangeErrorImpl;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
@@ -105621,13 +105649,16 @@ const ArgumentOutOfRangeError = ArgumentOutOfRangeErrorImpl;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmptyError", function() { return EmptyError; });
-function EmptyErrorImpl() {
-    Error.call(this);
-    this.message = 'no elements in sequence';
-    this.name = 'EmptyError';
-    return this;
-}
-EmptyErrorImpl.prototype = Object.create(Error.prototype);
+const EmptyErrorImpl = (() => {
+    function EmptyErrorImpl() {
+        Error.call(this);
+        this.message = 'no elements in sequence';
+        this.name = 'EmptyError';
+        return this;
+    }
+    EmptyErrorImpl.prototype = Object.create(Error.prototype);
+    return EmptyErrorImpl;
+})();
 const EmptyError = EmptyErrorImpl;
 //# sourceMappingURL=EmptyError.js.map
 
@@ -105637,30 +105668,38 @@ const EmptyError = EmptyErrorImpl;
 /*!***************************************************************!*\
   !*** ./node_modules/rxjs/_esm2015/internal/util/Immediate.js ***!
   \***************************************************************/
-/*! exports provided: Immediate */
+/*! exports provided: Immediate, TestTools */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Immediate", function() { return Immediate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestTools", function() { return TestTools; });
 let nextHandle = 1;
-const tasksByHandle = {};
-function runIfPresent(handle) {
-    const cb = tasksByHandle[handle];
-    if (cb) {
-        cb();
+const RESOLVED = (() => Promise.resolve())();
+const activeHandles = {};
+function findAndClearHandle(handle) {
+    if (handle in activeHandles) {
+        delete activeHandles[handle];
+        return true;
     }
+    return false;
 }
 const Immediate = {
     setImmediate(cb) {
         const handle = nextHandle++;
-        tasksByHandle[handle] = cb;
-        Promise.resolve().then(() => runIfPresent(handle));
+        activeHandles[handle] = true;
+        RESOLVED.then(() => findAndClearHandle(handle) && cb());
         return handle;
     },
     clearImmediate(handle) {
-        delete tasksByHandle[handle];
+        findAndClearHandle(handle);
     },
+};
+const TestTools = {
+    pending() {
+        return Object.keys(activeHandles).length;
+    }
 };
 //# sourceMappingURL=Immediate.js.map
 
@@ -105676,13 +105715,16 @@ const Immediate = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObjectUnsubscribedError", function() { return ObjectUnsubscribedError; });
-function ObjectUnsubscribedErrorImpl() {
-    Error.call(this);
-    this.message = 'object unsubscribed';
-    this.name = 'ObjectUnsubscribedError';
-    return this;
-}
-ObjectUnsubscribedErrorImpl.prototype = Object.create(Error.prototype);
+const ObjectUnsubscribedErrorImpl = (() => {
+    function ObjectUnsubscribedErrorImpl() {
+        Error.call(this);
+        this.message = 'object unsubscribed';
+        this.name = 'ObjectUnsubscribedError';
+        return this;
+    }
+    ObjectUnsubscribedErrorImpl.prototype = Object.create(Error.prototype);
+    return ObjectUnsubscribedErrorImpl;
+})();
 const ObjectUnsubscribedError = ObjectUnsubscribedErrorImpl;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
@@ -105698,13 +105740,16 @@ const ObjectUnsubscribedError = ObjectUnsubscribedErrorImpl;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeoutError", function() { return TimeoutError; });
-function TimeoutErrorImpl() {
-    Error.call(this);
-    this.message = 'Timeout has occurred';
-    this.name = 'TimeoutError';
-    return this;
-}
-TimeoutErrorImpl.prototype = Object.create(Error.prototype);
+const TimeoutErrorImpl = (() => {
+    function TimeoutErrorImpl() {
+        Error.call(this);
+        this.message = 'Timeout has occurred';
+        this.name = 'TimeoutError';
+        return this;
+    }
+    TimeoutErrorImpl.prototype = Object.create(Error.prototype);
+    return TimeoutErrorImpl;
+})();
 const TimeoutError = TimeoutErrorImpl;
 //# sourceMappingURL=TimeoutError.js.map
 
@@ -105720,16 +105765,19 @@ const TimeoutError = TimeoutErrorImpl;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnsubscriptionError", function() { return UnsubscriptionError; });
-function UnsubscriptionErrorImpl(errors) {
-    Error.call(this);
-    this.message = errors ?
-        `${errors.length} errors occurred during unsubscription:
+const UnsubscriptionErrorImpl = (() => {
+    function UnsubscriptionErrorImpl(errors) {
+        Error.call(this);
+        this.message = errors ?
+            `${errors.length} errors occurred during unsubscription:
 ${errors.map((err, i) => `${i + 1}) ${err.toString()}`).join('\n  ')}` : '';
-    this.name = 'UnsubscriptionError';
-    this.errors = errors;
-    return this;
-}
-UnsubscriptionErrorImpl.prototype = Object.create(Error.prototype);
+        this.name = 'UnsubscriptionError';
+        this.errors = errors;
+        return this;
+    }
+    UnsubscriptionErrorImpl.prototype = Object.create(Error.prototype);
+    return UnsubscriptionErrorImpl;
+})();
 const UnsubscriptionError = UnsubscriptionErrorImpl;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
@@ -105810,7 +105858,7 @@ function identity(x) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isArray", function() { return isArray; });
-const isArray = Array.isArray || ((x) => x && typeof x.length === 'number');
+const isArray = (() => Array.isArray || ((x) => x && typeof x.length === 'number'))();
 //# sourceMappingURL=isArray.js.map
 
 /***/ }),
@@ -106039,14 +106087,14 @@ function not(pred, thisArg) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pipe", function() { return pipe; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pipeFromArray", function() { return pipeFromArray; });
-/* harmony import */ var _noop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./noop */ "./node_modules/rxjs/_esm2015/internal/util/noop.js");
+/* harmony import */ var _identity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./identity */ "./node_modules/rxjs/_esm2015/internal/util/identity.js");
 
 function pipe(...fns) {
     return pipeFromArray(fns);
 }
 function pipeFromArray(fns) {
-    if (!fns) {
-        return _noop__WEBPACK_IMPORTED_MODULE_0__["noop"];
+    if (fns.length === 0) {
+        return _identity__WEBPACK_IMPORTED_MODULE_0__["identity"];
     }
     if (fns.length === 1) {
         return fns[0];
@@ -106236,14 +106284,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function subscribeToResult(outerSubscriber, result, outerValue, outerIndex, destination = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_0__["InnerSubscriber"](outerSubscriber, outerValue, outerIndex)) {
-    if (destination.closed) {
+function subscribeToResult(outerSubscriber, result, outerValue, outerIndex, innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_0__["InnerSubscriber"](outerSubscriber, outerValue, outerIndex)) {
+    if (innerSubscriber.closed) {
         return undefined;
     }
     if (result instanceof _Observable__WEBPACK_IMPORTED_MODULE_2__["Observable"]) {
-        return result.subscribe(destination);
+        return result.subscribe(innerSubscriber);
     }
-    return Object(_subscribeTo__WEBPACK_IMPORTED_MODULE_1__["subscribeTo"])(result)(destination);
+    return Object(_subscribeTo__WEBPACK_IMPORTED_MODULE_1__["subscribeTo"])(result)(innerSubscriber);
 }
 //# sourceMappingURL=subscribeToResult.js.map
 
@@ -106715,7 +106763,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault */
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106728,10 +106776,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
@@ -106739,19 +106789,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) Microsoft Corporation.
 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
@@ -106784,8 +106836,10 @@ function __rest(s, e) {
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
     return t;
 }
 
@@ -106805,10 +106859,11 @@ function __metadata(metadataKey, metadataValue) {
 }
 
 function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 }
@@ -106841,19 +106896,25 @@ function __generator(thisArg, body) {
     }
 }
 
+function __createBinding(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}
+
 function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 
 function __values(o) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
-    return {
+    if (o && typeof o.length === "number") return {
         next: function () {
             if (o && i >= o.length) o = void 0;
             return { value: o && o[i++], done: !o };
         }
     };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }
 
 function __read(o, n) {
@@ -106878,6 +106939,14 @@ function __spread() {
         ar = ar.concat(__read(arguments[i]));
     return ar;
 }
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 
 function __await(v) {
     return this instanceof __await ? (this.v = v, this) : new __await(v);
@@ -106924,6 +106993,21 @@ function __importStar(mod) {
 
 function __importDefault(mod) {
     return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
 }
 
 
