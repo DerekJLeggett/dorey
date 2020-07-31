@@ -1,0 +1,322 @@
+[
+    {
+        "id": 1009189,
+        "name": "Black Widow"
+    },
+    {
+        "id": 1009610,
+        "name": "Spider-Man"
+    },
+    {
+        "id": 1009351,
+        "name": "Hulk"
+    },
+    {
+        "id": 1009220,
+        "name": "Captain America"
+    },
+    {
+        "id": 1009368,
+        "name": "Iron Man"
+    },
+    {
+        "id": 1009187,
+        "name": "Black Panther"
+    },
+    {
+        "id": 1009664,
+        "name": "Thor"
+    },
+    {
+        "id": 1010338,
+        "name": "Captain Marvel (Carol Danvers)"
+    },
+    {
+        "id": 1011096,
+        "name": "Captain Marvel (Genis-Vell)"
+    },
+    {
+        "id": 1009224,
+        "name": "Captain Marvel (Mar-Vell)"
+    },
+    {
+        "id": 1011095,
+        "name": "Captain Marvel (Monica Rambeau)"
+    },
+    {
+        "id": 1011097,
+        "name": "Captain Marvel (Phyla-Vell)"
+    },
+    {
+        "id": 1009338,
+        "name": "Hawkeye"
+    },
+    {
+        "id": 1010808,
+        "name": "Hawkeye (Kate Bishop)"
+    },
+    {
+        "id": 1017311,
+        "name": "Hawkeye (Marvel Heroes)"
+    },
+    {
+        "id": 1011131,
+        "name": "Hawkeye (Ultimate)"
+    },
+    {
+        "id": 1017108,
+        "name": "Hawkeye/Clint Barton (MAA)"
+    },
+    {
+        "id": 1010802,
+        "name": "Ant-Man (Eric O'Grady)"
+    },
+    {
+        "id": 1010801,
+        "name": "Ant-Man (Scott Lang)"
+    },
+    {
+        "id": 1010365,
+        "name": "Nebula"
+    },
+    {
+        "id": 1017840,
+        "name": "Okoye"
+    },
+    {
+        "id": 1017304,
+        "name": "War Machine (Marvel: Avengers Alliance)"
+    },
+    {
+        "id": 1010991,
+        "name": "War Machine (Parnell Jacobs)"
+    },
+    {
+        "id": 1011226,
+        "name": "War Machine (Ultimate)"
+    },
+    {
+        "id": 1009494,
+        "name": "Pepper Potts"
+    },
+    {
+        "id": 1010744,
+        "name": "Rocket Raccoon"
+    },
+    {
+        "id": 1017314,
+        "name": "Rocket Raccoon (Marvel Heroes)"
+    },
+    {
+        "id": 1010769,
+        "name": "Rocket Racer"
+    },
+    {
+        "id": 1010350,
+        "name": "Valkyrie (Samantha Parrington)"
+    },
+    {
+        "id": 1011239,
+        "name": "Valkyrie (Ultimate)"
+    },
+    {
+        "id": 1009720,
+        "name": "Wong"
+    },
+    {
+        "id": 1015005,
+        "name": "Wong (Ultimate)"
+    },
+    {
+        "id": 1009348,
+        "name": "Happy Hogan"
+    },
+    {
+        "id": 1010733,
+        "name": "Star-Lord (Peter Quill)"
+    },
+    {
+        "id": 1010763,
+        "name": "Gamora"
+    },
+    {
+        "id": 1017324,
+        "name": "Gamora (Marvel War of Heroes)"
+    },
+    {
+        "id": 1009282,
+        "name": "Doctor Strange"
+    },
+    {
+        "id": 1011358,
+        "name": "Doctor Strange (Ultimate)"
+    },
+    {
+        "id": 1009562,
+        "name": "Scarlet Witch"
+    },
+    {
+        "id": 1010972,
+        "name": "Scarlet Witch (Age of Apocalypse)"
+    },
+    {
+        "id": 1017308,
+        "name": "Scarlet Witch (Marvel Heroes)"
+    },
+    {
+        "id": 1010971,
+        "name": "Scarlet Witch (Ultimate)"
+    },
+    {
+        "id": 1009697,
+        "name": "Vision"
+    },
+    {
+        "id": 1009471,
+        "name": "Nick Fury"
+    },
+    {
+        "id": 1011007,
+        "name": "Nick Fury (Ultimate)"
+    },
+    {
+        "id": 1009407,
+        "name": "Loki"
+    },
+    {
+        "id": 1010743,
+        "name": "Groot"
+    },
+    {
+        "id": 1009707,
+        "name": "Wasp"
+    },
+    {
+        "id": 1010992,
+        "name": "Wasp (Ultimate)"
+    },
+    {
+        "id": 1009297,
+        "name": "Falcon"
+    },
+    {
+        "id": 1017110,
+        "name": "Falcon/Sam Wilson (MAA)"
+    },
+    {
+        "id": 1010740,
+        "name": "Winter Soldier"
+    },
+    {
+        "id": 1011026,
+        "name": "Mantis"
+    },
+    {
+        "id": 1010735,
+        "name": "Drax"
+    },
+    {
+        "id": 1009718,
+        "name": "Wolverine"
+    },
+    {
+        "id": 1017325,
+        "name": "Wolverine (Marvel War of Heroes)"
+    },
+    {
+        "id": 1011006,
+        "name": "Wolverine (Ultimate)"
+    },
+    {
+        "id": 1017479,
+        "name": "Wolverine (X-Men: Battle of the Atom)"
+    },
+    {
+        "id": 1009257,
+        "name": "Cyclops"
+    },
+    {
+        "id": 1010918,
+        "name": "Cyclops (Ultimate)"
+    },
+    {
+        "id": 1017473,
+        "name": "Cyclops (X-Men: Battle of the Atom)"
+    },
+    {
+        "id": 1009629,
+        "name": "Storm"
+    },
+    {
+        "id": 1010979,
+        "name": "Storm (Age of Apocalypse)"
+    },
+    {
+        "id": 1017309,
+        "name": "Storm (Marvel Heroes)"
+    },
+    {
+        "id": 1010978,
+        "name": "Storm (Ultimate)"
+    },
+    {
+        "id": 1009327,
+        "name": "Jean Grey"
+    },
+    {
+        "id": 1009496,
+        "name": "Jean Grey"
+    },
+    {
+        "id": 1010946,
+        "name": "Jean Grey (Ultimate)"
+    },
+    {
+        "id": 1009504,
+        "name": "Professor X"
+    },
+    {
+        "id": 1010958,
+        "name": "Professor X (Ultimate)"
+    },
+    {
+        "id": 1009417,
+        "name": "Magneto"
+    },
+    {
+        "id": 1010944,
+        "name": "Magneto (Age of Apocalypse)"
+    },
+    {
+        "id": 1010945,
+        "name": "Magneto (House of M)"
+    },
+    {
+        "id": 1009465,
+        "name": "Mystique"
+    },
+    {
+        "id": 1010953,
+        "name": "Mystique (Age of Apocalypse)"
+    },
+    {
+        "id": 1010954,
+        "name": "Mystique (House of M)"
+    },
+    {
+        "id": 1011129,
+        "name": "Mystique (Ultimate)"
+    },
+    {
+        "id": 1009673,
+        "name": "Toad"
+    },
+    {
+        "id": 1009554,
+        "name": "Sabretooth"
+    },
+    {
+        "id": 1010969,
+        "name": "Sabretooth (Age of Apocalypse)"
+    }
+]

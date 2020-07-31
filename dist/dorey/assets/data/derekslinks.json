@@ -1,0 +1,37 @@
+[
+    {
+        "url": "/world",
+        "linkText": "World",
+        "imagePath": "assets/images/world.svg"
+    },
+    {
+        "url": "/starwars",
+        "linkText": "StarWars",
+        "imagePath": "assets/images/Star_Wars_Logo.svg"
+    },
+    {
+        "url": "/marvel",
+        "linkText": "Marvel",
+        "imagePath": "assets/images/Marvel-Comics-Logo.svg"
+    },
+    {
+        "url": "/ships",
+        "linkText": "Ships",
+        "imagePath": "assets/images/Emblem_of_the_United_States_Navy.svg"
+    },
+    {
+        "url": "/auto",
+        "linkText": "Auto",
+        "imagePath": "assets/images/Seal_of_the_United_States_Department_of_Transportation.svg"
+    },
+    {
+        "url": "/nps",
+        "linkText": "National Parks",
+        "imagePath": "assets/images/US-NationalParkService-Logo.svg"
+    },
+    {
+        "url": "/performance",
+        "linkText": "Website Performance",
+        "imagePath": "assets/images/HTML5_logo_and_wordmark.svg"
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "url": "https://www.hilton.com/",
+        "networkLatency": 543.0,
+        "pageLoadTime": 7038.0,
+        "completeTime": 7840.0,
+        "redirectTime": 0.0
+    },
+    {
+        "url": "https://www.holidayinn.com/",
+        "networkLatency": 63.0,
+        "pageLoadTime": 6431.0,
+        "completeTime": 7039.0,
+        "redirectTime": 544.0
+    },
+    {
+        "url": "https://www.marriott.com/",
+        "networkLatency": 127.0,
+        "pageLoadTime": 5417.0,
+        "completeTime": 5796.0,
+        "redirectTime": 250.0
+    },
+    {
+        "url": "https://www.bestwestern.com/",
+        "networkLatency": 314.0,
+        "pageLoadTime": 4966.0,
+        "completeTime": 5415.0,
+        "redirectTime": 134.0
+    },
+    {
+        "url": "https://www.choicehotels.com/",
+        "networkLatency": 453.0,
+        "pageLoadTime": 2169.0,
+        "completeTime": 2624.0,
+        "redirectTime": 0.0
+    }
+]
