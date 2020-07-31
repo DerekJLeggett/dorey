@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $name = $_POST['name'];
    $q = "INSERT INTO `testSuites`(`name`, `dateTime`) VALUES 
                              ('$name', NOW());"; 

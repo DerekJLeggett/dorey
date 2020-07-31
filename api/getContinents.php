@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $q = "SELECT DISTINCT(Continent), SUM(SurfaceArea) AS Area FROM `country` GROUP BY Continent ORDER BY Area DESC;"; 
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))

@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $q = "SELECT country.Name Country, SUM(city.Population) Population FROM my_derek.city city
                         JOIN my_derek.country country on city.CountryCode = country.Code
                         GROUP BY CountryCode

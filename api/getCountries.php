@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $q = "SELECT Code2, Name FROM `country`;"; 
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))

@@ -1,6 +1,6 @@
 <?php
-   require( '../connect_db.php' );
-   $q = "SELECT C.id, C.code, C.name AS company, C.url, I.name AS industry FROM `company` C JOIN industry I ON I.id = C.industryId;"; 
+   require( '../../connect_db.php' );
+   $q = "SELECT id, code, name, url FROM `company`;";
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))
         {

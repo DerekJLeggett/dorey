@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $q = "SELECT DISTINCT(Code), Name FROM 
 	 (SELECT LEFT(Type, POSITION(' ' IN Type)) AS Code, 
 	 Right(Type, (LENGTH(Type) - POSITION(' ' IN Type))) AS Name

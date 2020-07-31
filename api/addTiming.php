@@ -1,13 +1,12 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $companyId = $_POST['companyId'];
-   $browserId = $_POST['browserId'];
    $networkLatency = $_POST['networkLatency'];
    $redirectTime = $_POST['redirectTime'];
    $pageLoadTime = $_POST['pageLoadTime'];
    $completeTime = $_POST['completeTime'];
-   $q = "INSERT INTO `timings`(`companyId`, `browserId`, `networkLatency`, `redirectTime`, `pageLoadTime`, `completeTime`, `lastUpdate`) VALUES 
-                             ('$companyId', '$browserId', '$networkLatency', '$redirectTime', '$pageLoadTime', '$completeTime', NOW());"; 
+   $q = "INSERT INTO `timings`(`companyId`, `networkLatency`, `redirectTime`, `pageLoadTime`, `completeTime`, `lastUpdate`) VALUES
+                             ('$companyId', '$networkLatency', '$redirectTime', '$pageLoadTime', '$completeTime', NOW());"; 
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))
         {

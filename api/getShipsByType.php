@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
   if ( !empty ( $_GET['shipType'] ) )
   {
 	$shipType = $_GET['shipType'] ;

@@ -1,5 +1,5 @@
 <?php
-   require( '../connect_db.php' );
+   require( '../../connect_db.php' );
    $q = "SELECT C.Code, C.Code2, C.Continent, C.Name, C.Population, C.SurfaceArea, L.Language, L.IsOfficial, L.Percentage FROM `country` C
 	JOIN countrylanguage L ON L.CountryCode = C.Code
    	ORDER BY C.Name, L.Percentage DESC;"; 
