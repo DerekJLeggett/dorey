@@ -24,41 +24,43 @@ import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import selenium.Browser.Location;
+import selenium.Browser.Name;
 
 public class StartUp {
-    public static String baseUrl;
-    public String gridUrl;
     public WebDriver webDriver;
     public PageDriver pageDriver;
     public static OperatingSystem operatingSystem = new OperatingSystem();
     public static Browser browser = new Browser();
-    public Utility utility = new Utility();
+    public static Utility utility = new Utility();
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
-    Properties props = utility.loadProperties();
+    static Properties props = utility.loadProperties();
 
-    //@Parameters({ "browserName", "locationParam" })
     @BeforeSuite(alwaysRun = true)
     public void init() {
-        String locationString;
-        // if (browserParam != "") {
-        //     browser.setName(browserParam);
-        //     locationString = locationParam;
-        // } else {
-        browser.setName(props.getProperty("browser"));
-        locationString = props.getProperty("location");
-        // }
-        // if (locationString.equalsIgnoreCase("LOCALHOST")) {
-        browser.setLocation(Location.LOCALHOST);
-        // } else if (locationString.equalsIgnoreCase("GRID")) {
-        //     browser.setLocation(Location.GRID);
-        // }
-        baseUrl = props.getProperty("baseUrl");
-        gridUrl = props.getProperty("gridUrl");
-        logger.info("Base URL: {}, Grid URL: {}", baseUrl, gridUrl);
+        logger.info("browserParam: {}, location: {}", props.getProperty("browser"), props.getProperty("location"));
+        // Set Name
+        if (props.getProperty("browser").equalsIgnoreCase("chrome")) {
+            browser.setName(Name.CHROME);
+        } else if (props.getProperty("browser").equalsIgnoreCase("Firefox")) {
+            browser.setName(Name.FIREFOX);
+        } else if (props.getProperty("browser").equalsIgnoreCase("Edge")) {
+            browser.setName(Name.EDGE);
+        } else if (props.getProperty("browser").equalsIgnoreCase("Opera")) {
+            browser.setName(Name.OPERA);
+        } else if (props.getProperty("browser").equalsIgnoreCase("Safari")) {
+            browser.setName(Name.SAFARI);
+        }
+        // Set Location
+        if (props.getProperty("location").equalsIgnoreCase("LOCALHOST")) {
+            browser.setLocation(Location.LOCALHOST);
+        } else {
+            browser.setLocation(Location.GRID);
+        }
+        logger.info("Base URL: {}, Grid URL: {}", props.getProperty("baseUrl"), props.getProperty("gridUrl"));
         webDriver = getWebDriver(browser);
         pageDriver = new PageDriver(webDriver);
         pageDriver.maximizeBrowser();
-        pageDriver.navigateTo(baseUrl);
+        pageDriver.navigateTo(props.getProperty("baseUrl"));
     }
 
     @AfterSuite(alwaysRun = true)
@@ -67,60 +69,68 @@ public class StartUp {
     }
 
     public WebDriver getWebDriver(Browser browser) {
-        switch (browser.getName()) {
-        case "Chrome":
-            browser.setId("1");
-            //System.setProperty("webdriver.chrome.driver", System.getenv("webdriver.chrome.driver"));
-            //WebDriverManager.chromedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.setHeadless(true);
-            if (browser.getLocation() == Location.LOCALHOST) {
-                webDriver = new ChromeDriver(chromeOptions);
-            } else if (browser.getLocation() == Location.GRID) {
+        switch (browser.name) {
+            case CHROME:
+                browser.setId("1");
+                // System.setProperty("webdriver.chrome.driver",
+                // System.getenv("webdriver.chrome.driver"));
+                ChromeOptions chromeOptions = new ChromeOptions();
+                if (browser.getLocation() == Location.LOCALHOST) {
+                    WebDriverManager.chromedriver().setup();
+                    chromeOptions.setHeadless(true);
+                    webDriver = new ChromeDriver(chromeOptions);
+                } else if (browser.getLocation() == Location.GRID) {
+                    try {
+                        webDriver = new RemoteWebDriver(new URL(props.getProperty("gridUrl")), chromeOptions);
+                    } catch (MalformedURLException e) {
+                        logger.error(e.getMessage());
+                    }
+                }
+                break;
+            case EDGE:
+                browser.setId("2");
+                WebDriverManager.edgedriver().setup();
+                EdgeOptions edgeOptions = new EdgeOptions();
+                webDriver = new EdgeDriver(edgeOptions);
+                break;
+            case FIREFOX:
+                browser.setId("3");
+                // System.setProperty("webdriver.gecko.driver",
+                // System.getenv("webdriver.gecko.driver"));
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (browser.getLocation() == Location.LOCALHOST) {
+                    WebDriverManager.firefoxdriver().setup();
+                    webDriver = new FirefoxDriver(firefoxOptions);
+                } else if (browser.getLocation() == Location.GRID) {
+                    try {
+                        webDriver = new RemoteWebDriver(new URL(props.getProperty("gridUrl")), firefoxOptions);
+                    } catch (MalformedURLException e) {
+                        logger.error(e.getMessage());
+                    }
+                }
+                break;
+            case SAFARI:
+                SafariOptions safariOptions = new SafariOptions();
                 try {
-                    webDriver = new RemoteWebDriver(new URL(gridUrl), chromeOptions);
+                    webDriver = new RemoteWebDriver(new URL("http://ondemand.saucelabs.com:80/wd/hub"), safariOptions);
                 } catch (MalformedURLException e) {
                     logger.error(e.getMessage());
                 }
-            }
-            break;
-        case "Edge":
-            browser.setId("2");
-            EdgeOptions edgeOptions = new EdgeOptions();
-            webDriver = new EdgeDriver(edgeOptions);
-            break;
-        case "Firefox":
-            browser.setId("3");
-            System.setProperty("webdriver.gecko.driver", System.getenv("webdriver.gecko.driver"));
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            if (browser.getLocation() == Location.LOCALHOST) {
-                webDriver = new FirefoxDriver(firefoxOptions);
-            } else if (browser.getLocation() == Location.GRID) {
-                try {
-                    webDriver = new RemoteWebDriver(new URL(gridUrl), firefoxOptions);
-                } catch (MalformedURLException e) {
-                    logger.error(e.getMessage());
+                break;
+            case OPERA:
+                browser.setId("4");
+                OperaOptions operaOptions = new OperaOptions();
+                if (browser.getLocation() == Location.LOCALHOST) {
+                    WebDriverManager.operadriver().setup();
+                    webDriver = new OperaDriver(operaOptions);
+                } else if (browser.getLocation() == Location.GRID) {
+                    try {
+                        webDriver = new RemoteWebDriver(new URL(props.getProperty("gridUrl")), operaOptions);
+                    } catch (MalformedURLException e) {
+                        logger.error(e.getMessage());
+                    }
                 }
-            }
-            break;
-        case "Safari":
-            SafariOptions safariOptions = new SafariOptions();
-            try {
-                webDriver = new RemoteWebDriver(new URL("http://ondemand.saucelabs.com:80/wd/hub"), safariOptions);
-            } catch (MalformedURLException e) {
-                logger.error(e.getMessage());
-            }
-            break;
-        case "Opera":
-            browser.setId("4");
-            OperaOptions operaOptions = new OperaOptions();
-            if (browser.getLocation() == Location.LOCALHOST) {
-                operaOptions.setBinary("C:\\Users\\derek\\AppData\\Local\\Programs\\Opera\\60.0.3255.170\\opera.exe");
-                webDriver = new OperaDriver(operaOptions);
-            }
-            break;
         }
         return webDriver;
     }
-
 }

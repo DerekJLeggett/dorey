@@ -1,0 +1,11 @@
+.icon{
+    float: left;
+    margin: 0 0 10px 10px;
+    width: 200px;
+    height: 200px;
+    clear:right;
+}
+.flag {
+    width: 200px;
+    height: 200px;
+}

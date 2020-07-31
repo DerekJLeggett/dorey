@@ -5,7 +5,7 @@ mvn test -Dtest=PerformanceTest
 mvn -U clean install -Dmaven.test.skip=true
 mvn versions:use-latest-releases
 
-sudo docker-compose up --scale chrome=5 --scale firefox=5 -d
+sudo docker-compose up --scale chrome=5 --scale firefox=5 --scale opera=5 -d
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 

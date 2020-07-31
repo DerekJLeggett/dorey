@@ -18,7 +18,8 @@
   <div class="row">
     <div class="col text-center" *ngIf="country">
       <h3 id="countryName" class="text-center">{{country.Name}}</h3>
-      <img class="img-fluid" title="{{country.Name}}" src="assets/images/flags/svg/{{country.Code2 | lowercase}}.svg">
+      <img class="img-fluid flag" title="{{country.Name}}"
+        src="assets/images/flags/svg/{{country.Code2 | lowercase}}.svg">
       <h4 class="text-center"><u>Languages Spoken</u></h4>
       <div class="progress" *ngFor="let language of country.Languages">
         <div class="progress-bar bg-warning text-dark" role="progressbar" [style.width.%]="language.Percentage"

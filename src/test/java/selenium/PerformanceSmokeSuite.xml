@@ -1,25 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Performance Smoke Test Suite" parallel="tests">
-    <listeners>
-        <listener class-name="selenium.ReportingListener" />
-    </listeners>
-    <parameter name="browserParam" value="Chrome"></parameter>
-    <parameter name="locationParam" value="GRID"></parameter>
-    <test name="Performance Smoke Test - Chrome">
-        <classes>
-            <class name="selenium.PerformanceTest" />
-        </classes>
-    </test>
-    <parameter name="browserParam" value="Firefox"></parameter>
-    <parameter name="locationParam" value="GRID"></parameter>
-    <test name="Performance Smoke Test - Firefox">
-        <classes>
-            <class name="selenium.PerformanceTest" />
-        </classes>
-    </test>
-    <parameter name="browserParam" value="Edge"></parameter>
-    <parameter name="locationParam" value="LOCALHOST"></parameter>
-    <test name="Performance Smoke Test - Edge">
+<suite name="Performance Smoke Test Suite">
+    <test name="Performance Smoke Test">
         <classes>
             <class name="selenium.PerformanceTest" />
         </classes>

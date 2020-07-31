@@ -2,7 +2,7 @@ package selenium;
 
 public class Browser {
     String id;
-    String name;
+    Name name;
     String version;
     Location location;
 
@@ -10,6 +10,13 @@ public class Browser {
         LOCALHOST, GRID;
 
         private Location() {
+        }
+    }
+
+    enum Name {
+        CHROME, FIREFOX, EDGE, OPERA, SAFARI;
+
+        private Name() {
         }
     }
 
@@ -21,11 +28,11 @@ public class Browser {
         this.id = id;
     }
 
-    public void setName(String name) {
+    public void setName(Name name) {
         this.name = name;
     }
 
-    public String getName() {
+    public Name getName() {
         return this.name;
     }
 

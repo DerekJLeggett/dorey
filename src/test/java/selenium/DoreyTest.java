@@ -3,7 +3,7 @@ package selenium;
 import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory; 
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -108,7 +108,7 @@ public class DoreyTest extends StartUp {
         }
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testPerformance() {
         homePage.clickDereksTab();
         dereksPage.clickPerformance();
@@ -145,7 +145,7 @@ public class DoreyTest extends StartUp {
         pageDriver.closeNewTab(originalHandle);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testMarvel() {
         homePage.clickDereksTab();
         dereksPage.clickMarvel();

@@ -23,7 +23,7 @@ public class PerformanceTest extends StartUp {
         public void initializeAll() {
                 gson = new Gson();
                 utility = new Utility();
-                company_json = utility.sendGet(baseUrl + "/api/getCompanies.php");
+                company_json = utility.sendGet(StartUp.props.getProperty("baseUrl") + "/api/getCompanies.php");
                 companies = gson.fromJson(company_json, Company[].class);
         }
 
@@ -45,7 +45,7 @@ public class PerformanceTest extends StartUp {
         @Test(dataProvider = "companyList")
         public void testPagePerformance(Company company) {
                 logger.info("Url: {}", company.url);
-                pageDriver.navigateTo("https://www." + company.url);
+                pageDriver.navigateTo("https://" + company.url);
                 utility.logTimings(pageDriver.getTimings(), company);
         }
 }

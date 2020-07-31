@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory; 
+import org.slf4j.LoggerFactory;
 import net.sf.uadetector.ReadableUserAgent;
 import net.sf.uadetector.UserAgentStringParser;
 import net.sf.uadetector.service.UADetectorServiceFactory;
@@ -228,29 +228,29 @@ public class PageDriver {
             @SuppressWarnings("unchecked")
             Map<String, Object> resource = (Map<String, Object>) resourceObj;
             switch (resource.get("initiatorType").toString()) {
-            case "link":
-                resources.setNumLink(resources.getNumLink() + 1);
-                break;
-            case "script":
-                resources.setNumScript(resources.getNumScript() + 1);
-                break;
-            case "img":
-                resources.setNumImage(resources.getNumImage() + 1);
-                break;
-            case "xmlhttprequest":
-                resources.setNumXmlHttp(resources.getNumXmlHttp() + 1);
-                break;
-            case "css":
-                resources.setNumCss(resources.getNumCss() + 1);
-                break;
-            case "iframe":
-                resources.setNumIframe(resources.getNumIframe() + 1);
-                break;
-            case "other":
-                resources.setNumOther(resources.getNumOther() + 1);
-                break;
-            default:
-                resources.setNumUnknown(resources.getNumUnknown() + 1);
+                case "link":
+                    resources.setNumLink(resources.getNumLink() + 1);
+                    break;
+                case "script":
+                    resources.setNumScript(resources.getNumScript() + 1);
+                    break;
+                case "img":
+                    resources.setNumImage(resources.getNumImage() + 1);
+                    break;
+                case "xmlhttprequest":
+                    resources.setNumXmlHttp(resources.getNumXmlHttp() + 1);
+                    break;
+                case "css":
+                    resources.setNumCss(resources.getNumCss() + 1);
+                    break;
+                case "iframe":
+                    resources.setNumIframe(resources.getNumIframe() + 1);
+                    break;
+                case "other":
+                    resources.setNumOther(resources.getNumOther() + 1);
+                    break;
+                default:
+                    resources.setNumUnknown(resources.getNumUnknown() + 1);
             }
         }
         return resources;
@@ -267,7 +267,6 @@ public class PageDriver {
         logger.info("User agent: {}", userAgent);
         UserAgentStringParser parser = UADetectorServiceFactory.getResourceModuleParser();
         ReadableUserAgent agent = parser.parse(userAgent);
-        StartUp.browser.setName(agent.getName());
         StartUp.browser.setVersion(agent.getVersionNumber().getMajor() + "." + agent.getVersionNumber().getMinor());
         StartUp.operatingSystem.setName(agent.getOperatingSystem().getName());
         StartUp.operatingSystem.setVersion(agent.getOperatingSystem().getVersionNumber().toString());

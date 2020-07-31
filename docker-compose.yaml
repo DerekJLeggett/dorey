@@ -26,19 +26,34 @@ services:
       - "4444:4444"
   chrome:
     image: selenium/node-chrome
-    volumes:
-      - /dev/shm:/dev/shm
+    # volumes:
+    #   - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:
+      - NODE_MAX_INSTANCES=5
+      - NODE_MAX_SESSION=5
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
   firefox:
     image: selenium/node-firefox
-    volumes:
-      - /dev/shm:/dev/shm
+    # volumes:
+    #   - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:
+      - NODE_MAX_INSTANCES=5
+      - NODE_MAX_SESSION=5
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+  opera:
+    image: selenium/node-opera
+    # volumes:
+    #   - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - NODE_MAX_INSTANCES=5
+      - NODE_MAX_SESSION=5
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444

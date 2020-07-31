@@ -156,7 +156,7 @@ public class Utility {
     public String logTestCase(ITestResult testResult, String testSuiteId, String didPass, Browser browser,
             OperatingSystem operatingSystem, String baseUrl) {
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
-        urlParameters.add(new BasicNameValuePair("browserName", browser.getName()));
+        urlParameters.add(new BasicNameValuePair("browserId", browser.id));
         urlParameters.add(new BasicNameValuePair("browserVersion", browser.getVersion()));
         urlParameters.add(new BasicNameValuePair("operatingSystem", operatingSystem.getName()));
         urlParameters.add(new BasicNameValuePair("operatingSystemVersion", operatingSystem.getVersion()));
@@ -164,7 +164,7 @@ public class Utility {
         urlParameters.add(new BasicNameValuePair("name", testResult.getName()));
         urlParameters.add(new BasicNameValuePair("didPass", didPass));
         urlParameters.add(new BasicNameValuePair("error", ""));
-        return sendPost(StartUp.baseUrl + "/api/addTestCase.php", urlParameters);
+        return sendPost(StartUp.props.getProperty("baseUrl") + "/api/addTestCase.php", urlParameters);
     }
 
     /**
@@ -179,6 +179,6 @@ public class Utility {
         urlParameters.add(new BasicNameValuePair("redirectTime", timings.redirectTime.toString()));
         urlParameters.add(new BasicNameValuePair("pageLoadTime", timings.pageLoadTime.toString()));
         urlParameters.add(new BasicNameValuePair("completeTime", timings.completeTime.toString()));
-        sendPost(StartUp.baseUrl + "/api/addTiming.php", urlParameters);
+        sendPost(StartUp.props.getProperty("baseUrl") + "/api/addTiming.php", urlParameters);
     }
 }
