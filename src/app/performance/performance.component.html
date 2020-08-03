@@ -12,6 +12,17 @@
       </p>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+      <label for="industrySelect" class="sr-only">Select an Industry</label>
+      <select class="custom-select" id="makeSelect" (change)="getTimingsByIndustryId($event.target.value)">
+        <option selected class="text-center">Select an Industry</option>
+        <option *ngFor="let industry of industries" class="text-center" value="{{industry.id}}">
+          {{industry.name}}
+        </option>
+      </select>
+    </div>
+  </div>
   <div class="row" *ngFor="let timing of timings">
     <div class="col-12">
       <div class="progress" style="height: 30px;">

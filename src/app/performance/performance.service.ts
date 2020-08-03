@@ -14,11 +14,11 @@ export class PerformanceService {
 
   constructor(private http: HttpClient) { }
 
-  getTimings(): Observable<ITiming[]> {
-    return this.http.get<ITiming[]>('/api/getTimings.php')
+  getTimingsByIndustryId(industryId: number): Observable<ITiming[]> {
+    return this.http.get<ITiming[]>('/api/getTimingsByIndustryId.php?industryId=' + industryId)
       .pipe(
         map(response => response),
-        catchError(this.handleError('getTimings', []))
+        catchError(this.handleError('getTimingsByIndustryId', []))
       );
   }
   getIndustries(): Observable<IIndustry[]> {

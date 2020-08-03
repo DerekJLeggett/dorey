@@ -13,11 +13,11 @@ export class PerformanceComponent implements OnInit {
   constructor(private performanceService: PerformanceService) { }
 
   ngOnInit() {
-    this.getTimings();
+    this.getIndustries();
   }
 
-  getTimings() {
-    this.performanceService.getTimings()
+  getTimingsByIndustryId(industryId: number) {
+    this.performanceService.getTimingsByIndustryId(industryId)
       .subscribe(response => this.timings = response);
   }
   getIndustries() {
