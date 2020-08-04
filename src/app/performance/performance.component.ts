@@ -16,8 +16,8 @@ export class PerformanceComponent implements OnInit {
     this.getIndustries();
   }
 
-  getTimingsByIndustryId(industryId: number) {
-    this.performanceService.getTimingsByIndustryId(industryId)
+  getTimingsByIndustryCode(industryCode: number) {
+    this.performanceService.getTimingsByIndustryCode(industryCode)
       .subscribe(response => this.timings = response);
   }
   getIndustries() {

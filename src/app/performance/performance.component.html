@@ -15,9 +15,9 @@
   <div class="row">
     <div class="col-12">
       <label for="industrySelect" class="sr-only">Select an Industry</label>
-      <select class="custom-select" id="makeSelect" (change)="getTimingsByIndustryId($event.target.value)">
+      <select class="custom-select" id="makeSelect" (change)="getTimingsByIndustryCode($event.target.value)">
         <option selected class="text-center">Select an Industry</option>
-        <option *ngFor="let industry of industries" class="text-center" value="{{industry.id}}">
+        <option *ngFor="let industry of industries" class="text-center" value="{{industry.code}}">
           {{industry.name}}
         </option>
       </select>
@@ -37,7 +37,7 @@
         <div class="progress-bar bg-warning" role="progressbar"
           [style.width.%]="((timing.pageLoadTime/timings[0].completeTime)*100)"
           aria-valuenow="((timing.pageLoadTime/timings[0].completeTime)*100)" aria-valuemin="0" aria-valuemax="100">
-          <a class="h4" href="https://{{timing.url}}" target="_blank">{{timing.pageLoadTime}} - {{timing.url}}</a>
+          <a class="h4" href="https://www.{{timing.url}}" target="_blank">{{timing.pageLoadTime}} - {{timing.url}}</a>
         </div>
       </div>
     </div>

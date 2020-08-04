@@ -35,7 +35,8 @@ public class NpsPage {
      * @return states List<WebElement>
      */
     public List<WebElement> getStates() {
-        return pageDriver.getSelectOptions(stateSelect);
+        List<WebElement> states = pageDriver.getSelectOptions(stateSelect);
+        return states.subList(1, states.size());
     }
 
     /**
@@ -49,6 +50,8 @@ public class NpsPage {
      * Get a the list of park names displayed
      */
     public List<WebElement> getParkNames() {
-        return pageDriver.getElements(By.xpath("//h2//a[@target='_blank']"));
+        By by = By.xpath("//h2//a[@target='_blank']");
+        pageDriver.waitForElement(by);
+        return pageDriver.getElements();
     }
 }

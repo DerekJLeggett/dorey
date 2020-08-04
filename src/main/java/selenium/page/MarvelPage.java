@@ -32,7 +32,8 @@ public class MarvelPage {
      * Get all characters
      */
     public List<WebElement> getCharacters() {
-        return pageDriver.getSelectOptions(characterSelect);
+        List<WebElement> characters = pageDriver.getSelectOptions(characterSelect);
+        return characters.subList(1, characters.size());
     }
 
     /**

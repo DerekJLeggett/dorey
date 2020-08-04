@@ -32,7 +32,8 @@ public class StarWarsPage {
      * Get all film names
      */
     public List<WebElement> getFilms() {
-        return pageDriver.getSelectOptions(filmSelect);
+        List<WebElement> films = pageDriver.getSelectOptions(filmSelect);
+        return films.subList(1, films.size());
     }
 
     /**

@@ -5,7 +5,7 @@ mvn test -Dtest=PerformanceTest
 mvn -U clean install -Dmaven.test.skip=true
 mvn versions:use-latest-releases
 mysqldump -u root -p my_derek > my_derek.sql
-source my_derek.aql;
+source my_derek.sql;
 
 sudo docker-compose up --scale chrome=5 --scale firefox=5 --scale opera=5 -d
 

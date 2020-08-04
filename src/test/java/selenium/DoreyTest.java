@@ -1,6 +1,8 @@
 package selenium;
 
 import java.util.List;
+
+import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,9 +49,9 @@ public class DoreyTest extends StartUp {
 
     @Test(enabled = true)
     public void testHomePage() {
-        homePage.clickHomeTab();
-        Assert.assertTrue(webDriver.getTitle().equals("Dorey"));
-        Assert.assertTrue(webDriver.getPageSource().contains("Derek and Lori Leggett"));
+    homePage.clickHomeTab();
+    Assert.assertTrue(webDriver.getTitle().equals("Dorey"));
+    Assert.assertTrue(webDriver.getPageSource().contains("Derek and Lori Leggett"));
     }
 
     @Test(enabled = true)
@@ -84,16 +86,11 @@ public class DoreyTest extends StartUp {
     public void testStarWars() {
         homePage.clickDereksTab();
         dereksPage.clickStarWars();
-        String film = starWarsPage.selectRandomFilm();
-        logger.info("Film: {}", film);
-        Assert.assertTrue(starWarsPage.getTitle().trim().contains(film.trim()));
-        List<WebElement> characters = starWarsPage.getCharacters();
-        for (WebElement character : characters) {
-            character.click();
-            logger.info("Element name: {}", character.getText());
-            // Assert.assertEquals(character.getText(),
-            // starWarsPage.getCharacterModalCharacterName());
-            starWarsPage.clickCharacterModalClose();
+        List<WebElement> films = starWarsPage.getFilms();
+        for (WebElement film : films) {
+            starWarsPage.selectFilm(film.getText());
+            logger.info("Film: {}", film);
+            Assert.assertTrue(starWarsPage.getTitle().trim().contains(film.getText().trim()));
         }
     }
 
@@ -108,7 +105,7 @@ public class DoreyTest extends StartUp {
         }
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testPerformance() {
         homePage.clickDereksTab();
         dereksPage.clickPerformance();
@@ -145,15 +142,18 @@ public class DoreyTest extends StartUp {
         pageDriver.closeNewTab(originalHandle);
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void testMarvel() {
         homePage.clickDereksTab();
         dereksPage.clickMarvel();
-        String character = marvelPage.selectRandomCharacter();
-        logger.info("Character: {}", character);
-        List<WebElement> comics = marvelPage.getComics();
-        for (WebElement comic : comics) {
-            logger.info("Comic name: {}", comic.getText());
+        List<WebElement> characters = marvelPage.getCharacters();
+        for (WebElement character : characters) {
+            logger.info("Character: {}", character.getText());
+            marvelPage.selectCharacter(character.getText());
+            List<WebElement> comics = marvelPage.getComics();
+            for (WebElement comic : comics) {
+                logger.info("Comic name: {}", comic.getText());
+            }
         }
     }
 }

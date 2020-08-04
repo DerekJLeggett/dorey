@@ -117,7 +117,7 @@ module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h2 class=\"text-center\">SUPER(Single User Performance)</h2>\n      <p class=\"text-center\">Performance metrics were obtained by opening clean(no cache) browser, navigating to the\n        specified url\n        , waiting for the page to load, then collecting metrics reported by the browser.\n        Blue bar is Network + Server Processing time.\n        Red bar is Redirect time.\n        Yellow bar is Page Load/Browser Rendering time.\n        All values are in milliseconds.\n      </p>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"industrySelect\" class=\"sr-only\">Select an Industry</label>\n      <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getTimingsByIndustryId($event.target.value)\">\n        <option selected class=\"text-center\">Select an Industry</option>\n        <option *ngFor=\"let industry of industries\" class=\"text-center\" value=\"{{industry.id}}\">\n          {{industry.name}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <div class=\"row\" *ngFor=\"let timing of timings\">\n    <div class=\"col-12\">\n      <div class=\"progress\" style=\"height: 30px;\">\n        <div class=\"progress-bar\" role=\"progressbar\"\n          [style.width.%]=\"((timing.networkLatency/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.networkLatency/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.networkLatency}}</div>\n        <div class=\"progress-bar bg-danger\" role=\"progressbar\"\n          [style.width.%]=\"((timing.redirectTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.redirectTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.redirectTime}}</div>\n        <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n          [style.width.%]=\"((timing.pageLoadTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.pageLoadTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          <a class=\"h4\" href=\"https://{{timing.url}}\" target=\"_blank\">{{timing.pageLoadTime}} - {{timing.url}}</a>\n        </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h2 class=\"text-center\">SUPER(Single User Performance)</h2>\n      <p class=\"text-center\">Performance metrics were obtained by opening clean(no cache) browser, navigating to the\n        specified url\n        , waiting for the page to load, then collecting metrics reported by the browser.\n        Blue bar is Network + Server Processing time.\n        Red bar is Redirect time.\n        Yellow bar is Page Load/Browser Rendering time.\n        All values are in milliseconds.\n      </p>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"industrySelect\" class=\"sr-only\">Select an Industry</label>\n      <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getTimingsByIndustryCode($event.target.value)\">\n        <option selected class=\"text-center\">Select an Industry</option>\n        <option *ngFor=\"let industry of industries\" class=\"text-center\" value=\"{{industry.code}}\">\n          {{industry.name}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <div class=\"row\" *ngFor=\"let timing of timings\">\n    <div class=\"col-12\">\n      <div class=\"progress\" style=\"height: 30px;\">\n        <div class=\"progress-bar\" role=\"progressbar\"\n          [style.width.%]=\"((timing.networkLatency/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.networkLatency/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.networkLatency}}</div>\n        <div class=\"progress-bar bg-danger\" role=\"progressbar\"\n          [style.width.%]=\"((timing.redirectTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.redirectTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.redirectTime}}</div>\n        <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n          [style.width.%]=\"((timing.pageLoadTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.pageLoadTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          <a class=\"h4\" href=\"https://www.{{timing.url}}\" target=\"_blank\">{{timing.pageLoadTime}} - {{timing.url}}</a>\n        </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -1377,8 +1377,8 @@ let PerformanceComponent = class PerformanceComponent {
     ngOnInit() {
         this.getIndustries();
     }
-    getTimingsByIndustryId(industryId) {
-        this.performanceService.getTimingsByIndustryId(industryId)
+    getTimingsByIndustryCode(industryCode) {
+        this.performanceService.getTimingsByIndustryCode(industryCode)
             .subscribe(response => this.timings = response);
     }
     getIndustries() {
@@ -1429,8 +1429,8 @@ let PerformanceService = class PerformanceService {
     constructor(http) {
         this.http = http;
     }
-    getTimingsByIndustryId(industryId) {
-        return this.http.get('/api/getTimingsByIndustryId.php?industryId=' + industryId)
+    getTimingsByIndustryCode(industryCode) {
+        return this.http.get('/api/getTimingsByIndustryId.php?industryId=' + industryCode)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(response => response), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getTimingsByIndustryId', [])));
     }
     getIndustries() {
@@ -2204,7 +2204,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/pi/git/dorey/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /mnt/media/git/dorey/src/main.ts */"./src/main.ts");
 
 
 /***/ })
