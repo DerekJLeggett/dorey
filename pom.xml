@@ -67,7 +67,7 @@
                     <configuration>
                         <suiteXmlFiles>
                             <suiteXmlFile>src\test\java\selenium\DoreySmokeSuite.xml</suiteXmlFile>
-                            <!-- <suiteXmlFile>src\test\java\selenium\PerformanceSmokeSuite.xml</suiteXmlFile> -->
+                            <suiteXmlFile>src\test\java\selenium\PerformanceSmokeSuite.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

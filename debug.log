@@ -498,3 +498,14 @@
 [0725/193208.652:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\SYSTEM32\windows.storage.dll
 [0725/193208.652:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7fffc7b50000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
 [0725/193208.652:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\SYSTEM32\Wldp.dll
+[0803/200809.069:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/200809.503:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/200809.522:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/200809.712:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/201400.470:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/201401.214:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/201401.218:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/201401.223:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/201401.487:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0803/201401.563:ERROR:process_memory_win.cc(73)] ReadMemory at 0x28dcc0714c0 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0803/201401.569:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\84.0.4147.105\chrome_elf.dll

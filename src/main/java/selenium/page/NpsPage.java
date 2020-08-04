@@ -50,8 +50,6 @@ public class NpsPage {
      * Get a the list of park names displayed
      */
     public List<WebElement> getParkNames() {
-        By by = By.xpath("//h2//a[@target='_blank']");
-        pageDriver.waitForElement(by);
-        return pageDriver.getElements();
+        return pageDriver.getElements(By.xpath("//h2//a[@target='_blank']"));
     }
 }
