@@ -21,6 +21,7 @@ import { RecreationComponent } from './recreation/recreation.component';
 import { SnapComponent } from './snap/snap.component';
 import { LibraryComponent } from './library/library.component';
 import { PerformanceComponent } from './performance/performance.component';
+import { CovidComponent } from './covid/covid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { PerformanceComponent } from './performance/performance.component';
     RecreationComponent,
     SnapComponent,
     LibraryComponent,
-    PerformanceComponent
+    PerformanceComponent,
+    CovidComponent
   ],
   imports: [
     BrowserModule,
