@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">\n    <a class=\"nav-item nav-link active h4\" id=\"nav-home-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-home\" aria-selected=\"true\" routerLink=\"home\">Home</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lori-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"lori\">Lori</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lindsey-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-contact\" aria-selected=\"false\" routerLink=\"lindsey\">Lindsey</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-derek-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"derek\">Derek</a>\n  </div>\n</nav>\n<router-outlet></router-outlet>\n<footer class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 text-center\">\n      <a href=\"#\">\n        <img src=\"/assets/images/mailbox.gif\" alt=\"mailbox\" />\n      </a>\n      <br>\n      <a href=\"#\">\n        <img src=\"/assets/images/0342.gif\" alt=\"mailbox\" />\n      </a>\n      <h3 class=\"text-center\">Created by Lori Leggett - 1/13/01</h3>\n    </div>\n  </div>\n</footer>"
+module.exports = "<nav>\n  <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">\n    <a class=\"nav-item nav-link active h4\" id=\"nav-home-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-home\" aria-selected=\"true\" routerLink=\"home\">Home</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lori-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"lori\">Lori</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lindsey-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-contact\" aria-selected=\"false\" routerLink=\"lindsey\">Lindsey</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-derek-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"derek\">Derek</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-covid-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"covid\">Covid-19</a>\n  </div>\n</nav>\n<router-outlet></router-outlet>\n<footer class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 text-center\">\n      <a href=\"#\">\n        <img src=\"/assets/images/mailbox.gif\" alt=\"mailbox\" />\n      </a>\n      <br>\n      <a href=\"#\">\n        <img src=\"/assets/images/0342.gif\" alt=\"mailbox\" />\n      </a>\n      <h3 class=\"text-center\">Created by Lori Leggett - 1/13/01</h3>\n    </div>\n  </div>\n</footer>"
 
 /***/ }),
 
@@ -19,6 +19,17 @@ module.exports = "<nav>\n  <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tab
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group\">\n          <label for=\"typeSelect\" class=\"sr-only\">Select a vehicle type</label>\n          <select class=\"custom-select\" id=\"typeSelect\" (change)=\"getMakesByType($event.target.value)\">\n            <option selected class=\"text-center\">Select a vehicle type</option>\n            <option *ngFor=\"let type of types\" class=\"text-center\" value=\"{{type.type}}\">\n              {{type.type}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group\">\n          <label for=\"makeSelect\" class=\"sr-only\">Select a manufacturer</label>\n          <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getModelsByMakeId($event.target.value)\">\n            <option selected class=\"text-center\">Select a manufacturer</option>\n            <option *ngFor=\"let make of makesByType\" class=\"text-center\" value=\"{{make.MakeId}}\">\n              {{make.MakeName}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col text-center\">\n      <h4 class=\"text-center\">Models</h4>\n      <div *ngFor=\"let model of models\">\n        {{model.Model_Name}}\n      </div>\n    </div>\n  </div>\n  <a href=\"https://vpic.nhtsa.dot.gov/api/Home\" target=\"_blank\">Data Provided by Vehicle API</a>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/covid/covid.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/covid/covid.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n    <div class=\"row no-gutters\" *ngFor=\"let covidCount of covidCounts\">\n        <div class=\"col-1\">\n            <img class=\"img-fluid svg\" title=\"{{covidCount.Country_code}}\"\n                src=\"assets/images/flags/svg/{{covidCount.Country_code | lowercase}}.svg\">\n        </div>\n        <div class=\"col-11\">\n            <div class=\"progress\" style=\"height: 50px\">\n                <div class=\" progress-bar bg-danger\" role=\"progressbar\"\n                    [style.width.%]=\"((covidCount.Cumulative_deaths/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuenow=\"((covidCount.Cumulative_deaths/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuemin=\"0\" aria-valuemax=\"100\">\n                    {{covidCount.Cumulative_deaths | number}}</div>\n                <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n                    [style.width.%]=\"(((covidCount.Cumulative_cases - covidCount.Cumulative_deaths)/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuenow=\"(((covidCount.Cumulative_cases - covidCount.Cumulative_deaths)/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuemin=\"0\" aria-valuemax=\"100\">\n                    {{covidCount.Cumulative_cases | number}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -227,6 +238,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _snap_snap_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./snap/snap.component */ "./src/app/snap/snap.component.ts");
 /* harmony import */ var _library_library_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./library/library.component */ "./src/app/library/library.component.ts");
 /* harmony import */ var _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./performance/performance.component */ "./src/app/performance/performance.component.ts");
+/* harmony import */ var _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./covid/covid.component */ "./src/app/covid/covid.component.ts");
+
 
 
 
@@ -261,7 +274,8 @@ const routes = [
     { path: 'recreation', component: _recreation_recreation_component__WEBPACK_IMPORTED_MODULE_14__["RecreationComponent"] },
     { path: 'snap', component: _snap_snap_component__WEBPACK_IMPORTED_MODULE_15__["SnapComponent"] },
     { path: 'library', component: _library_library_component__WEBPACK_IMPORTED_MODULE_16__["LibraryComponent"] },
-    { path: 'performance', component: _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__["PerformanceComponent"] }
+    { path: 'performance', component: _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__["PerformanceComponent"] },
+    { path: 'covid', component: _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__["CovidComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -352,6 +366,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _snap_snap_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./snap/snap.component */ "./src/app/snap/snap.component.ts");
 /* harmony import */ var _library_library_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./library/library.component */ "./src/app/library/library.component.ts");
 /* harmony import */ var _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./performance/performance.component */ "./src/app/performance/performance.component.ts");
+/* harmony import */ var _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./covid/covid.component */ "./src/app/covid/covid.component.ts");
+
 
 
 
@@ -396,7 +412,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _recreation_recreation_component__WEBPACK_IMPORTED_MODULE_20__["RecreationComponent"],
             _snap_snap_component__WEBPACK_IMPORTED_MODULE_21__["SnapComponent"],
             _library_library_component__WEBPACK_IMPORTED_MODULE_22__["LibraryComponent"],
-            _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__["PerformanceComponent"]
+            _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__["PerformanceComponent"],
+            _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__["CovidComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -573,6 +590,103 @@ AutoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], AutoService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/covid/covid.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/covid/covid.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".svg {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY292aWQvY292aWQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY292aWQvY292aWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/covid/covid.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/covid/covid.component.ts ***!
+  \******************************************/
+/*! exports provided: CovidComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CovidComponent", function() { return CovidComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _covid_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./covid.service */ "./src/app/covid/covid.service.ts");
+
+
+
+let CovidComponent = class CovidComponent {
+    constructor(covidService) {
+        this.covidService = covidService;
+        this.covidCounts = [];
+    }
+    ngOnInit() {
+        this.getCovidCounts();
+    }
+    getCovidCounts() {
+        this.covidService.getCovidCounts()
+            .subscribe(response => this.covidCounts = response);
+    }
+};
+CovidComponent.ctorParameters = () => [
+    { type: _covid_service__WEBPACK_IMPORTED_MODULE_2__["CovidService"] }
+];
+CovidComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-covid',
+        template: __webpack_require__(/*! raw-loader!./covid.component.html */ "./node_modules/raw-loader/index.js!./src/app/covid/covid.component.html"),
+        styles: [__webpack_require__(/*! ./covid.component.css */ "./src/app/covid/covid.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_covid_service__WEBPACK_IMPORTED_MODULE_2__["CovidService"]])
+], CovidComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/covid/covid.service.ts":
+/*!****************************************!*\
+  !*** ./src/app/covid/covid.service.ts ***!
+  \****************************************/
+/*! exports provided: CovidService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CovidService", function() { return CovidService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+let CovidService = class CovidService {
+    constructor(http) {
+        this.http = http;
+    }
+    getCovidCounts() {
+        return this.http.get('/api/getCovidCounts.php')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(response => response));
+    }
+};
+CovidService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+CovidService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], CovidService);
 
 
 
