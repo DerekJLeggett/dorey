@@ -1,6 +1,6 @@
 <?php
    require( '../../connect_db.php' );
-   $q = "SELECT Country_code, Cumulative_cases, Cumulative_deaths 
+   $q = "SELECT Date_reported, Country_code, Cumulative_cases, Cumulative_deaths 
    FROM covid
    WHERE Date_reported = (SELECT MAX(Date_reported) FROM covid)
    ORDER BY Cumulative_cases DESC;"; 

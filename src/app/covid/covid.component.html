@@ -1,4 +1,6 @@
 <div class="container-fluid">
+    <a href="https://covid19.who.int" target="_blank">Data provided by the World Health Organization, Data current as of
+        {{covidCounts[0].Date_reported}}</a>
     <div class="row no-gutters" *ngFor="let covidCount of covidCounts">
         <div class="col-1">
             <img class="img-fluid svg" title="{{covidCount.Country_code}}"
