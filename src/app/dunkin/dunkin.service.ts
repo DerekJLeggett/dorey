@@ -26,6 +26,13 @@ export class DunkinService {
         catchError(this.handleError('getDunkin', []))
       );
   }
+  getDunkinNearGeo(latitude: string, longitude: string): Observable<Dunkin[]> {
+    return this.http.get<Dunkin[]>('api/getDunkinDonutLocations.php?lat=' + latitude + "&long=" + longitude)
+      .pipe(
+        map(response => response),
+        catchError(this.handleError('getDunkin', []))
+      );
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.

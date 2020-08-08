@@ -128,7 +128,18 @@ module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h2 class=\"text-center\">SUPER(Single User Performance)</h2>\n      <p class=\"text-center\">Performance metrics were obtained by opening clean(no cache) browser, navigating to the\n        specified url\n        , waiting for the page to load, then collecting metrics reported by the browser.\n        Blue bar is Network + Server Processing time.\n        Red bar is Redirect time.\n        Yellow bar is Page Load/Browser Rendering time.\n        All values are in milliseconds.\n      </p>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"industrySelect\" class=\"sr-only\">Select an Industry</label>\n      <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getTimingsByIndustryCode($event.target.value)\">\n        <option selected class=\"text-center\">Select an Industry</option>\n        <option *ngFor=\"let industry of industries\" class=\"text-center\" value=\"{{industry.code}}\">\n          {{industry.name}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <div class=\"row\" *ngFor=\"let timing of timings\">\n    <div class=\"col-12\">\n      <div class=\"progress\" style=\"height: 30px;\">\n        <div class=\"progress-bar\" role=\"progressbar\"\n          [style.width.%]=\"((timing.networkLatency/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.networkLatency/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.networkLatency}}</div>\n        <div class=\"progress-bar bg-danger\" role=\"progressbar\"\n          [style.width.%]=\"((timing.redirectTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.redirectTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.redirectTime}}</div>\n        <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n          [style.width.%]=\"((timing.pageLoadTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.pageLoadTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          <a class=\"h4\" href=\"https://www.{{timing.url}}\" target=\"_blank\">{{timing.pageLoadTime}} - {{timing.url}}</a>\n        </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h2 class=\"text-center\">SUPER(Single User Performance)</h2>\n      <p class=\"text-center\">Performance metrics were obtained by opening clean(no cache) browser, navigating to the\n        specified url\n        , waiting for the page to load, then collecting metrics reported by the browser.\n        Blue bar is Network + Server Processing time.\n        Red bar is Redirect time.\n        Yellow bar is Page Load/Browser Rendering time.\n        All values are in milliseconds.\n      </p>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <label for=\"industrySelect\" class=\"sr-only\">Select an Industry</label>\n      <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getTimingsByIndustryCode($event.target.value)\">\n        <option selected class=\"text-center\">Select an Industry</option>\n        <option *ngFor=\"let industry of industries\" class=\"text-center\" value=\"{{industry.id}}\">\n          {{industry.name}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <div class=\"row\" *ngFor=\"let timing of timings\">\n    <div class=\"col-12\">\n      <div class=\"progress\" style=\"height: 30px;\">\n        <div class=\"progress-bar\" role=\"progressbar\"\n          [style.width.%]=\"((timing.networkLatency/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.networkLatency/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.networkLatency}}</div>\n        <div class=\"progress-bar bg-danger\" role=\"progressbar\"\n          [style.width.%]=\"((timing.redirectTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.redirectTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          {{timing.redirectTime}}</div>\n        <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n          [style.width.%]=\"((timing.pageLoadTime/timings[0].completeTime)*100)\"\n          aria-valuenow=\"((timing.pageLoadTime/timings[0].completeTime)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          <a class=\"h4\" href=\"https://{{timing.url}}\" target=\"_blank\">{{timing.pageLoadTime}} - {{timing.url}}</a>\n        </div>\n      </div>\n    </div>\n  </div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/places/places.component.html":
+/*!************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/places/places.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\" *ngFor=\"let place of places\">\n        <div class=\"col\">\n            <h3>{{place.distance | number}}mi. - <a target=\"_blank\"\n                    href=\"https://www.google.com/maps/search/?api=1&query={{place.latitude}},{{place.longitude}}\"><img\n                        *ngIf=\"place.type=='Dunkin Donuts'\" class=\"img-fluid svg\" src=\"assets/images/Dunkin_Donuts.svg\"\n                        alt=\"Dunkin Donuts logo\">\n                    <img *ngIf=\"place.type=='Library'\" class=\"img-fluid svg\" src=\"assets/images/Library.svg\"\n                        alt=\"Dunkin Donuts logo\">\n                    <img *ngIf=\"place.type=='Snap'\" class=\"img-fluid svg\" src=\"assets/images/SNAP.svg\"\n                        alt=\"Dunkin Donuts logo\"></a>\n            </h3>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -239,6 +250,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _library_library_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./library/library.component */ "./src/app/library/library.component.ts");
 /* harmony import */ var _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./performance/performance.component */ "./src/app/performance/performance.component.ts");
 /* harmony import */ var _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./covid/covid.component */ "./src/app/covid/covid.component.ts");
+/* harmony import */ var _places_places_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./places/places.component */ "./src/app/places/places.component.ts");
+
 
 
 
@@ -275,7 +288,8 @@ var routes = [
     { path: 'snap', component: _snap_snap_component__WEBPACK_IMPORTED_MODULE_15__["SnapComponent"] },
     { path: 'library', component: _library_library_component__WEBPACK_IMPORTED_MODULE_16__["LibraryComponent"] },
     { path: 'performance', component: _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__["PerformanceComponent"] },
-    { path: 'covid', component: _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__["CovidComponent"] }
+    { path: 'covid', component: _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__["CovidComponent"] },
+    { path: 'places', component: _places_places_component__WEBPACK_IMPORTED_MODULE_19__["PlacesComponent"] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -371,6 +385,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _library_library_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./library/library.component */ "./src/app/library/library.component.ts");
 /* harmony import */ var _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./performance/performance.component */ "./src/app/performance/performance.component.ts");
 /* harmony import */ var _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./covid/covid.component */ "./src/app/covid/covid.component.ts");
+/* harmony import */ var _places_places_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./places/places.component */ "./src/app/places/places.component.ts");
+
 
 
 
@@ -418,7 +434,8 @@ var AppModule = /** @class */ (function () {
                 _snap_snap_component__WEBPACK_IMPORTED_MODULE_21__["SnapComponent"],
                 _library_library_component__WEBPACK_IMPORTED_MODULE_22__["LibraryComponent"],
                 _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__["PerformanceComponent"],
-                _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__["CovidComponent"]
+                _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__["CovidComponent"],
+                _places_places_component__WEBPACK_IMPORTED_MODULE_25__["PlacesComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -933,6 +950,10 @@ var DunkinService = /** @class */ (function () {
     };
     DunkinService.prototype.getDunkinByState = function (state) {
         return this.http.get('api/dunkin/byState?state=' + state)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getDunkin', [])));
+    };
+    DunkinService.prototype.getDunkinNearGeo = function (latitude, longitude) {
+        return this.http.get('api/getDunkinDonutLocations.php?lat=' + latitude + "&long=" + longitude)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getDunkin', [])));
     };
     /**
@@ -1540,9 +1561,9 @@ var PerformanceComponent = /** @class */ (function () {
     PerformanceComponent.prototype.ngOnInit = function () {
         this.getIndustries();
     };
-    PerformanceComponent.prototype.getTimingsByIndustryCode = function (industryCode) {
+    PerformanceComponent.prototype.getTimingsByIndustryCode = function (industryId) {
         var _this = this;
-        this.performanceService.getTimingsByIndustryCode(industryCode)
+        this.performanceService.getTimingsByIndustryId(industryId)
             .subscribe(function (response) { return _this.timings = response; });
     };
     PerformanceComponent.prototype.getIndustries = function () {
@@ -1595,8 +1616,8 @@ var PerformanceService = /** @class */ (function () {
     function PerformanceService(http) {
         this.http = http;
     }
-    PerformanceService.prototype.getTimingsByIndustryCode = function (industryCode) {
-        return this.http.get('/api/getTimingsByIndustryId.php?industryId=' + industryCode)
+    PerformanceService.prototype.getTimingsByIndustryId = function (industryId) {
+        return this.http.get('/api/getTimingsByIndustryId.php?industryId=' + industryId)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) { return response; }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getTimingsByIndustryId', [])));
     };
     PerformanceService.prototype.getIndustries = function () {
@@ -1630,6 +1651,112 @@ var PerformanceService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], PerformanceService);
     return PerformanceService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/places/places.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/places/places.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".svg {\r\n    width: 25%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxhY2VzL3BsYWNlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wbGFjZXMvcGxhY2VzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3ZnIHtcclxuICAgIHdpZHRoOiAyNSU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/places/places.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/places/places.component.ts ***!
+  \********************************************/
+/*! exports provided: PlacesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesComponent", function() { return PlacesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _places_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./places.service */ "./src/app/places/places.service.ts");
+
+
+
+var PlacesComponent = /** @class */ (function () {
+    function PlacesComponent(placesService) {
+        var _this = this;
+        this.placesService = placesService;
+        this.places = [];
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                _this.long = +pos.coords.longitude;
+                _this.lat = +pos.coords.latitude;
+                _this.getPlaces();
+            });
+        }
+    }
+    PlacesComponent.prototype.ngOnInit = function () { };
+    PlacesComponent.prototype.getPlaces = function () {
+        var _this = this;
+        this.placesService.getPlaces(this.lat, this.long)
+            .subscribe(function (response) { return _this.places = response; });
+    };
+    PlacesComponent.ctorParameters = function () { return [
+        { type: _places_service__WEBPACK_IMPORTED_MODULE_2__["PlacesService"] }
+    ]; };
+    PlacesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-places',
+            template: __webpack_require__(/*! raw-loader!./places.component.html */ "./node_modules/raw-loader/index.js!./src/app/places/places.component.html"),
+            styles: [__webpack_require__(/*! ./places.component.css */ "./src/app/places/places.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_places_service__WEBPACK_IMPORTED_MODULE_2__["PlacesService"]])
+    ], PlacesComponent);
+    return PlacesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/places/places.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/places/places.service.ts ***!
+  \******************************************/
+/*! exports provided: PlacesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesService", function() { return PlacesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+
+
+
+
+var PlacesService = /** @class */ (function () {
+    function PlacesService(http) {
+        this.http = http;
+    }
+    PlacesService.prototype.getPlaces = function (lat, long) {
+        return this.http.get('/api/getPlaces.php?lat=' + lat + '&long=' + long)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response; }));
+    };
+    PlacesService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+    ]; };
+    PlacesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], PlacesService);
+    return PlacesService;
 }());
 
 

@@ -45,7 +45,7 @@ public class PerformanceTest extends StartUp {
         @Test(dataProvider = "companyList")
         public void testPagePerformance(Company company) {
                 logger.info("Url: {}", company.url);
-                pageDriver.navigateTo("https://www." + company.url);
+                pageDriver.navigateTo("https://" + company.url);
                 utility.logTimings(pageDriver.getTimings(), company);
         }
 }

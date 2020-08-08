@@ -1,5 +1,5 @@
 export interface IIndustry {
-    "code": number;
+    "id": number;
     "name": string;
 }
 export interface ITiming {

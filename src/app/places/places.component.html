@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row text-center" *ngFor="let place of places">
+        <div class="col">
+            <ul class="list-unstyled">
+                <a target="_blank"
+                    href="https://www.google.com/maps/search/?api=1&query={{place.latitude}},{{place.longitude}}">
+                    <li><strong>{{place.name | titlecase}}</strong></li>
+                </a>
+                <li>Distance: {{place.distance | number}}mi.</li>
+                <li>{{place.address | titlecase}}</li>
+                <li>{{place.city | titlecase}},
+                    {{place.state}} {{place.zip}}</li>
+                <li>{{place.country}}</li>
+                <li>Phone: {{place.phone}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

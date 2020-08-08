@@ -22,6 +22,7 @@ import { SnapComponent } from './snap/snap.component';
 import { LibraryComponent } from './library/library.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { CovidComponent } from './covid/covid.component';
+import { PlacesComponent } from './places/places.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { CovidComponent } from './covid/covid.component';
     SnapComponent,
     LibraryComponent,
     PerformanceComponent,
-    CovidComponent
+    CovidComponent,
+    PlacesComponent
   ],
   imports: [
     BrowserModule,

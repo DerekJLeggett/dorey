@@ -14,8 +14,8 @@ export class PerformanceService {
 
   constructor(private http: HttpClient) { }
 
-  getTimingsByIndustryCode(industryCode: number): Observable<ITiming[]> {
-    return this.http.get<ITiming[]>('/api/getTimingsByIndustryId.php?industryId=' + industryCode)
+  getTimingsByIndustryId(industryId: number): Observable<ITiming[]> {
+    return this.http.get<ITiming[]>('/api/getTimingsByIndustryId.php?industryId=' + industryId)
       .pipe(
         map(response => response),
         catchError(this.handleError('getTimingsByIndustryId', []))

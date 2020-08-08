@@ -7,6 +7,9 @@ mvn versions:use-latest-releases
 mysqldump -u root -p my_derek > my_derek.sql
 source my_derek.sql;
 https://covid19.who.int/WHO-COVID-19-global-data.csv
+https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+/etc/apache2/sites-enabled$ sudo certbot --apache --expand -d thedorey.com,www.thedorey.com
+<iframe src="//assets.ngeo.com/modules-video/latest/assets/ngsEmbeddedVideo.html?guid=ngc-qTegnDBNaOavHCW66ItLcxmvYyI6rKHa" width="640" height="365" frameborder="0" seamless="seamless" scrolling="no" allowfullscreen=""></iframe>
 
 sudo docker-compose up --scale chrome=5 --scale firefox=5 --scale opera=5 -d
 

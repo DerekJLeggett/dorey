@@ -66,4 +66,11 @@ public class DereksPage extends StartUp {
     public void clickPerformance() {
         pageDriver.clickElement(By.xpath("//a[@href='/performance']"));
     }
+
+    /**
+     * CLick the Places icon
+     */
+    public void clickPlaces() {
+        pageDriver.clickElement(By.xpath("//a[@href='/places']"));
+    }
 }

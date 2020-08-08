@@ -1,6 +1,6 @@
 <?php
    require( '../../connect_db.php' );
-   $q = "SELECT code, name FROM `industry` ORDER BY name;";
+   $q = "SELECT id, name FROM `industry` ORDER BY name;";
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))
         {

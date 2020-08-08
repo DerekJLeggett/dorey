@@ -49,9 +49,9 @@ public class DoreyTest extends StartUp {
 
     @Test(enabled = true)
     public void testHomePage() {
-    homePage.clickHomeTab();
-    Assert.assertTrue(webDriver.getTitle().equals("Dorey"));
-    Assert.assertTrue(webDriver.getPageSource().contains("Derek and Lori Leggett"));
+        homePage.clickHomeTab();
+        Assert.assertTrue(webDriver.getTitle().equals("Dorey"));
+        Assert.assertTrue(webDriver.getPageSource().contains("Derek and Lori Leggett"));
     }
 
     @Test(enabled = true)
@@ -155,5 +155,11 @@ public class DoreyTest extends StartUp {
                 logger.info("Comic name: {}", comic.getText());
             }
         }
+    }
+
+    @Test(enabled = true)
+    public void testCovid() {
+        homePage.clickCovidTab();
+        dereksPage.clickPlaces();
     }
 }

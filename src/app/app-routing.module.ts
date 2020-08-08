@@ -16,6 +16,7 @@ import { SnapComponent } from './snap/snap.component';
 import { LibraryComponent } from './library/library.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { CovidComponent } from './covid/covid.component';
+import { PlacesComponent } from './places/places.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home', },
   { path: 'home', component: HomeComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'snap', component: SnapComponent },
   { path: 'library', component: LibraryComponent },
   { path: 'performance', component: PerformanceComponent },
-  { path: 'covid', component: CovidComponent }
+  { path: 'covid', component: CovidComponent },
+  { path: 'places', component: PlacesComponent }
 ];
 
 @NgModule({

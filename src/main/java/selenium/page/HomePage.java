@@ -37,4 +37,11 @@ public class HomePage {
     public void clickDereksTab() {
         pageDriver.clickElement(By.id("nav-derek-tab"));
     }
+
+    /**
+     * Click Covid tab from the main menu
+     */
+    public void clickCovidTab() {
+        pageDriver.clickElement(By.id("nav-covid-tab"));
+    }
 }
