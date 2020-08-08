@@ -33,5 +33,10 @@
         "url": "/performance",
         "linkText": "Website Performance",
         "imagePath": "assets/images/HTML5_logo_and_wordmark.svg"
+    },
+    {
+        "url": "/places",
+        "linkText": "Around me!",
+        "imagePath": "assets/images/gps.svg"
     }
 ]
