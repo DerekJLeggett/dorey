@@ -17,6 +17,9 @@ import { LibraryComponent } from './library/library.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { CovidComponent } from './covid/covid.component';
 import { PlacesComponent } from './places/places.component';
+import { NatgeoComponent } from './natgeo/natgeo.component';
+import { PopulationComponent } from './population/population.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home', },
   { path: 'home', component: HomeComponent },
@@ -35,7 +38,9 @@ const routes: Routes = [
   { path: 'library', component: LibraryComponent },
   { path: 'performance', component: PerformanceComponent },
   { path: 'covid', component: CovidComponent },
-  { path: 'places', component: PlacesComponent }
+  { path: 'places', component: PlacesComponent },
+  { path: 'natgeo', component: NatgeoComponent },
+  { path: 'population', component: PopulationComponent }
 ];
 
 @NgModule({

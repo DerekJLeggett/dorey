@@ -2,11 +2,16 @@ export interface IIndustry {
     "id": number;
     "name": string;
 }
-export interface ITiming {
+export interface ICompany {
+    Company: string;
     url: string;
-    companyId: string;
+    Timings: Timing[];
+}
+
+interface Timing {
+    browserName: string;
+    completeTIme: string;
     networkLatency: string;
-    redirectTime: string;
     pageLoadTime: string;
-    completeTime: string;
+    redirectTime: string;
 }

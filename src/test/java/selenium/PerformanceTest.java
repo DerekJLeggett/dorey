@@ -46,6 +46,6 @@ public class PerformanceTest extends StartUp {
         public void testPagePerformance(Company company) {
                 logger.info("Url: {}", company.url);
                 pageDriver.navigateTo("https://" + company.url);
-                utility.logTimings(pageDriver.getTimings(), company);
+                utility.logTimings(pageDriver.getTimings(), company, StartUp.browser);
         }
 }

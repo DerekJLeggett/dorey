@@ -1,6 +1,6 @@
 <?php
    require( '../../connect_db.php' );
-   $q = "SELECT id, code, name, url FROM `company`;";
+   $q = "SELECT id, name, url FROM `company`;";
    $r = mysqli_query( $dbc , $q ) ;
    while($row = mysqli_fetch_array($r, MYSQLI_ASSOC ))
         {

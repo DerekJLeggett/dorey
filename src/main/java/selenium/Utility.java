@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -64,6 +66,15 @@ public class Utility {
             logger.error(e.getMessage());
         }
         // Check Environment Variables for overrides
+        // Iterating properties using For-Each
+        Set<String> keys = appProps.stringPropertyNames();
+        for (String key : keys) {
+            if (System.getProperty(key) != null) {
+                appProps.setProperty(key, System.getProperty(key));
+            }
+            System.out.println(key + " : " + appProps.getProperty(key));
+        }
+
         return appProps;
     }
 
@@ -173,9 +184,10 @@ public class Utility {
      * 
      * @param timings
      */
-    public void logTimings(Timings timings, Company company) {
+    public void logTimings(Timings timings, Company company, Browser browser) {
         List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
         urlParameters.add(new BasicNameValuePair("companyId", company.id));
+        urlParameters.add(new BasicNameValuePair("browserId", browser.id));
         urlParameters.add(new BasicNameValuePair("networkLatency", timings.networkLatency.toString()));
         urlParameters.add(new BasicNameValuePair("redirectTime", timings.redirectTime.toString()));
         urlParameters.add(new BasicNameValuePair("pageLoadTime", timings.pageLoadTime.toString()));

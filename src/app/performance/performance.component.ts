@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITiming, IIndustry } from './performance';
+import { ICompany, IIndustry } from './performance';
 import { PerformanceService } from './performance.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { PerformanceService } from './performance.service';
   styleUrls: ['./performance.component.css']
 })
 export class PerformanceComponent implements OnInit {
-  timings: ITiming[] = [];
+  performance: ICompany[] = [];
   industries: IIndustry[] = [];
   constructor(private performanceService: PerformanceService) { }
 
@@ -16,9 +16,9 @@ export class PerformanceComponent implements OnInit {
     this.getIndustries();
   }
 
-  getTimingsByIndustryCode(industryId: number) {
+  getTimingsByIndustryId(industryId: number) {
     this.performanceService.getTimingsByIndustryId(industryId)
-      .subscribe(response => this.timings = response);
+      .subscribe(response => this.performance = response);
   }
   getIndustries() {
     this.performanceService.getIndustries()

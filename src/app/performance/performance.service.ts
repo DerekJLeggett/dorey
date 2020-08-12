@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { ITiming, IIndustry } from './performance';
+import { ICompany, IIndustry } from './performance';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,8 +14,8 @@ export class PerformanceService {
 
   constructor(private http: HttpClient) { }
 
-  getTimingsByIndustryId(industryId: number): Observable<ITiming[]> {
-    return this.http.get<ITiming[]>('/api/getTimingsByIndustryId.php?industryId=' + industryId)
+  getTimingsByIndustryId(industryId: number): Observable<ICompany[]> {
+    return this.http.get<ICompany[]>('/api/getTimingsByIndustryId.php?industryId=' + industryId)
       .pipe(
         map(response => response),
         catchError(this.handleError('getTimingsByIndustryId', []))

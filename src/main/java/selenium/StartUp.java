@@ -22,6 +22,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import selenium.Browser.Location;
 import selenium.Browser.Name;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StartUp {
     public WebDriver webDriver;
@@ -71,6 +72,7 @@ public class StartUp {
                 browser.setId("1");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
+                    WebDriverManager.chromedriver().setup();
                     chromeOptions.setHeadless(Boolean.parseBoolean(props.getProperty("headless")));
                     webDriver = new ChromeDriver(chromeOptions);
                 } else if (browser.getLocation() == Location.GRID) {
@@ -85,7 +87,8 @@ public class StartUp {
                 browser.setId("2");
                 EdgeOptions edgeOptions = new EdgeOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
-                    edgeOptions.setHeadless(true);
+                    WebDriverManager.edgedriver().setup();
+                    edgeOptions.setHeadless(Boolean.parseBoolean(props.getProperty("headless")));
                     webDriver = new EdgeDriver(edgeOptions);
                 } else if (browser.getLocation() == Location.GRID) {
                     try {
@@ -99,7 +102,8 @@ public class StartUp {
                 browser.setId("3");
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
-                    firefoxOptions.setHeadless(true);
+                    WebDriverManager.firefoxdriver().setup();
+                    firefoxOptions.setHeadless(Boolean.parseBoolean(props.getProperty("headless")));
                     webDriver = new FirefoxDriver(firefoxOptions);
                 } else if (browser.getLocation() == Location.GRID) {
                     try {
@@ -125,6 +129,7 @@ public class StartUp {
                 browser.setId("4");
                 OperaOptions operaOptions = new OperaOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
+                    WebDriverManager.operadriver().setup();
                     webDriver = new OperaDriver(operaOptions);
                 } else if (browser.getLocation() == Location.GRID) {
                     try {

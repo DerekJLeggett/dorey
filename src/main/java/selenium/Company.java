@@ -2,7 +2,6 @@ package selenium;
 
 public class Company {
     String id;
-    String code;
     String name;
     String url;
 
@@ -12,14 +11,6 @@ public class Company {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getName() {

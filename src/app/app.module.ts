@@ -23,6 +23,9 @@ import { LibraryComponent } from './library/library.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { CovidComponent } from './covid/covid.component';
 import { PlacesComponent } from './places/places.component';
+import { NatgeoComponent } from './natgeo/natgeo.component';
+import { PopulationComponent } from './population/population.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { PlacesComponent } from './places/places.component';
     LibraryComponent,
     PerformanceComponent,
     CovidComponent,
-    PlacesComponent
+    PlacesComponent,
+    NatgeoComponent,
+    PopulationComponent
   ],
   imports: [
     BrowserModule,
