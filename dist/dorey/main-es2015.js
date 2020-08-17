@@ -1,200 +1,262 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
-/*!**************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<nav>\n  <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">\n    <a class=\"nav-item nav-link active h4\" id=\"nav-home-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-home\" aria-selected=\"true\" routerLink=\"home\">Home</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lori-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"lori\">Lori</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lindsey-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-contact\" aria-selected=\"false\" routerLink=\"lindsey\">Lindsey</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-derek-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"derek\">Derek</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-covid-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"covid\">Covid-19</a>\n  </div>\n</nav>\n<router-outlet></router-outlet>\n<footer class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 text-center\">\n      <a href=\"#\">\n        <img src=\"/assets/images/mailbox.gif\" alt=\"mailbox\" />\n      </a>\n      <br>\n      <a href=\"#\">\n        <img src=\"/assets/images/0342.gif\" alt=\"mailbox\" />\n      </a>\n      <h3 class=\"text-center\">Created by Lori Leggett - 1/13/01</h3>\n    </div>\n  </div>\n</footer>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/auto/auto.component.html":
-/*!********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/auto/auto.component.html ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group\">\n          <label for=\"typeSelect\" class=\"sr-only\">Select a vehicle type</label>\n          <select class=\"custom-select\" id=\"typeSelect\" (change)=\"getMakesByType($event.target.value)\">\n            <option selected class=\"text-center\">Select a vehicle type</option>\n            <option *ngFor=\"let type of types\" class=\"text-center\" value=\"{{type.type}}\">\n              {{type.type}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group\">\n          <label for=\"makeSelect\" class=\"sr-only\">Select a manufacturer</label>\n          <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getModelsByMakeId($event.target.value)\">\n            <option selected class=\"text-center\">Select a manufacturer</option>\n            <option *ngFor=\"let make of makesByType\" class=\"text-center\" value=\"{{make.MakeId}}\">\n              {{make.MakeName}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col text-center\">\n      <h4 class=\"text-center\">Models</h4>\n      <div *ngFor=\"let model of models\">\n        {{model.Model_Name}}\n      </div>\n    </div>\n  </div>\n  <a href=\"https://vpic.nhtsa.dot.gov/api/Home\" target=\"_blank\">Data Provided by Vehicle API</a>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/covid/covid.component.html":
-/*!**********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/covid/covid.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n    <a href=\"https://covid19.who.int\" target=\"_blank\">Data provided by the World Health Organization, Data current as of\n        {{covidCounts[0].Date_reported}}</a>\n    <div class=\"row no-gutters\" *ngFor=\"let covidCount of covidCounts\">\n        <div class=\"col-1\">\n            <img class=\"img-fluid svg\" title=\"{{covidCount.Country_code}}\"\n                src=\"assets/images/flags/svg/{{covidCount.Country_code | lowercase}}.svg\">\n        </div>\n        <div class=\"col-11\">\n            <div class=\"progress\" style=\"height: 50px\">\n                <div class=\" progress-bar bg-danger\" role=\"progressbar\"\n                    [style.width.%]=\"((covidCount.Cumulative_deaths/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuenow=\"((covidCount.Cumulative_deaths/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuemin=\"0\" aria-valuemax=\"100\">\n                    {{covidCount.Cumulative_deaths | number}}</div>\n                <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n                    [style.width.%]=\"(((covidCount.Cumulative_cases - covidCount.Cumulative_deaths)/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuenow=\"(((covidCount.Cumulative_cases - covidCount.Cumulative_deaths)/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuemin=\"0\" aria-valuemax=\"100\">\n                    {{covidCount.Cumulative_cases | number}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/derek/derek.component.html":
-/*!**********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/derek/derek.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h1 class=\"text-center\">Derek's Project Page!</h1>\n      <h2 class=\"text-center\">Serving up delicious, byte size chunks of functionality!</h2>\n      <div class=\"list-group\">\n        <a routerLink=\"{{link.url}}\" href=\"#\"\n          class=\"list-group-item list-group-item-action list-group-item-primary text-center\"\n          *ngFor=\"let link of dereksLinks\">\n          <img class=\"img-fluid svg\" src=\"{{link.imagePath}}\" />\n        </a>\n      </div>\n    </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/dunkin/dunkin.component.html":
-/*!************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/dunkin/dunkin.component.html ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"stateSelect\" class=\"sr-only\">Select a State</label>\n            <select class=\"custom-select\" id=\"stateSelect\" (change)=\"getDunkinByState($event.target.value)\">\n                <option selected class=\"text-center\">Select a State</option>\n                <option class=\"text-center\" *ngFor=\"let state of states\" class=\"text-center\" value=\"{{state.code}}\">\n                    {{state.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <ul class=\"list-unstyled\">\n                <li>\n                    <ul>\n                        <li *ngFor=\"let dunkin of dunkins\">{{dunkin.address}}\n\n                        </li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html":
-/*!********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/home/home.component.html ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-4\">\n      <img class=\"img-fluid\" src=\"/assets/images/dlwedding.jpg\"\n        alt=\"Derek and Lori Leggett's wedding picture from June 6th, 1998\">\n    </div>\n    <div class=\"col-lg-8 story\">\n      <p class=\"h1\">\n        Hi, our names are Derek and Lori Leggett. We were married on June 6, 1998 and live in Peoria, Arizona.\n        Lori is a 5th grade teacher. Derek is the computer guy! We are expecting our first child around May 5,\n        2002. Thank you for visting our web page. We\n        hope you enjoy it!\n      </p>\n    </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/library/library.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/library/library.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
   \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<p>\n  library works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/lindsey/lindsey.component.html":
-/*!**************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/lindsey/lindsey.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n\n    </div>\n  </div>\n</div>"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<nav>\n  <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">\n    <a class=\"nav-item nav-link active h4\" id=\"nav-home-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-home\" aria-selected=\"true\" routerLink=\"home\">Home</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lori-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"lori\">Lori</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-lindsey-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\"\n      aria-controls=\"nav-contact\" aria-selected=\"false\" routerLink=\"lindsey\">Lindsey</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-derek-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"derek\">Derek</a>\n    <a class=\"nav-item nav-link h4\" id=\"nav-covid-tab\" data-toggle=\"tab\" href=\"#\" role=\"tab\" aria-controls=\"nav-profile\"\n      aria-selected=\"false\" routerLink=\"covid\">Covid-19</a>\n  </div>\n</nav>\n<router-outlet></router-outlet>\n<footer class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 text-center\">\n      <a href=\"#\">\n        <img src=\"/assets/images/mailbox.gif\" alt=\"mailbox\" />\n      </a>\n      <br>\n      <a href=\"#\">\n        <img src=\"/assets/images/0342.gif\" alt=\"mailbox\" />\n      </a>\n      <h3 class=\"text-center\">Created by Lori Leggett - 1/13/01</h3>\n    </div>\n  </div>\n</footer>");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/lori/lori.component.html":
-/*!********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/lori/lori.component.html ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h1 class=\"text-center\">Lori's Teacher Resource Page</h1>\n      <h2 class=\"text-center\">Looking for new ideas and lessons? Visit...</h2>\n      <div class=\"list-group\">\n\n        <a target=\"_blank\" href=\"{{link.url}}\" class=\"list-group-item list-group-item-action list-group-item-primary\"\n          *ngFor=\"let link of lorisLinks\">\n\n          <h4 class=\"text-center\"><img src=\"/assets/images/nn0518.gif\" />{{link.linkText}}</h4>\n        </a>\n      </div>\n    </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/marvel/marvel.component.html":
-/*!************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/marvel/marvel.component.html ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"characterSelect\" class=\"sr-only\">Select a Character</label>\n            <select class=\"custom-select\" id=\"characterSelect\" (change)=\"getCharacterById($event.target.value)\">\n                <option selected class=\"text-center\">Select a Character</option>\n                <option class=\"text-center\" *ngFor=\"let character of characters\" class=\"text-center\"\n                    value=\"{{character.id}}\">\n                    {{character.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div *ngFor=\"let characterBy of characterById\" class=\"text-center\">\n                <h3>{{characterBy.name}}</h3>\n                <h4>{{characterBy.description}}</h4>\n                <img class=\"img-fluid\" title=\"{{characterBy.name}}\"\n                    src=\"{{characterBy.thumbnail.path}}.{{characterBy.thumbnail.extension}}\">\n                <h4><u>Comics</u></h4>\n                <div *ngFor=\"let comic of characterBy.comics.items\">\n                    {{comic.name}}\n                </div>\n                <h4><u>Stories</u></h4>\n                <div *ngFor=\"let story of characterBy.stories.items\">\n                    {{story.name}}\n                </div>\n            </div>\n            <a class=\"text-center\" href=\"http://marvel.com\">Data provided by Marvel. © 2019 MARVEL</a>\n        </div>\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/nps/nps.component.html":
-/*!******************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/nps/nps.component.html ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"stateSelect\" class=\"sr-only\">Select a State</label>\n            <select class=\"custom-select\" id=\"stateSelect\" (change)=\"getParks($event.target.value)\">\n                <option selected class=\"text-center\">Select a State</option>\n                <option class=\"text-center\" *ngFor=\"let state of states\" class=\"text-center\" value=\"{{state.code}}\">\n                    {{state.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"text-center\" *ngFor=\"let park of parks\">\n                <h2><a target=\"_blank\" href=\"{{park.url}}\">{{park.fullName}}</a></h2><br>\n                <img *ngFor=\"let image of park.images\" class=\"img-fluid img-thumbnail\" src=\"{{image.url}}\"\n                    alt=\"{{image.altText}}\"><br>\n                <h3>{{park.description}}</h3><br>\n                <h4><a target=\"_blank\" href=\"{{park.directionsUrl}}\">Get Directions</a></h4><br>\n                <h3>Weather Info: </h3><br>\n                <h4>{{park.weatherInfo}}</h4>\n            </div>\n        </div>\n    </div>\n    <a href=\"https://www.nps.gov/subjects/developer/index.htm\" target=\"_blank\">Data provided by the US National Park\n        Service</a>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/performance/performance.component.html":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/performance/performance.component.html ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h2 class=\"text-center\">SUPER(Single User Performance)</h2>\n      <p class=\"text-center\">Performance metrics were obtained by opening clean(no cache) browser, navigating to the\n        specified url\n        , waiting for the page to load, then collecting metrics reported by the browser.\n        Blue bar is Network + Server Processing time.\n        Red bar is Redirect time.\n        Yellow bar is Page Load/Browser Rendering time.\n        All values are in milliseconds.\n      </p>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <label for=\"industrySelect\" class=\"sr-only\">Select an Industry</label>\n      <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getTimingsByIndustryId($event.target.value)\">\n        <option selected class=\"text-center\">Select an Industry</option>\n        <option *ngFor=\"let industry of industries\" class=\"text-center\" value=\"{{industry.id}}\">\n          {{industry.name}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <div *ngFor=\"let company of performance\">\n    <div class=\"row\">\n      <div class=\"col\">\n        <div>{{company.Company}} - https://{{company.url}}</div>\n      </div>\n    </div>\n\n    <div class=\"row\" *ngFor=\"let perf of company.Timings\">\n      <div class=\"col-1\">\n        <img *ngIf=\"perf.browserName=='Chrome'\" class=\"img-fluid svg\" src=\"assets/images/Chrome.svg\"\n          alt=\"Chrome browser logo\">\n        <img *ngIf=\"perf.browserName=='Firefox'\" class=\"img-fluid svg\" src=\"assets/images/Firefox.svg\"\n          alt=\"Firefox browser logo\">\n        <img *ngIf=\"perf.browserName=='Edge'\" class=\"img-fluid svg\" src=\"assets/images/Edge.svg\"\n          alt=\"Edge browser logo\">\n        <img *ngIf=\"perf.browserName=='Opera'\" class=\"img-fluid svg\" src=\"assets/images/Opera_O.svg\"\n          alt=\"Opera browser logo\">\n      </div>\n      <div class=\"col-11\">\n        <div class=\"progress\" style=\"height: 30px;\">\n          <div class=\"progress-bar\" role=\"progressbar\"\n            [style.width.%]=\"((perf.networkLatency/company.Timings[0].completeTime)*100)\"\n            aria-valuenow=\"((perf.networkLatency/company.Timings[0].completeTime)*100)\" aria-valuemin=\"0\"\n            aria-valuemax=\"100\">\n            {{perf.network}}</div>\n          <div class=\"progress-bar bg-danger\" role=\"progressbar\"\n            [style.width.%]=\"((perf.redirectTime/company.Timings[0].completeTime)*100)\"\n            aria-valuenow=\"((perf.redirectTime/company.Timings[0].completeTime)*100)\" aria-valuemin=\"0\"\n            aria-valuemax=\"100\">\n            {{perf.redirectTime}}</div>\n          <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n            [style.width.%]=\"((perf.pageLoadTime/company.Timings[0].completeTime)*100)\"\n            aria-valuenow=\"((perf.pageLoadTime/company.Timings[0].completeTime)*100)\" aria-valuemin=\"0\"\n            aria-valuemax=\"100\">\n            <a class=\"h4\" href=\"https://{{company.url}}\" target=\"_blank\">{{perf.pageLoadTime}}</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/places/places.component.html":
-/*!************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/places/places.component.html ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row text-center\" *ngFor=\"let place of places\">\n        <div class=\"col\">\n            <ul class=\"list-unstyled\">\n                <a target=\"_blank\"\n                    href=\"https://www.google.com/maps/search/?api=1&query={{place.latitude}},{{place.longitude}}\">\n                    <li><strong>{{place.name | titlecase}}</strong></li>\n                </a>\n                <li>Distance: {{place.distance | number}}mi.</li>\n                <li>{{place.address | titlecase}}</li>\n                <li>{{place.city | titlecase}},\n                    {{place.state}} {{place.zip}}</li>\n                <li>{{place.country}}</li>\n                <li>Phone: {{place.phone}}</li>\n            </ul>\n        </div>\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/recreation/recreation.component.html":
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/auto/auto.component.html":
 /*!********************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/recreation/recreation.component.html ***!
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/auto/auto.component.html ***!
   \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"stateSelect\" class=\"sr-only\">Select a State</label>\n            <select class=\"custom-select\" id=\"stateSelect\" (change)=\"getRecreationalAreas($event.target.value)\">\n                <option selected class=\"text-center\">Select a State</option>\n                <option class=\"text-center\" *ngFor=\"let state of states\" class=\"text-center\" value=\"{{state.code}}\">\n                    {{state.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <ul class=\"list-unstyled\">\n                <li>\n                    <ul class=\"list-unstyled\">\n                        <li *ngFor=\"let recArea of recreationalAreas\">\n                            <h2><a target=\"_blank\" href=\"{{recArea.RecAreaMapURL}}\">{{recArea.RecAreaName}}</a></h2><br>\n                            <h3>{{recArea.RecAreaDescription}}</h3><br>\n                        </li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <a target=\"_blank\" href=\"http://ridb.recreation.gov/\">Data Source</a>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/ships/ships.component.html":
-/*!**********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/ships/ships.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"shipTypeSelect\" class=\"sr-only\">Select a Ship Type</label>\n            <select class=\"custom-select\" id=\"shipTypeSelect\" (change)=\"getShipsByType($event.target.value)\">\n                <option selected class=\"text-center\">Select a Ship Type</option>\n                <option class=\"text-center\" *ngFor=\"let type of shipTypes\" class=\"text-center\" value=\"{{type.Code}}\">\n                    {{type.Code}} - {{type.Name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-12 text-center\">\n            <h2>Active Ships in the U.S. Navy</h2>\n            <div *ngFor=\"let ship of ships\" (click)=\"selectShip(ship)\">\n                <a target=\"_blank\" href=\"{{ship.DANFSLink}}\">{{ship.Name}}</a>\n            </div>\n        </div>\n    </div>\n</div>"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group\">\n          <label for=\"typeSelect\" class=\"sr-only\">Select a vehicle type</label>\n          <select class=\"custom-select\" id=\"typeSelect\" (change)=\"getMakesByType($event.target.value)\">\n            <option selected class=\"text-center\">Select a vehicle type</option>\n            <option *ngFor=\"let type of types\" class=\"text-center\" value=\"{{type.type}}\">\n              {{type.type}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group\">\n          <label for=\"makeSelect\" class=\"sr-only\">Select a manufacturer</label>\n          <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getModelsByMakeId($event.target.value)\">\n            <option selected class=\"text-center\">Select a manufacturer</option>\n            <option *ngFor=\"let make of makesByType\" class=\"text-center\" value=\"{{make.MakeId}}\">\n              {{make.MakeName}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col text-center\">\n      <h4 class=\"text-center\">Models</h4>\n      <div *ngFor=\"let model of models\">\n        {{model.Model_Name}}\n      </div>\n    </div>\n  </div>\n  <a href=\"https://vpic.nhtsa.dot.gov/api/Home\" target=\"_blank\">Data Provided by Vehicle API</a>\n</div>");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/snap/snap.component.html":
-/*!********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/snap/snap.component.html ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/covid/covid.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/covid/covid.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      Aw' Snap!\n    </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/swapi/swapi.component.html":
-/*!**********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/swapi/swapi.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <form>\n                <div class=\"form-group\">\n                    <label for=\"filmSelect\" class=\"sr-only\">Select a Film</label>\n                    <select class=\"custom-select\" id=\"filmSelect\" (change)=\"getDetails($event.target.value)\">\n                        <option selected class=\"text-center\">Select a Film</option>\n                        <option *ngFor=\"let film of films\" class=\"text-center\" value=\"{{film.episode_id}}\">\n                            {{film.title}}\n                        </option>\n                    </select>\n                </div>\n            </form>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\" *ngIf=\"selectedFilm\">\n            <div>\n                <h2 id=\"title\">Episode: {{selectedFilm.episode_id}} - {{selectedFilm.title}} - Directed by:\n                    {{selectedFilm.director}} - Produced by: {{selectedFilm.producer}} Released:\n                    {{selectedFilm.release_date | date}}\n                </h2>\n                <p>{{selectedFilm.opening_crawl}}</p>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\" *ngIf=\"selectedFilm\">\n            <h4 class=\"text-center\">Characters</h4>\n            <div class=\"text-center\" *ngFor=\"let character of characters\" data-toggle=\"modal\"\n                data-target=\"#characterModal\" (click)=\"characterSelected(character)\">{{character.name}}</div>\n            <h4 class=\"text-center\">Planets</h4>\n            <div class=\"text-center\" *ngFor=\"let planet of planets\" data-toggle=\"modal\" data-target=\"#planetModal\"\n                (click)=\"planetSelected(planet)\">{{planet.name}}</div>\n            <h4 class=\"text-center\">StarShips</h4>\n            <div class=\"text-center\" *ngFor=\"let starship of starShips\" data-toggle=\"modal\" data-target=\"#starshipModal\"\n                (click)=\"starShipSelected(starship)\">{{starship.name}}</div>\n            <h4 class=\"text-center\">Vehicles</h4>\n            <div class=\"text-center\" *ngFor=\"let vehicle of vehicles\" data-toggle=\"modal\" data-target=\"#vehicleModal\"\n                (click)=\"vehicleSelected(vehicle)\">{{vehicle.name}}</div>\n            <h4 class=\"text-center\">Species</h4>\n            <div class=\"text-center\" *ngFor=\"let specie of species\" data-toggle=\"modal\" data-target=\"#specieModal\"\n                (click)=\"specieSelected(specie)\">{{specie.name}}</div>\n        </div>\n    </div>\n    <a href=\"https://swapi.dev/\" target=\"_blank\">Data provided by StarWars API</a>\n</div>\n\n\n<div class=\"container-fluid\">\n\n    <div class=\"modal\" id=\"characterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"characterModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedCharacter\">Character Details -\n                        {{selectedCharacter.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Height</th>\n                                        <th>Weight</th>\n                                        <th>Hair</th>\n                                        <th>Skin</th>\n                                        <th>Eye</th>\n                                        <th>Birth</th>\n                                        <th>Gender</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedCharacter\">\n                                        <td>{{selectedCharacter.name | titlecase}}</td>\n                                        <td>{{selectedCharacter.height}}</td>\n                                        <td>{{selectedCharacter.mass}}</td>\n                                        <td>{{selectedCharacter.hair_color | titlecase}}</td>\n                                        <td>{{selectedCharacter.skin_color | titlecase}}</td>\n                                        <td>{{selectedCharacter.eye_color | titlecase}}</td>\n                                        <td>{{selectedCharacter.birth_year}}</td>\n                                        <td>{{selectedCharacter.gender | titlecase}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"characterModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"planetModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"planetModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedPlanet\">Planet Details -\n                        {{selectedPlanet.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Rotation Period</th>\n                                        <th>Orbital Period</th>\n                                        <th>Diameter</th>\n                                        <th>Climate</th>\n                                        <th>Gravity</th>\n                                        <th>Terrain</th>\n                                        <th>Surface Water</th>\n                                        <th>Population</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedPlanet\">\n                                        <td>{{selectedPlanet.name}}</td>\n                                        <td>{{selectedPlanet.rotation_period | number}}</td>\n                                        <td>{{selectedPlanet.orbital_period | number}}</td>\n                                        <td>{{selectedPlanet.diameter | number}}</td>\n                                        <td>{{selectedPlanet.climate | titlecase}}</td>\n                                        <td>{{selectedPlanet.gravity | titlecase}}</td>\n                                        <td>{{selectedPlanet.terrain | titlecase}}</td>\n                                        <td>{{selectedPlanet.surface_water | number}}</td>\n                                        <td>{{selectedPlanet.population | number}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"planetModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"starshipModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"starshipModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedStarShip\">StarShip Details -\n                        {{selectedStarShip.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Model</th>\n                                        <th>Manufacturer</th>\n                                        <th>Cost</th>\n                                        <th>Length</th>\n                                        <th>Speed</th>\n                                        <th>Crew</th>\n                                        <th>Passengers</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedStarShip\">\n                                        <td>{{selectedStarShip.name}}</td>\n                                        <td>{{selectedStarShip.model | titlecase}}</td>\n                                        <td>{{selectedStarShip.manufacturer | titlecase}}</td>\n                                        <td>{{selectedStarShip.cost_in_credits | number}}</td>\n                                        <td>{{selectedStarShip.length | number}}</td>\n                                        <td>{{selectedStarShip.max_atmosphering_speed | number}}</td>\n                                        <td>{{selectedStarShip.crew | number}}</td>\n                                        <td>{{selectedStarShip.passengers | number}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"starshipModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"vehicleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"vehicleModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedVehicle\">Vehicle Details -\n                        {{selectedVehicle.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Model</th>\n                                        <th>Manufacturer</th>\n                                        <th>Cost</th>\n                                        <th>Length</th>\n                                        <th>Speed</th>\n                                        <th>Crew</th>\n                                        <th>Passengers</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedVehicle\">\n                                        <td>{{selectedVehicle.name}}</td>\n                                        <td>{{selectedVehicle.model | titlecase}}</td>\n                                        <td>{{selectedVehicle.manufacturer | titlecase}}</td>\n                                        <td>{{selectedVehicle.cost_in_credits | number}}</td>\n                                        <td>{{selectedVehicle.length | number}}</td>\n                                        <td>{{selectedVehicle.max_atmosphering_speed | number}}</td>\n                                        <td>{{selectedVehicle.crew | number}}</td>\n                                        <td>{{selectedVehicle.passengers | number}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"vehicleModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"specieModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"specieModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedSpecie\">Specie Details -\n                        {{selectedSpecie.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Classification</th>\n                                        <th>Designation</th>\n                                        <th>Average Height</th>\n                                        <th>Average Life Span</th>\n                                        <th>Homeworld</th>\n                                        <th>Language</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedSpecie\">\n                                        <td>{{selectedSpecie.name}}</td>\n                                        <td>{{selectedSpecie.classification | titlecase}}</td>\n                                        <td>{{selectedSpecie.designation | titlecase}}</td>\n                                        <td>{{selectedSpecie.average_height | number}}</td>\n                                        <td>{{selectedSpecie.average_lifespan | number}}</td>\n                                        <td>{{selectedSpecie.homeworld | titlecase}}</td>\n                                        <td>{{selectedSpecie.language | titlecase}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"vehicleModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <a href=\"https://covid19.who.int\" target=\"_blank\">Data provided by the World Health Organization, Data current as of\n        {{covidCounts[0].Date_reported}}</a>\n    <div class=\"row no-gutters\" *ngFor=\"let covidCount of covidCounts\">\n        <div class=\"col-1\">\n            <img class=\"img-fluid svg\" title=\"{{covidCount.Country_code}}\"\n                src=\"assets/images/flags/svg/{{covidCount.Country_code | lowercase}}.svg\">\n        </div>\n        <div class=\"col-11\">\n            <div class=\"progress\" style=\"height: 50px\">\n                <div class=\" progress-bar bg-danger\" role=\"progressbar\"\n                    [style.width.%]=\"((covidCount.Cumulative_deaths/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuenow=\"((covidCount.Cumulative_deaths/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuemin=\"0\" aria-valuemax=\"100\">\n                    {{covidCount.Cumulative_deaths | number}}</div>\n                <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n                    [style.width.%]=\"(((covidCount.Cumulative_cases - covidCount.Cumulative_deaths)/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuenow=\"(((covidCount.Cumulative_cases - covidCount.Cumulative_deaths)/covidCounts[0].Cumulative_cases)*100)\"\n                    aria-valuemin=\"0\" aria-valuemax=\"100\">\n                    {{covidCount.Cumulative_cases | number}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/world/world.component.html":
-/*!**********************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/world/world.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/derek/derek.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/derek/derek.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group text-center\">\n          <label for=\"countrySelect\" class=\"sr-only\">Select a Country</label>\n          <select class=\"custom-select text-center\" id=\"countrySelect\"\n            (change)=\"getStatesNestedCitiesByCountryCode($event.target.value)\">\n            <option selected class=\"text-center\">Select a Country</option>\n            <option *ngFor=\"let country of countries\" class=\"text-center\" value=\"{{country.Code}}\">\n              {{country.Name}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col text-center\" *ngIf=\"country\">\n      <h3 id=\"countryName\" class=\"text-center\">{{country.Name}}</h3>\n      <img class=\"img-fluid svg\" title=\"{{country.Name}}\"\n        src=\"assets/images/flags/svg/{{country.Code2 | lowercase}}.svg\">\n      <h4 class=\"text-center\"><u>Languages Spoken</u></h4>\n      <div class=\"progress\" *ngFor=\"let language of country.Languages\">\n        <div class=\"progress-bar bg-warning text-dark\" role=\"progressbar\" [style.width.%]=\"language.Percentage\"\n          aria-valuenow=\"language.Percentage\" aria-valuemin=\"0\" aria-valuemax=\"100\"><strong>{{language.Language}} -\n            {{language.Percentage}}%</strong></div>\n      </div>\n    </div>\n  </div>\n  <h4 *ngIf=\"country\" class=\"text-center\"><u>States</u></h4>\n  <div class=\"row\" *ngFor=\"let state of states\">\n    <div class=\"col text-center\">\n      <h3 class=\"text-center\">{{state.State}}</h3>\n      <img class=\"img-fluid text-center svg\" title=\"{{state.State}}\"\n        src=\"assets/images/flags/svg/{{country.Code2 | lowercase}}/{{state.StateCode | lowercase}}.svg\">\n      <h4 class=\"text-center\"><u>Population by City</u></h4>\n      <div class=\"progress\" *ngFor=\"let city of state.Cities\">\n        <div class=\"progress-bar bg-warning text-dark\" role=\"progressbar\"\n          [style.width.%]=\"((city.Population/state.Cities[0].Population)*100)\"\n          aria-valuenow=\"((city.Population/state.Cities[0].Population)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          <strong>{{city.City}} -\n            {{city.Population | number}}</strong></div>\n      </div>\n    </div>\n  </div>\n</div>\n<router-outlet></router-outlet>"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h1 class=\"text-center\">Derek's Project Page!</h1>\n      <h2 class=\"text-center\">Serving up delicious, byte size chunks of functionality!</h2>\n      <div class=\"list-group\">\n        <a routerLink=\"{{link.url}}\" href=\"#\"\n          class=\"list-group-item list-group-item-action list-group-item-primary text-center\"\n          *ngFor=\"let link of dereksLinks\">\n          <img class=\"img-fluid svg\" src=\"{{link.imagePath}}\" />\n        </a>\n      </div>\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/dunkin/dunkin.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/dunkin/dunkin.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"stateSelect\" class=\"sr-only\">Select a State</label>\n            <select class=\"custom-select\" id=\"stateSelect\" (change)=\"getDunkinByState($event.target.value)\">\n                <option selected class=\"text-center\">Select a State</option>\n                <option class=\"text-center\" *ngFor=\"let state of states\" class=\"text-center\" value=\"{{state.code}}\">\n                    {{state.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <ul class=\"list-unstyled\">\n                <li>\n                    <ul>\n                        <li *ngFor=\"let dunkin of dunkins\">{{dunkin.address}}\n\n                        </li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-4\">\n      <img class=\"img-fluid\" src=\"/assets/images/dlwedding.jpg\"\n        alt=\"Derek and Lori Leggett's wedding picture from June 6th, 1998\">\n    </div>\n    <div class=\"col-lg-8 story\">\n      <p class=\"h1\">\n        Hi, our names are Derek and Lori Leggett. We were married on June 6, 1998 and live in Peoria, Arizona.\n        Lori is a 5th grade teacher. Derek is the computer guy! We are expecting our first child around May 5,\n        2002. Thank you for visting our web page. We\n        hope you enjoy it!\n      </p>\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/library/library.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/library/library.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>\n  library works!\n</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/lindsey/lindsey.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/lindsey/lindsey.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col\">\n\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/lori/lori.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/lori/lori.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      <h1 class=\"text-center\">Lori's Teacher Resource Page</h1>\n      <h2 class=\"text-center\">Looking for new ideas and lessons? Visit...</h2>\n      <div class=\"list-group\">\n\n        <a target=\"_blank\" href=\"{{link.url}}\" class=\"list-group-item list-group-item-action list-group-item-primary\"\n          *ngFor=\"let link of lorisLinks\">\n\n          <h4 class=\"text-center\"><img src=\"/assets/images/nn0518.gif\" />{{link.linkText}}</h4>\n        </a>\n      </div>\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/marvel/marvel.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/marvel/marvel.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"characterSelect\" class=\"sr-only\">Select a Character</label>\n            <select class=\"custom-select\" id=\"characterSelect\" (change)=\"getCharacterById($event.target.value)\">\n                <option selected class=\"text-center\">Select a Character</option>\n                <option class=\"text-center\" *ngFor=\"let character of characters\" class=\"text-center\"\n                    value=\"{{character.id}}\">\n                    {{character.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div *ngFor=\"let characterBy of characterById\" class=\"text-center\">\n                <h3>{{characterBy.name}}</h3>\n                <h4>{{characterBy.description}}</h4>\n                <img class=\"img-fluid\" title=\"{{characterBy.name}}\"\n                    src=\"{{characterBy.thumbnail.path}}.{{characterBy.thumbnail.extension}}\">\n                <h4><u>Comics</u></h4>\n                <div *ngFor=\"let comic of characterBy.comics.items\">\n                    {{comic.name}}\n                </div>\n                <h4><u>Stories</u></h4>\n                <div *ngFor=\"let story of characterBy.stories.items\">\n                    {{story.name}}\n                </div>\n            </div>\n            <a class=\"text-center\" href=\"http://marvel.com\">Data provided by Marvel. © 2019 MARVEL</a>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/natgeo/natgeo.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/natgeo/natgeo.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row text-center\">\n        <div class=\"col\">\n            <h1>Roadrunner Vs Rattlesnake</h1>\n            <iframe\n                src=\"//assets.ngeo.com/modules-video/latest/assets/ngsEmbeddedVideo.html?guid=ngc-qTegnDBNaOavHCW66ItLcxmvYyI6rKHa\"\n                width=\"640\" height=\"365\" frameborder=\"0\" seamless=\"seamless\" scrolling=\"no\" allowfullscreen=\"\"></iframe>\n        </div>\n    </div>\n    <div class=\"row text-center\">\n        <div class=\"col\">\n            <h1>Rope-Free Climb</h1>\n            <iframe\n                src=\"//assets.ngeo.com/modules-video/latest/assets/ngsEmbeddedVideo.html?guid=0000015c-7b06-dd1b-afff-7b4f22f60000\"\n                width=\"640\" height=\"365\" frameborder=\"0\" seamless=\"seamless\" scrolling=\"no\" allowfullscreen=\"\"></iframe>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/nps/nps.component.html":
+/*!******************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/nps/nps.component.html ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"stateSelect\" class=\"sr-only\">Select a State</label>\n            <select class=\"custom-select\" id=\"stateSelect\" (change)=\"getParks($event.target.value)\">\n                <option selected class=\"text-center\">Select a State</option>\n                <option class=\"text-center\" *ngFor=\"let state of states\" class=\"text-center\" value=\"{{state.code}}\">\n                    {{state.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"text-center\" *ngFor=\"let park of parks\">\n                <h2><a target=\"_blank\" href=\"{{park.url}}\">{{park.fullName}}</a></h2><br>\n                <img *ngFor=\"let image of park.images\" class=\"img-fluid img-thumbnail\" src=\"{{image.url}}\"\n                    alt=\"{{image.altText}}\"><br>\n                <h3>{{park.description}}</h3><br>\n                <h4><a target=\"_blank\" href=\"{{park.directionsUrl}}\">Get Directions</a></h4><br>\n                <h3>Weather Info: </h3><br>\n                <h4>{{park.weatherInfo}}</h4>\n            </div>\n        </div>\n    </div>\n    <a href=\"https://www.nps.gov/subjects/developer/index.htm\" target=\"_blank\">Data provided by the US National Park\n        Service</a>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/performance/performance.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/performance/performance.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <h2 class=\"text-center\">SUPER(Single User Performance)</h2>\n      <p class=\"text-center\">Performance metrics were obtained by opening clean(no cache) browser, navigating to the\n        specified url\n        , waiting for the page to load, then collecting metrics reported by the browser.\n        Blue bar is Network + Server Processing time.\n        Red bar is Redirect time.\n        Yellow bar is Page Load/Browser Rendering time.\n        All values are in milliseconds.\n      </p>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col\">\n      <label for=\"industrySelect\" class=\"sr-only\">Select an Industry</label>\n      <select class=\"custom-select\" id=\"makeSelect\" (change)=\"getTimingsByIndustryId($event.target.value)\">\n        <option selected class=\"text-center\">Select an Industry</option>\n        <option *ngFor=\"let industry of industries\" class=\"text-center\" value=\"{{industry.id}}\">\n          {{industry.name}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <div *ngFor=\"let company of performance\">\n    <div class=\"row\">\n      <div class=\"col\">\n        <div>{{company.Company}} - https://{{company.url}}</div>\n      </div>\n    </div>\n\n    <div class=\"row\" *ngFor=\"let perf of company.Timings\">\n      <div class=\"col-1\">\n        <img *ngIf=\"perf.browserName=='Chrome'\" class=\"img-fluid svg\" src=\"assets/images/Chrome.svg\"\n          alt=\"Chrome browser logo\">\n        <img *ngIf=\"perf.browserName=='Firefox'\" class=\"img-fluid svg\" src=\"assets/images/Firefox.svg\"\n          alt=\"Firefox browser logo\">\n        <img *ngIf=\"perf.browserName=='Edge'\" class=\"img-fluid svg\" src=\"assets/images/Edge.svg\"\n          alt=\"Edge browser logo\">\n        <img *ngIf=\"perf.browserName=='Opera'\" class=\"img-fluid svg\" src=\"assets/images/Opera_O.svg\"\n          alt=\"Opera browser logo\">\n      </div>\n      <div class=\"col-11\">\n        <div class=\"progress\" style=\"height: 30px;\">\n          <div class=\"progress-bar\" role=\"progressbar\"\n            [style.width.%]=\"((perf.networkLatency/company.Timings[0].completeTime)*100)\"\n            aria-valuenow=\"((perf.networkLatency/company.Timings[0].completeTime)*100)\" aria-valuemin=\"0\"\n            aria-valuemax=\"100\">\n            {{perf.network}}</div>\n          <div class=\"progress-bar bg-danger\" role=\"progressbar\"\n            [style.width.%]=\"((perf.redirectTime/company.Timings[0].completeTime)*100)\"\n            aria-valuenow=\"((perf.redirectTime/company.Timings[0].completeTime)*100)\" aria-valuemin=\"0\"\n            aria-valuemax=\"100\">\n            {{perf.redirectTime}}</div>\n          <div class=\"progress-bar bg-warning\" role=\"progressbar\"\n            [style.width.%]=\"((perf.pageLoadTime/company.Timings[0].completeTime)*100)\"\n            aria-valuenow=\"((perf.pageLoadTime/company.Timings[0].completeTime)*100)\" aria-valuemin=\"0\"\n            aria-valuemax=\"100\">\n            <a class=\"h4\" href=\"https://{{company.url}}\" target=\"_blank\">{{perf.pageLoadTime}}</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/places/places.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/places/places.component.html ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row text-center\" *ngFor=\"let place of places\">\n        <div class=\"col\">\n            <ul class=\"list-unstyled\">\n                <a target=\"_blank\"\n                    href=\"https://www.google.com/maps/search/?api=1&query={{place.latitude}},{{place.longitude}}\">\n                    <li><strong>{{place.name | titlecase}}</strong></li>\n                </a>\n                <li>Distance: {{place.distance | number}}mi.</li>\n                <li>{{place.address | titlecase}}</li>\n                <li>{{place.city | titlecase}},\n                    {{place.state}} {{place.zip}}</li>\n                <li>{{place.country}}</li>\n                <li>Phone: {{place.phone}}</li>\n            </ul>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/population/population.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/population/population.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>population works!</p>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/recreation/recreation.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/recreation/recreation.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"stateSelect\" class=\"sr-only\">Select a State</label>\n            <select class=\"custom-select\" id=\"stateSelect\" (change)=\"getRecreationalAreas($event.target.value)\">\n                <option selected class=\"text-center\">Select a State</option>\n                <option class=\"text-center\" *ngFor=\"let state of states\" class=\"text-center\" value=\"{{state.code}}\">\n                    {{state.name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <ul class=\"list-unstyled\">\n                <li>\n                    <ul class=\"list-unstyled\">\n                        <li *ngFor=\"let recArea of recreationalAreas\">\n                            <h2><a target=\"_blank\" href=\"{{recArea.RecAreaMapURL}}\">{{recArea.RecAreaName}}</a></h2><br>\n                            <h3>{{recArea.RecAreaDescription}}</h3><br>\n                        </li>\n                    </ul>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <a target=\"_blank\" href=\"http://ridb.recreation.gov/\">Data Source</a>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/ships/ships.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/ships/ships.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <label for=\"shipTypeSelect\" class=\"sr-only\">Select a Ship Type</label>\n            <select class=\"custom-select\" id=\"shipTypeSelect\" (change)=\"getShipsByType($event.target.value)\">\n                <option selected class=\"text-center\">Select a Ship Type</option>\n                <option class=\"text-center\" *ngFor=\"let type of shipTypes\" class=\"text-center\" value=\"{{type.Code}}\">\n                    {{type.Code}} - {{type.Name}}\n                </option>\n            </select>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-12 text-center\">\n            <h2>Active Ships in the U.S. Navy</h2>\n            <div *ngFor=\"let ship of ships\" (click)=\"selectShip(ship)\">\n                <a target=\"_blank\" href=\"{{ship.DANFSLink}}\">{{ship.Name}}</a>\n            </div>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/snap/snap.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/snap/snap.component.html ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-lg-12\">\n      Aw' Snap!\n    </div>\n  </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/swapi/swapi.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/swapi/swapi.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <div class=\"row\">\n        <div class=\"col\">\n            <form>\n                <div class=\"form-group\">\n                    <label for=\"filmSelect\" class=\"sr-only\">Select a Film</label>\n                    <select class=\"custom-select\" id=\"filmSelect\" (change)=\"getDetails($event.target.value)\">\n                        <option selected class=\"text-center\">Select a Film</option>\n                        <option *ngFor=\"let film of films\" class=\"text-center\" value=\"{{film.episode_id}}\">\n                            {{film.title}}\n                        </option>\n                    </select>\n                </div>\n            </form>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\" *ngIf=\"selectedFilm\">\n            <div>\n                <h2 id=\"title\">Episode: {{selectedFilm.episode_id}} - {{selectedFilm.title}} - Directed by:\n                    {{selectedFilm.director}} - Produced by: {{selectedFilm.producer}} Released:\n                    {{selectedFilm.release_date | date}}\n                </h2>\n                <p>{{selectedFilm.opening_crawl}}</p>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\" *ngIf=\"selectedFilm\">\n            <h4 class=\"text-center\">Characters</h4>\n            <div class=\"text-center\" *ngFor=\"let character of characters\" data-toggle=\"modal\"\n                data-target=\"#characterModal\" (click)=\"characterSelected(character)\">{{character.name}}</div>\n            <h4 class=\"text-center\">Planets</h4>\n            <div class=\"text-center\" *ngFor=\"let planet of planets\" data-toggle=\"modal\" data-target=\"#planetModal\"\n                (click)=\"planetSelected(planet)\">{{planet.name}}</div>\n            <h4 class=\"text-center\">StarShips</h4>\n            <div class=\"text-center\" *ngFor=\"let starship of starShips\" data-toggle=\"modal\" data-target=\"#starshipModal\"\n                (click)=\"starShipSelected(starship)\">{{starship.name}}</div>\n            <h4 class=\"text-center\">Vehicles</h4>\n            <div class=\"text-center\" *ngFor=\"let vehicle of vehicles\" data-toggle=\"modal\" data-target=\"#vehicleModal\"\n                (click)=\"vehicleSelected(vehicle)\">{{vehicle.name}}</div>\n            <h4 class=\"text-center\">Species</h4>\n            <div class=\"text-center\" *ngFor=\"let specie of species\" data-toggle=\"modal\" data-target=\"#specieModal\"\n                (click)=\"specieSelected(specie)\">{{specie.name}}</div>\n        </div>\n    </div>\n    <a href=\"https://swapi.dev/\" target=\"_blank\">Data provided by StarWars API</a>\n</div>\n\n\n<div class=\"container-fluid\">\n\n    <div class=\"modal\" id=\"characterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"characterModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedCharacter\">Character Details -\n                        {{selectedCharacter.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Height</th>\n                                        <th>Weight</th>\n                                        <th>Hair</th>\n                                        <th>Skin</th>\n                                        <th>Eye</th>\n                                        <th>Birth</th>\n                                        <th>Gender</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedCharacter\">\n                                        <td>{{selectedCharacter.name | titlecase}}</td>\n                                        <td>{{selectedCharacter.height}}</td>\n                                        <td>{{selectedCharacter.mass}}</td>\n                                        <td>{{selectedCharacter.hair_color | titlecase}}</td>\n                                        <td>{{selectedCharacter.skin_color | titlecase}}</td>\n                                        <td>{{selectedCharacter.eye_color | titlecase}}</td>\n                                        <td>{{selectedCharacter.birth_year}}</td>\n                                        <td>{{selectedCharacter.gender | titlecase}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"characterModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"planetModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"planetModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedPlanet\">Planet Details -\n                        {{selectedPlanet.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Rotation Period</th>\n                                        <th>Orbital Period</th>\n                                        <th>Diameter</th>\n                                        <th>Climate</th>\n                                        <th>Gravity</th>\n                                        <th>Terrain</th>\n                                        <th>Surface Water</th>\n                                        <th>Population</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedPlanet\">\n                                        <td>{{selectedPlanet.name}}</td>\n                                        <td>{{selectedPlanet.rotation_period | number}}</td>\n                                        <td>{{selectedPlanet.orbital_period | number}}</td>\n                                        <td>{{selectedPlanet.diameter | number}}</td>\n                                        <td>{{selectedPlanet.climate | titlecase}}</td>\n                                        <td>{{selectedPlanet.gravity | titlecase}}</td>\n                                        <td>{{selectedPlanet.terrain | titlecase}}</td>\n                                        <td>{{selectedPlanet.surface_water | number}}</td>\n                                        <td>{{selectedPlanet.population | number}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"planetModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"starshipModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"starshipModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedStarShip\">StarShip Details -\n                        {{selectedStarShip.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Model</th>\n                                        <th>Manufacturer</th>\n                                        <th>Cost</th>\n                                        <th>Length</th>\n                                        <th>Speed</th>\n                                        <th>Crew</th>\n                                        <th>Passengers</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedStarShip\">\n                                        <td>{{selectedStarShip.name}}</td>\n                                        <td>{{selectedStarShip.model | titlecase}}</td>\n                                        <td>{{selectedStarShip.manufacturer | titlecase}}</td>\n                                        <td>{{selectedStarShip.cost_in_credits | number}}</td>\n                                        <td>{{selectedStarShip.length | number}}</td>\n                                        <td>{{selectedStarShip.max_atmosphering_speed | number}}</td>\n                                        <td>{{selectedStarShip.crew | number}}</td>\n                                        <td>{{selectedStarShip.passengers | number}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"starshipModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"vehicleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"vehicleModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedVehicle\">Vehicle Details -\n                        {{selectedVehicle.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Model</th>\n                                        <th>Manufacturer</th>\n                                        <th>Cost</th>\n                                        <th>Length</th>\n                                        <th>Speed</th>\n                                        <th>Crew</th>\n                                        <th>Passengers</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedVehicle\">\n                                        <td>{{selectedVehicle.name}}</td>\n                                        <td>{{selectedVehicle.model | titlecase}}</td>\n                                        <td>{{selectedVehicle.manufacturer | titlecase}}</td>\n                                        <td>{{selectedVehicle.cost_in_credits | number}}</td>\n                                        <td>{{selectedVehicle.length | number}}</td>\n                                        <td>{{selectedVehicle.max_atmosphering_speed | number}}</td>\n                                        <td>{{selectedVehicle.crew | number}}</td>\n                                        <td>{{selectedVehicle.passengers | number}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"vehicleModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal\" id=\"specieModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModal-label\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\" id=\"specieModalClose\">&times;</span>\n                    </button>\n                    <h4 class=\"modal-title\" id=\"myModal-label\" *ngIf=\"selectedSpecie\">Specie Details -\n                        {{selectedSpecie.name}}</h4>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"row\">\n                        <div class=\"col\">\n                            <table class=\"table table-striped table-bordered table-hover table-condensed table-sm\">\n                                <thead class=\"thead-dark\">\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Classification</th>\n                                        <th>Designation</th>\n                                        <th>Average Height</th>\n                                        <th>Average Life Span</th>\n                                        <th>Homeworld</th>\n                                        <th>Language</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngIf=\"selectedSpecie\">\n                                        <td>{{selectedSpecie.name}}</td>\n                                        <td>{{selectedSpecie.classification | titlecase}}</td>\n                                        <td>{{selectedSpecie.designation | titlecase}}</td>\n                                        <td>{{selectedSpecie.average_height | number}}</td>\n                                        <td>{{selectedSpecie.average_lifespan | number}}</td>\n                                        <td>{{selectedSpecie.homeworld | titlecase}}</td>\n                                        <td>{{selectedSpecie.language | titlecase}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\"\n                        id=\"vehicleModalClose\">Close</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/world/world.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/world/world.component.html ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col\">\n      <form>\n        <div class=\"form-group text-center\">\n          <label for=\"countrySelect\" class=\"sr-only\">Select a Country</label>\n          <select class=\"custom-select text-center\" id=\"countrySelect\"\n            (change)=\"getStatesNestedCitiesByCountryCode($event.target.value)\">\n            <option selected class=\"text-center\">Select a Country</option>\n            <option *ngFor=\"let country of countries\" class=\"text-center\" value=\"{{country.Code}}\">\n              {{country.Name}}\n            </option>\n          </select>\n        </div>\n      </form>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col text-center\" *ngIf=\"country\">\n      <h3 id=\"countryName\" class=\"text-center\">{{country.Name}}</h3>\n      <img class=\"img-fluid svg\" title=\"{{country.Name}}\"\n        src=\"assets/images/flags/svg/{{country.Code2 | lowercase}}.svg\">\n      <h4 class=\"text-center\"><u>Languages Spoken</u></h4>\n      <div class=\"progress\" *ngFor=\"let language of country.Languages\">\n        <div class=\"progress-bar bg-warning text-dark\" role=\"progressbar\" [style.width.%]=\"language.Percentage\"\n          aria-valuenow=\"language.Percentage\" aria-valuemin=\"0\" aria-valuemax=\"100\"><strong>{{language.Language}} -\n            {{language.Percentage}}%</strong></div>\n      </div>\n    </div>\n  </div>\n  <h4 *ngIf=\"country\" class=\"text-center\"><u>States</u></h4>\n  <div class=\"row\" *ngFor=\"let state of states\">\n    <div class=\"col text-center\">\n      <h3 class=\"text-center\">{{state.State}}</h3>\n      <img class=\"img-fluid text-center svg\" title=\"{{state.State}}\"\n        src=\"assets/images/flags/svg/{{country.Code2 | lowercase}}/{{state.StateCode | lowercase}}.svg\">\n      <h4 class=\"text-center\"><u>Population by City</u></h4>\n      <div class=\"progress\" *ngFor=\"let city of state.Cities\">\n        <div class=\"progress-bar bg-warning text-dark\" role=\"progressbar\"\n          [style.width.%]=\"((city.Population/state.Cities[0].Population)*100)\"\n          aria-valuenow=\"((city.Population/state.Cities[0].Population)*100)\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n          <strong>{{city.City}} -\n            {{city.Population | number}}</strong></div>\n      </div>\n    </div>\n  </div>\n</div>\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -232,8 +294,8 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _lori_lori_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lori/lori.component */ "./src/app/lori/lori.component.ts");
 /* harmony import */ var _lindsey_lindsey_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lindsey/lindsey.component */ "./src/app/lindsey/lindsey.component.ts");
@@ -251,6 +313,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./performance/performance.component */ "./src/app/performance/performance.component.ts");
 /* harmony import */ var _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./covid/covid.component */ "./src/app/covid/covid.component.ts");
 /* harmony import */ var _places_places_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./places/places.component */ "./src/app/places/places.component.ts");
+/* harmony import */ var _natgeo_natgeo_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./natgeo/natgeo.component */ "./src/app/natgeo/natgeo.component.ts");
+/* harmony import */ var _population_population_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./population/population.component */ "./src/app/population/population.component.ts");
+
+
 
 
 
@@ -289,11 +355,13 @@ const routes = [
     { path: 'library', component: _library_library_component__WEBPACK_IMPORTED_MODULE_16__["LibraryComponent"] },
     { path: 'performance', component: _performance_performance_component__WEBPACK_IMPORTED_MODULE_17__["PerformanceComponent"] },
     { path: 'covid', component: _covid_covid_component__WEBPACK_IMPORTED_MODULE_18__["CovidComponent"] },
-    { path: 'places', component: _places_places_component__WEBPACK_IMPORTED_MODULE_19__["PlacesComponent"] }
+    { path: 'places', component: _places_places_component__WEBPACK_IMPORTED_MODULE_19__["PlacesComponent"] },
+    { path: 'natgeo', component: _natgeo_natgeo_component__WEBPACK_IMPORTED_MODULE_20__["NatgeoComponent"] },
+    { path: 'population', component: _population_population_component__WEBPACK_IMPORTED_MODULE_21__["PopulationComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
-AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
@@ -308,10 +376,12 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!***********************************!*\
   !*** ./src/app/app.component.css ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -326,7 +396,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
 
 let AppComponent = class AppComponent {
@@ -334,11 +404,11 @@ let AppComponent = class AppComponent {
         this.title = 'dorey';
     }
 };
-AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
-        styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")).default]
     })
 ], AppComponent);
 
@@ -357,13 +427,13 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/__ivy_ngcc__/fesm2015/service-worker.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _lori_lori_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lori/lori.component */ "./src/app/lori/lori.component.ts");
 /* harmony import */ var _lindsey_lindsey_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lindsey/lindsey.component */ "./src/app/lindsey/lindsey.component.ts");
@@ -380,8 +450,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _snap_snap_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./snap/snap.component */ "./src/app/snap/snap.component.ts");
 /* harmony import */ var _library_library_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./library/library.component */ "./src/app/library/library.component.ts");
 /* harmony import */ var _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./performance/performance.component */ "./src/app/performance/performance.component.ts");
-/* harmony import */ var _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./covid/covid.component */ "./src/app/covid/covid.component.ts");
-/* harmony import */ var _places_places_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./places/places.component */ "./src/app/places/places.component.ts");
+/* harmony import */ var _places_places_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./places/places.component */ "./src/app/places/places.component.ts");
+/* harmony import */ var _natgeo_natgeo_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./natgeo/natgeo.component */ "./src/app/natgeo/natgeo.component.ts");
+/* harmony import */ var _population_population_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./population/population.component */ "./src/app/population/population.component.ts");
+
 
 
 
@@ -410,7 +482,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let AppModule = class AppModule {
 };
-AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
@@ -429,8 +501,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _snap_snap_component__WEBPACK_IMPORTED_MODULE_21__["SnapComponent"],
             _library_library_component__WEBPACK_IMPORTED_MODULE_22__["LibraryComponent"],
             _performance_performance_component__WEBPACK_IMPORTED_MODULE_23__["PerformanceComponent"],
-            _covid_covid_component__WEBPACK_IMPORTED_MODULE_24__["CovidComponent"],
-            _places_places_component__WEBPACK_IMPORTED_MODULE_25__["PlacesComponent"]
+            _places_places_component__WEBPACK_IMPORTED_MODULE_24__["PlacesComponent"],
+            _natgeo_natgeo_component__WEBPACK_IMPORTED_MODULE_25__["NatgeoComponent"],
+            _population_population_component__WEBPACK_IMPORTED_MODULE_26__["PopulationComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -452,10 +525,12 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*****************************************!*\
   !*** ./src/app/auto/auto.component.css ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dG8vYXV0by5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dG8vYXV0by5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -470,7 +545,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutoComponent", function() { return AutoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _auto_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auto.service */ "./src/app/auto/auto.service.ts");
 
 
@@ -510,13 +585,13 @@ let AutoComponent = class AutoComponent {
 AutoComponent.ctorParameters = () => [
     { type: _auto_service__WEBPACK_IMPORTED_MODULE_2__["AutoService"] }
 ];
-AutoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+AutoComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-auto',
-        template: __webpack_require__(/*! raw-loader!./auto.component.html */ "./node_modules/raw-loader/index.js!./src/app/auto/auto.component.html"),
-        styles: [__webpack_require__(/*! ./auto.component.css */ "./src/app/auto/auto.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./auto.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/auto/auto.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./auto.component.css */ "./src/app/auto/auto.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auto_service__WEBPACK_IMPORTED_MODULE_2__["AutoService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_auto_service__WEBPACK_IMPORTED_MODULE_2__["AutoService"]])
 ], AutoComponent);
 
 
@@ -534,8 +609,8 @@ AutoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AutoService", function() { return AutoService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -601,11 +676,11 @@ let AutoService = class AutoService {
 AutoService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-AutoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+AutoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], AutoService);
 
 
@@ -616,10 +691,12 @@ AutoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************************!*\
   !*** ./src/app/covid/covid.component.css ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".svg {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY292aWQvY292aWQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY292aWQvY292aWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbn0iXX0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".svg {\n    width: 100%;\n    height: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY292aWQvY292aWQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvY292aWQvY292aWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogYXV0bztcbn0iXX0= */");
 
 /***/ }),
 
@@ -634,7 +711,7 @@ module.exports = ".svg {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n/*# so
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CovidComponent", function() { return CovidComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _covid_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./covid.service */ "./src/app/covid/covid.service.ts");
 
 
@@ -655,13 +732,13 @@ let CovidComponent = class CovidComponent {
 CovidComponent.ctorParameters = () => [
     { type: _covid_service__WEBPACK_IMPORTED_MODULE_2__["CovidService"] }
 ];
-CovidComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+CovidComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-covid',
-        template: __webpack_require__(/*! raw-loader!./covid.component.html */ "./node_modules/raw-loader/index.js!./src/app/covid/covid.component.html"),
-        styles: [__webpack_require__(/*! ./covid.component.css */ "./src/app/covid/covid.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./covid.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/covid/covid.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./covid.component.css */ "./src/app/covid/covid.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_covid_service__WEBPACK_IMPORTED_MODULE_2__["CovidService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_covid_service__WEBPACK_IMPORTED_MODULE_2__["CovidService"]])
 ], CovidComponent);
 
 
@@ -679,8 +756,8 @@ CovidComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CovidService", function() { return CovidService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
 
@@ -698,11 +775,11 @@ let CovidService = class CovidService {
 CovidService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-CovidService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+CovidService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], CovidService);
 
 
@@ -713,10 +790,12 @@ CovidService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************************!*\
   !*** ./src/app/derek/derek.component.css ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".svg {\r\n    width: 50%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVyZWsvZGVyZWsuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvZGVyZWsvZGVyZWsuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogYXV0bztcclxufSJdfQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".svg {\n    width: 50%;\n    height: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGVyZWsvZGVyZWsuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvZGVyZWsvZGVyZWsuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xuICAgIHdpZHRoOiA1MCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -731,7 +810,7 @@ module.exports = ".svg {\r\n    width: 50%;\r\n    height: auto;\r\n}\r\n/*# sou
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DerekComponent", function() { return DerekComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _derek_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./derek.service */ "./src/app/derek/derek.service.ts");
 
 
@@ -752,13 +831,13 @@ let DerekComponent = class DerekComponent {
 DerekComponent.ctorParameters = () => [
     { type: _derek_service__WEBPACK_IMPORTED_MODULE_2__["DerekService"] }
 ];
-DerekComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+DerekComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-derek',
-        template: __webpack_require__(/*! raw-loader!./derek.component.html */ "./node_modules/raw-loader/index.js!./src/app/derek/derek.component.html"),
-        styles: [__webpack_require__(/*! ./derek.component.css */ "./src/app/derek/derek.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./derek.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/derek/derek.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./derek.component.css */ "./src/app/derek/derek.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_derek_service__WEBPACK_IMPORTED_MODULE_2__["DerekService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_derek_service__WEBPACK_IMPORTED_MODULE_2__["DerekService"]])
 ], DerekComponent);
 
 
@@ -776,8 +855,8 @@ DerekComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DerekService", function() { return DerekService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -816,11 +895,11 @@ let DerekService = class DerekService {
 DerekService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-DerekService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+DerekService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], DerekService);
 
 
@@ -831,10 +910,12 @@ DerekService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*********************************************!*\
   !*** ./src/app/dunkin/dunkin.component.css ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2R1bmtpbi9kdW5raW4uY29tcG9uZW50LmNzcyJ9 */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2R1bmtpbi9kdW5raW4uY29tcG9uZW50LmNzcyJ9 */");
 
 /***/ }),
 
@@ -849,7 +930,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DunkinComponent", function() { return DunkinComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _dunkin_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dunkin.service */ "./src/app/dunkin/dunkin.service.ts");
 /* harmony import */ var _shared_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/state.service */ "./src/app/shared/state.service.ts");
 
@@ -878,13 +959,13 @@ DunkinComponent.ctorParameters = () => [
     { type: _dunkin_service__WEBPACK_IMPORTED_MODULE_2__["DunkinService"] },
     { type: _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"] }
 ];
-DunkinComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+DunkinComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-dunkin',
-        template: __webpack_require__(/*! raw-loader!./dunkin.component.html */ "./node_modules/raw-loader/index.js!./src/app/dunkin/dunkin.component.html"),
-        styles: [__webpack_require__(/*! ./dunkin.component.css */ "./src/app/dunkin/dunkin.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./dunkin.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/dunkin/dunkin.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./dunkin.component.css */ "./src/app/dunkin/dunkin.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_dunkin_service__WEBPACK_IMPORTED_MODULE_2__["DunkinService"], _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_dunkin_service__WEBPACK_IMPORTED_MODULE_2__["DunkinService"], _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
 ], DunkinComponent);
 
 
@@ -902,8 +983,8 @@ DunkinComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DunkinService", function() { return DunkinService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -950,11 +1031,11 @@ let DunkinService = class DunkinService {
 DunkinService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-DunkinService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+DunkinService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], DunkinService);
 
 
@@ -965,10 +1046,12 @@ DunkinService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*****************************************!*\
   !*** ./src/app/home/home.component.css ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -983,7 +1066,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
 
 let HomeComponent = class HomeComponent {
@@ -991,13 +1074,14 @@ let HomeComponent = class HomeComponent {
     ngOnInit() {
     }
 };
-HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+HomeComponent.ctorParameters = () => [];
+HomeComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-home',
-        template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html"),
-        styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
 ], HomeComponent);
 
 
@@ -1008,10 +1092,12 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!***********************************************!*\
   !*** ./src/app/library/library.component.css ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvbGlicmFyeS5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpYnJhcnkvbGlicmFyeS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -1026,7 +1112,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LibraryComponent", function() { return LibraryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
 
 let LibraryComponent = class LibraryComponent {
@@ -1034,13 +1120,14 @@ let LibraryComponent = class LibraryComponent {
     ngOnInit() {
     }
 };
-LibraryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+LibraryComponent.ctorParameters = () => [];
+LibraryComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-library',
-        template: __webpack_require__(/*! raw-loader!./library.component.html */ "./node_modules/raw-loader/index.js!./src/app/library/library.component.html"),
-        styles: [__webpack_require__(/*! ./library.component.css */ "./src/app/library/library.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./library.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/library/library.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./library.component.css */ "./src/app/library/library.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
 ], LibraryComponent);
 
 
@@ -1051,10 +1138,12 @@ LibraryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!***********************************************!*\
   !*** ./src/app/lindsey/lindsey.component.css ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpbmRzZXkvbGluZHNleS5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xpbmRzZXkvbGluZHNleS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -1069,7 +1158,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LindseyComponent", function() { return LindseyComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
 
 let LindseyComponent = class LindseyComponent {
@@ -1077,13 +1166,14 @@ let LindseyComponent = class LindseyComponent {
     ngOnInit() {
     }
 };
-LindseyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+LindseyComponent.ctorParameters = () => [];
+LindseyComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-lindsey',
-        template: __webpack_require__(/*! raw-loader!./lindsey.component.html */ "./node_modules/raw-loader/index.js!./src/app/lindsey/lindsey.component.html"),
-        styles: [__webpack_require__(/*! ./lindsey.component.css */ "./src/app/lindsey/lindsey.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./lindsey.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/lindsey/lindsey.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./lindsey.component.css */ "./src/app/lindsey/lindsey.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
 ], LindseyComponent);
 
 
@@ -1094,10 +1184,12 @@ LindseyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*****************************************!*\
   !*** ./src/app/lori/lori.component.css ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvcmkvbG9yaS5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvcmkvbG9yaS5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -1112,7 +1204,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoriComponent", function() { return LoriComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _lori_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lori.service */ "./src/app/lori/lori.service.ts");
 
 
@@ -1133,13 +1225,13 @@ let LoriComponent = class LoriComponent {
 LoriComponent.ctorParameters = () => [
     { type: _lori_service__WEBPACK_IMPORTED_MODULE_2__["LoriService"] }
 ];
-LoriComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+LoriComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-lori',
-        template: __webpack_require__(/*! raw-loader!./lori.component.html */ "./node_modules/raw-loader/index.js!./src/app/lori/lori.component.html"),
-        styles: [__webpack_require__(/*! ./lori.component.css */ "./src/app/lori/lori.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./lori.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/lori/lori.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./lori.component.css */ "./src/app/lori/lori.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_lori_service__WEBPACK_IMPORTED_MODULE_2__["LoriService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_lori_service__WEBPACK_IMPORTED_MODULE_2__["LoriService"]])
 ], LoriComponent);
 
 
@@ -1157,8 +1249,8 @@ LoriComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoriService", function() { return LoriService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1197,11 +1289,11 @@ let LoriService = class LoriService {
 LoriService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-LoriService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+LoriService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], LoriService);
 
 
@@ -1212,10 +1304,12 @@ LoriService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*********************************************!*\
   !*** ./src/app/marvel/marvel.component.css ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hcnZlbC9tYXJ2ZWwuY29tcG9uZW50LmNzcyJ9 */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hcnZlbC9tYXJ2ZWwuY29tcG9uZW50LmNzcyJ9 */");
 
 /***/ }),
 
@@ -1230,7 +1324,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarvelComponent", function() { return MarvelComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _marvel_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./marvel.service */ "./src/app/marvel/marvel.service.ts");
 
 
@@ -1263,13 +1357,13 @@ let MarvelComponent = class MarvelComponent {
 MarvelComponent.ctorParameters = () => [
     { type: _marvel_service__WEBPACK_IMPORTED_MODULE_2__["MarvelService"] }
 ];
-MarvelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+MarvelComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-marvel',
-        template: __webpack_require__(/*! raw-loader!./marvel.component.html */ "./node_modules/raw-loader/index.js!./src/app/marvel/marvel.component.html"),
-        styles: [__webpack_require__(/*! ./marvel.component.css */ "./src/app/marvel/marvel.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./marvel.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/marvel/marvel.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./marvel.component.css */ "./src/app/marvel/marvel.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_marvel_service__WEBPACK_IMPORTED_MODULE_2__["MarvelService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_marvel_service__WEBPACK_IMPORTED_MODULE_2__["MarvelService"]])
 ], MarvelComponent);
 
 
@@ -1287,8 +1381,8 @@ MarvelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarvelService", function() { return MarvelService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1337,12 +1431,132 @@ let MarvelService = class MarvelService {
 MarvelService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-MarvelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+MarvelService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], MarvelService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/natgeo/natgeo.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/natgeo/natgeo.component.css ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25hdGdlby9uYXRnZW8uY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/natgeo/natgeo.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/natgeo/natgeo.component.ts ***!
+  \********************************************/
+/*! exports provided: NatgeoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NatgeoComponent", function() { return NatgeoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _natgeo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./natgeo.service */ "./src/app/natgeo/natgeo.service.ts");
+
+
+
+let NatgeoComponent = class NatgeoComponent {
+    constructor(natgeoService) {
+        this.natgeoService = natgeoService;
+        this.videos = [];
+    }
+    ngOnInit() {
+        this.getVideos();
+    }
+    getVideos() {
+        this.natgeoService.getVideos()
+            .subscribe(response => this.videos = response);
+    }
+};
+NatgeoComponent.ctorParameters = () => [
+    { type: _natgeo_service__WEBPACK_IMPORTED_MODULE_2__["NatgeoService"] }
+];
+NatgeoComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-natgeo',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./natgeo.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/natgeo/natgeo.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./natgeo.component.css */ "./src/app/natgeo/natgeo.component.css")).default]
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_natgeo_service__WEBPACK_IMPORTED_MODULE_2__["NatgeoService"]])
+], NatgeoComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/natgeo/natgeo.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/natgeo/natgeo.service.ts ***!
+  \******************************************/
+/*! exports provided: NatgeoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NatgeoService", function() { return NatgeoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+const httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' })
+};
+let NatgeoService = class NatgeoService {
+    constructor(http) {
+        this.http = http;
+    }
+    getVideos() {
+        return this.http.get('assets/data/natGeoVideos.json')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(response => response), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getCharacters', [])));
+    }
+    /**
+     * Handle Http operation that failed.
+     * Let the app continue.
+     * @param operation - name of the operation that failed
+     * @param result - optional value to return as the observable result
+     */
+    handleError(operation = 'operation', result) {
+        return (error) => {
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+            // TODO: better job of transforming error for user consumption
+            //this.log(`${operation} failed: ${error.message}`);
+            // Let the app keep running by returning an empty result.
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(result);
+        };
+    }
+};
+NatgeoService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+NatgeoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], NatgeoService);
 
 
 
@@ -1352,10 +1566,12 @@ MarvelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!***************************************!*\
   !*** ./src/app/nps/nps.component.css ***!
   \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".flag {\n    width: 200px;\n    height: 200px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbnBzL25wcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9ucHMvbnBzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZmxhZyB7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIGhlaWdodDogMjAwcHg7XG59Il19 */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".flag {\n    width: 200px;\n    height: 200px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbnBzL25wcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGFBQWE7QUFDakIiLCJmaWxlIjoic3JjL2FwcC9ucHMvbnBzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZmxhZyB7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIGhlaWdodDogMjAwcHg7XG59Il19 */");
 
 /***/ }),
 
@@ -1370,7 +1586,7 @@ module.exports = ".flag {\n    width: 200px;\n    height: 200px;\n}\n/*# sourceM
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NpsComponent", function() { return NpsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _nps_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nps.service */ "./src/app/nps/nps.service.ts");
 /* harmony import */ var _shared_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/state.service */ "./src/app/shared/state.service.ts");
 
@@ -1400,13 +1616,13 @@ NpsComponent.ctorParameters = () => [
     { type: _nps_service__WEBPACK_IMPORTED_MODULE_2__["NpsService"] },
     { type: _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"] }
 ];
-NpsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+NpsComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-nps',
-        template: __webpack_require__(/*! raw-loader!./nps.component.html */ "./node_modules/raw-loader/index.js!./src/app/nps/nps.component.html"),
-        styles: [__webpack_require__(/*! ./nps.component.css */ "./src/app/nps/nps.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./nps.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/nps/nps.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./nps.component.css */ "./src/app/nps/nps.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_nps_service__WEBPACK_IMPORTED_MODULE_2__["NpsService"], _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_nps_service__WEBPACK_IMPORTED_MODULE_2__["NpsService"], _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
 ], NpsComponent);
 
 
@@ -1424,8 +1640,8 @@ NpsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NpsService", function() { return NpsService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1465,11 +1681,11 @@ let NpsService = class NpsService {
 NpsService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-NpsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+NpsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], NpsService);
 
 
@@ -1480,10 +1696,12 @@ NpsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************************************!*\
   !*** ./src/app/performance/performance.component.css ***!
   \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".svg {\r\n    width: 50%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogYXV0bztcclxufSJdfQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".svg {\n    width: 50%;\n    height: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2UuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvcGVyZm9ybWFuY2UvcGVyZm9ybWFuY2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xuICAgIHdpZHRoOiA1MCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1498,7 +1716,7 @@ module.exports = ".svg {\r\n    width: 50%;\r\n    height: auto;\r\n}\r\n/*# sou
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PerformanceComponent", function() { return PerformanceComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _performance_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./performance.service */ "./src/app/performance/performance.service.ts");
 
 
@@ -1524,13 +1742,13 @@ let PerformanceComponent = class PerformanceComponent {
 PerformanceComponent.ctorParameters = () => [
     { type: _performance_service__WEBPACK_IMPORTED_MODULE_2__["PerformanceService"] }
 ];
-PerformanceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+PerformanceComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-performance',
-        template: __webpack_require__(/*! raw-loader!./performance.component.html */ "./node_modules/raw-loader/index.js!./src/app/performance/performance.component.html"),
-        styles: [__webpack_require__(/*! ./performance.component.css */ "./src/app/performance/performance.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./performance.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/performance/performance.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./performance.component.css */ "./src/app/performance/performance.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_performance_service__WEBPACK_IMPORTED_MODULE_2__["PerformanceService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_performance_service__WEBPACK_IMPORTED_MODULE_2__["PerformanceService"]])
 ], PerformanceComponent);
 
 
@@ -1548,8 +1766,8 @@ PerformanceComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PerformanceService", function() { return PerformanceService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1592,11 +1810,11 @@ let PerformanceService = class PerformanceService {
 PerformanceService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-PerformanceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+PerformanceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], PerformanceService);
 
 
@@ -1607,10 +1825,12 @@ PerformanceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*********************************************!*\
   !*** ./src/app/places/places.component.css ***!
   \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".svg {\r\n    width: 25%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxhY2VzL3BsYWNlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wbGFjZXMvcGxhY2VzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3ZnIHtcclxuICAgIHdpZHRoOiAyNSU7XHJcbiAgICBoZWlnaHQ6IGF1dG87XHJcbn0iXX0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".svg {\n    width: 25%;\n    height: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGxhY2VzL3BsYWNlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wbGFjZXMvcGxhY2VzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3ZnIHtcbiAgICB3aWR0aDogMjUlO1xuICAgIGhlaWdodDogYXV0bztcbn0iXX0= */");
 
 /***/ }),
 
@@ -1625,7 +1845,7 @@ module.exports = ".svg {\r\n    width: 25%;\r\n    height: auto;\r\n}\r\n/*# sou
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesComponent", function() { return PlacesComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _places_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./places.service */ "./src/app/places/places.service.ts");
 
 
@@ -1651,13 +1871,13 @@ let PlacesComponent = class PlacesComponent {
 PlacesComponent.ctorParameters = () => [
     { type: _places_service__WEBPACK_IMPORTED_MODULE_2__["PlacesService"] }
 ];
-PlacesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+PlacesComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-places',
-        template: __webpack_require__(/*! raw-loader!./places.component.html */ "./node_modules/raw-loader/index.js!./src/app/places/places.component.html"),
-        styles: [__webpack_require__(/*! ./places.component.css */ "./src/app/places/places.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./places.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/places/places.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./places.component.css */ "./src/app/places/places.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_places_service__WEBPACK_IMPORTED_MODULE_2__["PlacesService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_places_service__WEBPACK_IMPORTED_MODULE_2__["PlacesService"]])
 ], PlacesComponent);
 
 
@@ -1675,8 +1895,8 @@ PlacesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlacesService", function() { return PlacesService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
 
@@ -1694,12 +1914,58 @@ let PlacesService = class PlacesService {
 PlacesService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-PlacesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+PlacesService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], PlacesService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/population/population.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/population/population.component.css ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BvcHVsYXRpb24vcG9wdWxhdGlvbi5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/population/population.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/population/population.component.ts ***!
+  \****************************************************/
+/*! exports provided: PopulationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopulationComponent", function() { return PopulationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+let PopulationComponent = class PopulationComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+PopulationComponent.ctorParameters = () => [];
+PopulationComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-population',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./population.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/population/population.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./population.component.css */ "./src/app/population/population.component.css")).default]
+    }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+], PopulationComponent);
 
 
 
@@ -1709,10 +1975,12 @@ PlacesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*****************************************************!*\
   !*** ./src/app/recreation/recreation.component.css ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".flag {\n    width: 200px;\n    height: 200px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVjcmVhdGlvbi9yZWNyZWF0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL3JlY3JlYXRpb24vcmVjcmVhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZsYWcge1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBoZWlnaHQ6IDIwMHB4O1xufSJdfQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".flag {\n    width: 200px;\n    height: 200px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVjcmVhdGlvbi9yZWNyZWF0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osYUFBYTtBQUNqQiIsImZpbGUiOiJzcmMvYXBwL3JlY3JlYXRpb24vcmVjcmVhdGlvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZsYWcge1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBoZWlnaHQ6IDIwMHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1727,7 +1995,7 @@ module.exports = ".flag {\n    width: 200px;\n    height: 200px;\n}\n/*# sourceM
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecreationComponent", function() { return RecreationComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _recreation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./recreation.service */ "./src/app/recreation/recreation.service.ts");
 /* harmony import */ var _shared_state_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/state.service */ "./src/app/shared/state.service.ts");
 
@@ -1762,13 +2030,13 @@ RecreationComponent.ctorParameters = () => [
     { type: _recreation_service__WEBPACK_IMPORTED_MODULE_2__["RecreationService"] },
     { type: _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"] }
 ];
-RecreationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+RecreationComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-recreation',
-        template: __webpack_require__(/*! raw-loader!./recreation.component.html */ "./node_modules/raw-loader/index.js!./src/app/recreation/recreation.component.html"),
-        styles: [__webpack_require__(/*! ./recreation.component.css */ "./src/app/recreation/recreation.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./recreation.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/recreation/recreation.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./recreation.component.css */ "./src/app/recreation/recreation.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_recreation_service__WEBPACK_IMPORTED_MODULE_2__["RecreationService"], _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_recreation_service__WEBPACK_IMPORTED_MODULE_2__["RecreationService"], _shared_state_service__WEBPACK_IMPORTED_MODULE_3__["StateService"]])
 ], RecreationComponent);
 
 
@@ -1786,8 +2054,8 @@ RecreationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecreationService", function() { return RecreationService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1832,11 +2100,11 @@ let RecreationService = class RecreationService {
 RecreationService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-RecreationService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+RecreationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], RecreationService);
 
 
@@ -1854,8 +2122,8 @@ RecreationService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateService", function() { return StateService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -1894,11 +2162,11 @@ let StateService = class StateService {
 StateService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-StateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+StateService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], StateService);
 
 
@@ -1909,10 +2177,12 @@ StateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************************!*\
   !*** ./src/app/ships/ships.component.css ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "/* .container-fluid {\n    background-image: url('/assets/images/Emblem_of_the_United_States_Navy.svg');\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center;\n} */\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hpcHMvc2hpcHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7R0FLRyIsImZpbGUiOiJzcmMvYXBwL3NoaXBzL3NoaXBzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiAuY29udGFpbmVyLWZsdWlkIHtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvaW1hZ2VzL0VtYmxlbV9vZl90aGVfVW5pdGVkX1N0YXRlc19OYXZ5LnN2ZycpO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG59ICovIl19 */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("/* .container-fluid {\n    background-image: url('/assets/images/Emblem_of_the_United_States_Navy.svg');\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-position: center;\n} */\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hpcHMvc2hpcHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7R0FLRyIsImZpbGUiOiJzcmMvYXBwL3NoaXBzL3NoaXBzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiAuY29udGFpbmVyLWZsdWlkIHtcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvaW1hZ2VzL0VtYmxlbV9vZl90aGVfVW5pdGVkX1N0YXRlc19OYXZ5LnN2ZycpO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG59ICovIl19 */");
 
 /***/ }),
 
@@ -1927,7 +2197,7 @@ module.exports = "/* .container-fluid {\n    background-image: url('/assets/imag
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShipsComponent", function() { return ShipsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _ships_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ships.service */ "./src/app/ships/ships.service.ts");
 
 
@@ -1956,13 +2226,13 @@ let ShipsComponent = class ShipsComponent {
 ShipsComponent.ctorParameters = () => [
     { type: _ships_service__WEBPACK_IMPORTED_MODULE_2__["ShipsService"] }
 ];
-ShipsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+ShipsComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-ships',
-        template: __webpack_require__(/*! raw-loader!./ships.component.html */ "./node_modules/raw-loader/index.js!./src/app/ships/ships.component.html"),
-        styles: [__webpack_require__(/*! ./ships.component.css */ "./src/app/ships/ships.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./ships.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/ships/ships.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./ships.component.css */ "./src/app/ships/ships.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ships_service__WEBPACK_IMPORTED_MODULE_2__["ShipsService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_ships_service__WEBPACK_IMPORTED_MODULE_2__["ShipsService"]])
 ], ShipsComponent);
 
 
@@ -1980,8 +2250,8 @@ ShipsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShipsService", function() { return ShipsService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -2024,11 +2294,11 @@ let ShipsService = class ShipsService {
 ShipsService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-ShipsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+ShipsService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], ShipsService);
 
 
@@ -2039,10 +2309,12 @@ ShipsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*****************************************!*\
   !*** ./src/app/snap/snap.component.css ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NuYXAvc25hcC5jb21wb25lbnQuY3NzIn0= */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NuYXAvc25hcC5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -2057,7 +2329,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SnapComponent", function() { return SnapComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
 
 let SnapComponent = class SnapComponent {
@@ -2065,13 +2337,14 @@ let SnapComponent = class SnapComponent {
     ngOnInit() {
     }
 };
-SnapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+SnapComponent.ctorParameters = () => [];
+SnapComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-snap',
-        template: __webpack_require__(/*! raw-loader!./snap.component.html */ "./node_modules/raw-loader/index.js!./src/app/snap/snap.component.html"),
-        styles: [__webpack_require__(/*! ./snap.component.css */ "./src/app/snap/snap.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./snap.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/snap/snap.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./snap.component.css */ "./src/app/snap/snap.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
 ], SnapComponent);
 
 
@@ -2082,10 +2355,12 @@ SnapComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************************!*\
   !*** ./src/app/swapi/swapi.component.css ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N3YXBpL3N3YXBpLmNvbXBvbmVudC5jc3MifQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N3YXBpL3N3YXBpLmNvbXBvbmVudC5jc3MifQ== */");
 
 /***/ }),
 
@@ -2100,7 +2375,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwapiComponent", function() { return SwapiComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _swapi_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./swapi.service */ "./src/app/swapi/swapi.service.ts");
 
 
@@ -2179,13 +2454,13 @@ let SwapiComponent = class SwapiComponent {
 SwapiComponent.ctorParameters = () => [
     { type: _swapi_service__WEBPACK_IMPORTED_MODULE_2__["SwapiService"] }
 ];
-SwapiComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+SwapiComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-swapi',
-        template: __webpack_require__(/*! raw-loader!./swapi.component.html */ "./node_modules/raw-loader/index.js!./src/app/swapi/swapi.component.html"),
-        styles: [__webpack_require__(/*! ./swapi.component.css */ "./src/app/swapi/swapi.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./swapi.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/swapi/swapi.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./swapi.component.css */ "./src/app/swapi/swapi.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_swapi_service__WEBPACK_IMPORTED_MODULE_2__["SwapiService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_swapi_service__WEBPACK_IMPORTED_MODULE_2__["SwapiService"]])
 ], SwapiComponent);
 
 
@@ -2203,8 +2478,8 @@ SwapiComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwapiService", function() { return SwapiService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
@@ -2261,11 +2536,11 @@ let SwapiService = class SwapiService {
 SwapiService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-SwapiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+SwapiService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], SwapiService);
 
 
@@ -2276,10 +2551,12 @@ SwapiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*!*******************************************!*\
   !*** ./src/app/world/world.component.css ***!
   \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = ".svg {\r\n    width: 50%;\r\n    height: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd29ybGQvd29ybGQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvd29ybGQvd29ybGQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xyXG4gICAgd2lkdGg6IDUwJTtcclxuICAgIGhlaWdodDogYXV0bztcclxufSJdfQ== */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".svg {\n    width: 50%;\n    height: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvd29ybGQvd29ybGQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFVBQVU7SUFDVixZQUFZO0FBQ2hCIiwiZmlsZSI6InNyYy9hcHAvd29ybGQvd29ybGQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zdmcge1xuICAgIHdpZHRoOiA1MCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -2294,7 +2571,7 @@ module.exports = ".svg {\r\n    width: 50%;\r\n    height: auto;\r\n}\r\n/*# sou
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorldComponent", function() { return WorldComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _world_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./world.service */ "./src/app/world/world.service.ts");
 
 
@@ -2322,13 +2599,13 @@ let WorldComponent = class WorldComponent {
 WorldComponent.ctorParameters = () => [
     { type: _world_service__WEBPACK_IMPORTED_MODULE_2__["WorldService"] }
 ];
-WorldComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+WorldComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-world',
-        template: __webpack_require__(/*! raw-loader!./world.component.html */ "./node_modules/raw-loader/index.js!./src/app/world/world.component.html"),
-        styles: [__webpack_require__(/*! ./world.component.css */ "./src/app/world/world.component.css")]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./world.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/world/world.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./world.component.css */ "./src/app/world/world.component.css")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_world_service__WEBPACK_IMPORTED_MODULE_2__["WorldService"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_world_service__WEBPACK_IMPORTED_MODULE_2__["WorldService"]])
 ], WorldComponent);
 
 
@@ -2346,8 +2623,8 @@ WorldComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorldService", function() { return WorldService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 
 
@@ -2369,11 +2646,11 @@ let WorldService = class WorldService {
 WorldService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-WorldService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+WorldService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
         providedIn: 'root'
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], WorldService);
 
 
@@ -2417,8 +2694,8 @@ const environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm2015/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
@@ -2441,7 +2718,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /mnt/media/git/dorey/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/pi/git/dorey/src/main.ts */"./src/main.ts");
 
 
 /***/ })

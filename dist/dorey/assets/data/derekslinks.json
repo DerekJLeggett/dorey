@@ -5,6 +5,11 @@
         "imagePath": "assets/images/world.svg"
     },
     {
+        "url": "/population",
+        "linkText": "World Population by country",
+        "imagePath": "assets/images/population.svg"
+    },
+    {
         "url": "/starwars",
         "linkText": "StarWars",
         "imagePath": "assets/images/Star_Wars_Logo.svg"
@@ -38,5 +43,15 @@
         "url": "/places",
         "linkText": "Around me!",
         "imagePath": "assets/images/gps.svg"
+    },
+    {
+        "url": "/natgeo",
+        "linkText": "National Geographic videos",
+        "imagePath": "assets/images/Natgeologo.svg"
+    },
+    {
+        "url": "/steam",
+        "linkText": "Steam Game Library",
+        "imagePath": "assets/images/Steam_Logo.svg"
     }
 ]

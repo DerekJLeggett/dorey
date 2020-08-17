@@ -1,4 +1,4 @@
-export interface IVideo {
+export interface IPopulation {
     Code2: string;
     Population: number;
 }

@@ -72,7 +72,7 @@ public class StartUp {
                 browser.setId("1");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 if (browser.getLocation() == Location.LOCALHOST) {
-                    WebDriverManager.chromedriver().setup();
+                    //WebDriverManager.chromedriver().setup();
                     chromeOptions.setHeadless(Boolean.parseBoolean(props.getProperty("headless")));
                     webDriver = new ChromeDriver(chromeOptions);
                 } else if (browser.getLocation() == Location.GRID) {
