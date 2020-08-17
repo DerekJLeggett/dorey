@@ -21,7 +21,6 @@ import { RecreationComponent } from './recreation/recreation.component';
 import { SnapComponent } from './snap/snap.component';
 import { LibraryComponent } from './library/library.component';
 import { PerformanceComponent } from './performance/performance.component';
-import { CovidComponent } from './covid/covid.component';
 import { PlacesComponent } from './places/places.component';
 import { NatgeoComponent } from './natgeo/natgeo.component';
 import { PopulationComponent } from './population/population.component';
@@ -44,7 +43,6 @@ import { PopulationComponent } from './population/population.component';
     SnapComponent,
     LibraryComponent,
     PerformanceComponent,
-    CovidComponent,
     PlacesComponent,
     NatgeoComponent,
     PopulationComponent
