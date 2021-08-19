@@ -25,16 +25,13 @@ import selenium.Browser.Name;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StartUp {
-    public WebDriver webDriver;
-    public PageDriver pageDriver;
     public static OperatingSystem operatingSystem = new OperatingSystem();
     public static Browser browser = new Browser();
     public static Utility utility = new Utility();
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
     static Properties props = utility.loadProperties();
 
-    @BeforeSuite(alwaysRun = true)
-    public void init() {
+    public static PageDriver start() {
         logger.info("browserParam: {}, location: {}", props.getProperty("browser"), props.getProperty("location"));
         // Set Name
         if (props.getProperty("browser").equalsIgnoreCase("chrome")) {
@@ -55,25 +52,26 @@ public class StartUp {
             browser.setLocation(Location.GRID);
         }
         logger.info("Base URL: {}, Grid URL: {}", props.getProperty("baseUrl"), props.getProperty("gridUrl"));
-        webDriver = getWebDriver(browser);
-        pageDriver = new PageDriver(webDriver);
+        WebDriver webDriver = getWebDriver(browser);
+        PageDriver pageDriver = new PageDriver(webDriver);
         pageDriver.maximizeBrowser();
         pageDriver.navigateTo(props.getProperty("baseUrl"));
+        return pageDriver;
     }
 
-    @AfterSuite(alwaysRun = true)
-    public void tearDown() {
+    public static void stop(WebDriver webDriver) {
         webDriver.quit();
     }
 
-    public WebDriver getWebDriver(Browser browser) {
+    public static WebDriver getWebDriver(Browser browser) {
+        WebDriver webDriver = null;
         switch (browser.name) {
             case CHROME:
                 browser.setId("1");
                 ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(Boolean.parseBoolean(props.getProperty("headless")));
                 if (browser.getLocation() == Location.LOCALHOST) {
                     //WebDriverManager.chromedriver().setup();
-                    chromeOptions.setHeadless(Boolean.parseBoolean(props.getProperty("headless")));
                     webDriver = new ChromeDriver(chromeOptions);
                 } else if (browser.getLocation() == Location.GRID) {
                     try {

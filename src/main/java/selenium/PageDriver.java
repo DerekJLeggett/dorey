@@ -16,9 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.sf.uadetector.ReadableUserAgent;
-import net.sf.uadetector.UserAgentStringParser;
-import net.sf.uadetector.service.UADetectorServiceFactory;
+
 
 public class PageDriver {
     WebDriver webDriver;
@@ -167,109 +165,5 @@ public class PageDriver {
         logger.info("Get text {}", by);
         waitForElement(by);
         return webDriver.findElement(by).getText();
-    }
-
-    /**
-     * Get cookies for the current domain
-     */
-    public Set<Cookie> getCookies() {
-        Set<Cookie> cookies = webDriver.manage().getCookies();
-        logger.info("Number of cookies: {}", cookies.size());
-        for (Cookie cookie : cookies) {
-            logger.info("Cookie: {}-{}-{}", cookie.getDomain(), cookie.getName(), cookie.getValue());
-        }
-        return cookies;
-    }
-
-    /**
-     * Collect browser statistics from the current page
-     * 
-     * @param webDriver
-     * @return
-     */
-    public Timings getTimings() {
-        Timings timings = new Timings();
-        @SuppressWarnings("unchecked")
-        Map<String, Object> pagePerformance = (Map<String, Object>) ((JavascriptExecutor) webDriver)
-                .executeScript("return performance.timing;");
-        Double navigationStart = Double.parseDouble(pagePerformance.get("navigationStart").toString());
-        Double fetchStart = Double.parseDouble(pagePerformance.get("fetchStart").toString());
-        Double loadEventEnd = Double.parseDouble(pagePerformance.get("loadEventEnd").toString());
-        Double responseEnd = Double.parseDouble(pagePerformance.get("responseEnd").toString());
-        Double responseStart = Double.parseDouble(pagePerformance.get("responseStart").toString());
-        Double domInteractive = Double.parseDouble(pagePerformance.get("domInteractive").toString());
-        Double domContentLoadedEventEnd = Double
-                .parseDouble(pagePerformance.get("domContentLoadedEventEnd").toString());
-        Double redirectStart = Double.parseDouble(pagePerformance.get("redirectStart").toString());
-        Double redirectEnd = Double.parseDouble(pagePerformance.get("redirectEnd").toString());
-        // Calculate the performance'''
-        timings.setNetworkLatency(responseEnd - fetchStart);
-        timings.setPageLoadTime(loadEventEnd - responseEnd);
-        timings.setCompleteTime(loadEventEnd - navigationStart);
-        timings.setRedirectTime(redirectEnd - redirectStart);
-        timings.setTimeToFirstByte(responseStart - fetchStart);
-        timings.setTimeToLastByte(responseEnd - fetchStart);
-        timings.setTimeToInteract(domInteractive - responseStart);
-        timings.setDocLoaded(domContentLoadedEventEnd - fetchStart);
-        return timings;
-    }
-
-    /**
-     * Get artifact counts like .css, .js, etc...
-     * 
-     * @param webDriver
-     */
-    public Resources getResources() {
-        Resources resources = new Resources();
-        @SuppressWarnings("unchecked")
-        ArrayList<Object> pageResources = (ArrayList<Object>) ((JavascriptExecutor) webDriver)
-                .executeScript("return window.performance.getEntriesByType('resource');");
-        for (Object resourceObj : pageResources) {
-            @SuppressWarnings("unchecked")
-            Map<String, Object> resource = (Map<String, Object>) resourceObj;
-            switch (resource.get("initiatorType").toString()) {
-                case "link":
-                    resources.setNumLink(resources.getNumLink() + 1);
-                    break;
-                case "script":
-                    resources.setNumScript(resources.getNumScript() + 1);
-                    break;
-                case "img":
-                    resources.setNumImage(resources.getNumImage() + 1);
-                    break;
-                case "xmlhttprequest":
-                    resources.setNumXmlHttp(resources.getNumXmlHttp() + 1);
-                    break;
-                case "css":
-                    resources.setNumCss(resources.getNumCss() + 1);
-                    break;
-                case "iframe":
-                    resources.setNumIframe(resources.getNumIframe() + 1);
-                    break;
-                case "other":
-                    resources.setNumOther(resources.getNumOther() + 1);
-                    break;
-                default:
-                    resources.setNumUnknown(resources.getNumUnknown() + 1);
-            }
-        }
-        return resources;
-    }
-
-    /**
-     * Get the user agent reported by the browser
-     * 
-     * @param webDriver
-     * @return
-     */
-    public String getUserAgent() {
-        String userAgent = (String) ((JavascriptExecutor) webDriver).executeScript("return navigator.userAgent;");
-        logger.info("User agent: {}", userAgent);
-        UserAgentStringParser parser = UADetectorServiceFactory.getResourceModuleParser();
-        ReadableUserAgent agent = parser.parse(userAgent);
-        StartUp.browser.setVersion(agent.getVersionNumber().getMajor() + "." + agent.getVersionNumber().getMinor());
-        StartUp.operatingSystem.setName(agent.getOperatingSystem().getName());
-        StartUp.operatingSystem.setVersion(agent.getOperatingSystem().getVersionNumber().toString());
-        return userAgent;
     }
 }

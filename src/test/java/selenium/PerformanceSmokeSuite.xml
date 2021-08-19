@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Performance Smoke Test Suite">
+<suite name="Performance Smoke Test Suite" data-provider-thread-count="4">
     <test name="Performance Smoke Test">
         <classes>
             <class name="selenium.PerformanceTest" />

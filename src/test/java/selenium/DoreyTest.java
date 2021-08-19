@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import selenium.page.AutoPage;
@@ -21,6 +22,7 @@ import selenium.page.StarWarsPage;
 import selenium.page.WorldPage;
 
 public class DoreyTest extends StartUp {
+    PageDriver pageDriver;
     private HomePage homePage;
     private LorisPage lorisPage;
     private DereksPage dereksPage;
@@ -34,7 +36,8 @@ public class DoreyTest extends StartUp {
     private static Logger logger = LoggerFactory.getLogger(DoreyTest.class);
 
     @BeforeClass
-    public void initializeAll() {
+    public void begin() {
+        pageDriver = StartUp.start();
         homePage = new HomePage(pageDriver);
         lorisPage = new LorisPage(pageDriver);
         dereksPage = new DereksPage(pageDriver);
@@ -47,11 +50,16 @@ public class DoreyTest extends StartUp {
         performancePage = new PerformancePage(pageDriver);
     }
 
+    @AfterClass
+    public void end(){
+        StartUp.stop(pageDriver.webDriver);
+    }
+
     @Test(enabled = true)
     public void testHomePage() {
         homePage.clickHomeTab();
-        Assert.assertTrue(webDriver.getTitle().equals("Dorey"));
-        Assert.assertTrue(webDriver.getPageSource().contains("Derek and Lori Leggett"));
+        Assert.assertTrue(pageDriver.webDriver.getTitle().equals("Dorey"));
+        Assert.assertTrue(pageDriver.webDriver.getPageSource().contains("Derek and Lori Leggett"));
     }
 
     @Test(enabled = true)
@@ -60,7 +68,7 @@ public class DoreyTest extends StartUp {
         for (WebElement element : lorisPage.getLorisLinks()) {
             String linkText = element.getText();
             logger.info("Link text: {}", linkText);
-            String originalHandle = webDriver.getWindowHandle();
+            String originalHandle = pageDriver.webDriver.getWindowHandle();
             lorisPage.clickLink(linkText);
             pageDriver.closeNewTab(originalHandle);
         }
@@ -137,7 +145,7 @@ public class DoreyTest extends StartUp {
         List<WebElement> parks = npsPage.getParkNames();
         WebElement park = parks.get(Utility.getRandomNumberInRange(0, parks.size() - 1));
         logger.info("Park name: {}", park.getText());
-        String originalHandle = webDriver.getWindowHandle();
+        String originalHandle = pageDriver.webDriver.getWindowHandle();
         park.click();
         pageDriver.closeNewTab(originalHandle);
     }
@@ -157,7 +165,7 @@ public class DoreyTest extends StartUp {
         }
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void testCovid() {
         homePage.clickCovidTab();
         dereksPage.clickPlaces();

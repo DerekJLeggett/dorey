@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
@@ -20,9 +21,15 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
+import net.sf.uadetector.ReadableUserAgent;
+import net.sf.uadetector.UserAgentStringParser;
+import net.sf.uadetector.service.UADetectorServiceFactory;
 
 public class Utility {
 
@@ -193,5 +200,109 @@ public class Utility {
         urlParameters.add(new BasicNameValuePair("pageLoadTime", timings.pageLoadTime.toString()));
         urlParameters.add(new BasicNameValuePair("completeTime", timings.completeTime.toString()));
         sendPost(StartUp.props.getProperty("baseUrl") + "/api/addTiming.php", urlParameters);
+    }
+
+    /**
+     * Get cookies for the current domain
+     */
+    public Set<Cookie> getCookies(WebDriver webDriver) {
+        Set<Cookie> cookies = webDriver.manage().getCookies();
+        logger.info("Number of cookies: {}", cookies.size());
+        for (Cookie cookie : cookies) {
+            logger.info("Cookie: {}-{}-{}", cookie.getDomain(), cookie.getName(), cookie.getValue());
+        }
+        return cookies;
+    }
+
+    /**
+     * Collect browser statistics from the current page
+     * 
+     * @param webDriver
+     * @return
+     */
+    public Timings getTimings(WebDriver webDriver) {
+        Timings timings = new Timings();
+        @SuppressWarnings("unchecked")
+        Map<String, Object> pagePerformance = (Map<String, Object>) ((JavascriptExecutor) webDriver)
+                .executeScript("return performance.timing;");
+        Double navigationStart = Double.parseDouble(pagePerformance.get("navigationStart").toString());
+        Double fetchStart = Double.parseDouble(pagePerformance.get("fetchStart").toString());
+        Double loadEventEnd = Double.parseDouble(pagePerformance.get("loadEventEnd").toString());
+        Double responseEnd = Double.parseDouble(pagePerformance.get("responseEnd").toString());
+        Double responseStart = Double.parseDouble(pagePerformance.get("responseStart").toString());
+        Double domInteractive = Double.parseDouble(pagePerformance.get("domInteractive").toString());
+        Double domContentLoadedEventEnd = Double
+                .parseDouble(pagePerformance.get("domContentLoadedEventEnd").toString());
+        Double redirectStart = Double.parseDouble(pagePerformance.get("redirectStart").toString());
+        Double redirectEnd = Double.parseDouble(pagePerformance.get("redirectEnd").toString());
+        // Calculate the performance'''
+        timings.setNetworkLatency(responseEnd - fetchStart);
+        timings.setPageLoadTime(loadEventEnd - responseEnd);
+        timings.setCompleteTime(loadEventEnd - navigationStart);
+        timings.setRedirectTime(redirectEnd - redirectStart);
+        timings.setTimeToFirstByte(responseStart - fetchStart);
+        timings.setTimeToLastByte(responseEnd - fetchStart);
+        timings.setTimeToInteract(domInteractive - responseStart);
+        timings.setDocLoaded(domContentLoadedEventEnd - fetchStart);
+        return timings;
+    }
+
+    /**
+     * Get artifact counts like .css, .js, etc...
+     * 
+     * @param webDriver
+     */
+    public Resources getResources(WebDriver webDriver) {
+        Resources resources = new Resources();
+        @SuppressWarnings("unchecked")
+        ArrayList<Object> pageResources = (ArrayList<Object>) ((JavascriptExecutor) webDriver)
+                .executeScript("return window.performance.getEntriesByType('resource');");
+        for (Object resourceObj : pageResources) {
+            @SuppressWarnings("unchecked")
+            Map<String, Object> resource = (Map<String, Object>) resourceObj;
+            switch (resource.get("initiatorType").toString()) {
+                case "link":
+                    resources.setNumLink(resources.getNumLink() + 1);
+                    break;
+                case "script":
+                    resources.setNumScript(resources.getNumScript() + 1);
+                    break;
+                case "img":
+                    resources.setNumImage(resources.getNumImage() + 1);
+                    break;
+                case "xmlhttprequest":
+                    resources.setNumXmlHttp(resources.getNumXmlHttp() + 1);
+                    break;
+                case "css":
+                    resources.setNumCss(resources.getNumCss() + 1);
+                    break;
+                case "iframe":
+                    resources.setNumIframe(resources.getNumIframe() + 1);
+                    break;
+                case "other":
+                    resources.setNumOther(resources.getNumOther() + 1);
+                    break;
+                default:
+                    resources.setNumUnknown(resources.getNumUnknown() + 1);
+            }
+        }
+        return resources;
+    }
+
+    /**
+     * Get the user agent reported by the browser
+     * 
+     * @param webDriver
+     * @return
+     */
+    public String getUserAgent(WebDriver webDriver) {
+        String userAgent = (String) ((JavascriptExecutor) webDriver).executeScript("return navigator.userAgent;");
+        logger.info("User agent: {}", userAgent);
+        UserAgentStringParser parser = UADetectorServiceFactory.getResourceModuleParser();
+        ReadableUserAgent agent = parser.parse(userAgent);
+        StartUp.browser.setVersion(agent.getVersionNumber().getMajor() + "." + agent.getVersionNumber().getMinor());
+        StartUp.operatingSystem.setName(agent.getOperatingSystem().getName());
+        StartUp.operatingSystem.setVersion(agent.getOperatingSystem().getVersionNumber().toString());
+        return userAgent;
     }
 }

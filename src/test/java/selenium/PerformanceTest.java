@@ -13,21 +13,19 @@ import org.testng.annotations.BeforeClass;
 public class PerformanceTest extends StartUp {
 
         private static Logger logger = LoggerFactory.getLogger(PerformanceTest.class);
-        Timings timings;
+
         Company[] companies;
         Gson gson;
-        String company_json;
-        Utility utility;
 
         @BeforeClass
         public void initializeAll() {
                 gson = new Gson();
-                utility = new Utility();
-                company_json = utility.sendGet(StartUp.props.getProperty("baseUrl") + "/api/getCompanies.php");
+                Utility utility = new Utility();
+                String company_json = utility.sendGet(StartUp.props.getProperty("baseUrl") + "/api/getCompanies.php");
                 companies = gson.fromJson(company_json, Company[].class);
         }
 
-        @DataProvider(parallel = false)
+        @DataProvider(parallel = true)
         public Object[][] companyList() throws Exception {
                 Object[][] returnValue = null;
                 try {
@@ -44,8 +42,11 @@ public class PerformanceTest extends StartUp {
 
         @Test(dataProvider = "companyList")
         public void testPagePerformance(Company company) {
+                PageDriver pageDriver = StartUp.start();
                 logger.info("Url: {}", company.url);
+                Utility utility = new Utility();
                 pageDriver.navigateTo("https://" + company.url);
-                utility.logTimings(pageDriver.getTimings(), company, StartUp.browser);
+                utility.logTimings(utility.getTimings(pageDriver.webDriver), company, StartUp.browser);
+                StartUp.stop(pageDriver.webDriver);
         }
 }
