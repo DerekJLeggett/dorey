@@ -20,18 +20,27 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+
 import selenium.Browser.Location;
 import selenium.Browser.Name;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StartUp {
-    public static OperatingSystem operatingSystem = new OperatingSystem();
-    public static Browser browser = new Browser();
-    public static Utility utility = new Utility();
+    static OperatingSystem operatingSystem = new OperatingSystem();
+    protected static Browser browser = new Browser();
+    private static Utility utility = new Utility();
     private static Logger logger = LoggerFactory.getLogger(StartUp.class);
     static Properties props = utility.loadProperties();
+    public static PageDriver pageDriver;
 
-    public static PageDriver start() {
+    @Parameters({ "browserName" })
+    @BeforeSuite
+    public static PageDriver start(@Optional("Chrome") String browserName) {
+        if(browserName != null){
+            props.setProperty("browser", browserName);
+        }
         logger.info("browserParam: {}, location: {}", props.getProperty("browser"), props.getProperty("location"));
         // Set Name
         if (props.getProperty("browser").equalsIgnoreCase("chrome")) {
@@ -53,12 +62,12 @@ public class StartUp {
         }
         logger.info("Base URL: {}, Grid URL: {}", props.getProperty("baseUrl"), props.getProperty("gridUrl"));
         WebDriver webDriver = getWebDriver(browser);
-        PageDriver pageDriver = new PageDriver(webDriver);
+        pageDriver = new PageDriver(webDriver);
         pageDriver.maximizeBrowser();
         pageDriver.navigateTo(props.getProperty("baseUrl"));
         return pageDriver;
     }
-
+    @AfterSuite
     public static void stop(WebDriver webDriver) {
         webDriver.quit();
     }

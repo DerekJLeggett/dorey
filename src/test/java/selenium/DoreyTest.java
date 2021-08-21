@@ -2,7 +2,6 @@ package selenium;
 
 import java.util.List;
 
-import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +21,6 @@ import selenium.page.StarWarsPage;
 import selenium.page.WorldPage;
 
 public class DoreyTest extends StartUp {
-    PageDriver pageDriver;
     private HomePage homePage;
     private LorisPage lorisPage;
     private DereksPage dereksPage;
@@ -37,7 +35,6 @@ public class DoreyTest extends StartUp {
 
     @BeforeClass
     public void begin() {
-        pageDriver = StartUp.start();
         homePage = new HomePage(pageDriver);
         lorisPage = new LorisPage(pageDriver);
         dereksPage = new DereksPage(pageDriver);
@@ -48,11 +45,6 @@ public class DoreyTest extends StartUp {
         npsPage = new NpsPage(pageDriver);
         autoPage = new AutoPage(pageDriver);
         performancePage = new PerformancePage(pageDriver);
-    }
-
-    @AfterClass
-    public void end(){
-        StartUp.stop(pageDriver.webDriver);
     }
 
     @Test(enabled = true)

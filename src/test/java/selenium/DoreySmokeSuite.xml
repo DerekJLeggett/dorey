@@ -1,8 +1,27 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Dorey Smoke Test Suite">
-    <test name="Dorey Smoke Test">
+<suite name="Dorey Smoke Test Suite" parallel="tests">
+    <parameter name="browserName"  value="Chrome"/>
+    <test name="Dorey Smoke Test - Chrome">
         <classes>
             <class name="selenium.DoreyTest" />
         </classes>
     </test>
+    <!--<parameter name="browserName"  value="FireFox"/>
+    <test name="Dorey Smoke Test - FireFox">
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test>
+    <parameter name="browserName"  value="Edge"/>
+    <test name="Dorey Smoke Test - Edge">
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test>
+    <parameter name="browserName"  value="Opera"/>
+    <test name="Dorey Smoke Test - Opera">
+        <classes>
+            <class name="selenium.DoreyTest" />
+        </classes>
+    </test>-->
 </suite>
